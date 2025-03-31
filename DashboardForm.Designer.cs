@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState27 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState29 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState28 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState30 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState31 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState32 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState33 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState34 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState35 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState36 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState38 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState37 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState39 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState14 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState16 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState15 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState17 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState18 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState19 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState20 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState21 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState22 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState23 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState25 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState24 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState26 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             this.mainPalette = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
             this.buttonSpecAny1 = new Krypton.Toolkit.ButtonSpecAny();
             this.tabsBtn = new FontAwesome.Sharp.IconButton();
@@ -186,10 +186,10 @@
             this.tabsBtn.Name = "tabsBtn";
             this.tabsBtn.Size = new System.Drawing.Size(45, 35);
             this.tabsBtn.TabIndex = 0;
-            layoutState27.Location = new System.Drawing.Point(3, 3);
-            layoutState27.Size = new System.Drawing.Size(29, 27);
-            layoutState27.Visible = true;
-            this.tabsBtn.Tag = layoutState27;
+            layoutState14.Location = new System.Drawing.Point(3, 3);
+            layoutState14.Size = new System.Drawing.Size(29, 27);
+            layoutState14.Visible = true;
+            this.tabsBtn.Tag = layoutState14;
             this.tabsBtn.UseVisualStyleBackColor = false;
             this.tabsBtn.Click += new System.EventHandler(this.tabsBtn_Click);
             // 
@@ -235,10 +235,10 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(194, 35);
             this.topPanel.TabIndex = 4;
-            layoutState29.Location = new System.Drawing.Point(3, 3);
-            layoutState29.Size = new System.Drawing.Size(194, 35);
-            layoutState29.Visible = true;
-            this.topPanel.Tag = layoutState29;
+            layoutState16.Location = new System.Drawing.Point(3, 3);
+            layoutState16.Size = new System.Drawing.Size(194, 35);
+            layoutState16.Visible = true;
+            this.topPanel.Tag = layoutState16;
             // 
             // userBtn
             // 
@@ -255,10 +255,10 @@
             this.userBtn.Name = "userBtn";
             this.userBtn.Size = new System.Drawing.Size(45, 35);
             this.userBtn.TabIndex = 1;
-            layoutState28.Location = new System.Drawing.Point(3, 3);
-            layoutState28.Size = new System.Drawing.Size(29, 27);
-            layoutState28.Visible = true;
-            this.userBtn.Tag = layoutState28;
+            layoutState15.Location = new System.Drawing.Point(3, 3);
+            layoutState15.Size = new System.Drawing.Size(29, 27);
+            layoutState15.Visible = true;
+            this.userBtn.Tag = layoutState15;
             this.userBtn.UseVisualStyleBackColor = false;
             this.userBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.userBtn_MouseClick);
             // 
@@ -302,10 +302,10 @@
             this.backgroundLogo.Size = new System.Drawing.Size(197, 197);
             this.backgroundLogo.SizeMode = SiticoneNetFrameworkUI.Helpers.Enum.SiticonePictureBoxSizeMode.Zoom;
             this.backgroundLogo.TabIndex = 2;
-            layoutState30.Location = new System.Drawing.Point(3, 44);
-            layoutState30.Size = new System.Drawing.Size(197, 197);
-            layoutState30.Visible = true;
-            this.backgroundLogo.Tag = layoutState30;
+            layoutState17.Location = new System.Drawing.Point(3, 44);
+            layoutState17.Size = new System.Drawing.Size(197, 197);
+            layoutState17.Visible = true;
+            this.backgroundLogo.Tag = layoutState17;
             this.backgroundLogo.Text = "siticonePictureBox1";
             // 
             // homeBtn
@@ -326,10 +326,10 @@
             this.homeBtn.Name = "homeBtn";
             this.homeBtn.Size = new System.Drawing.Size(194, 35);
             this.homeBtn.TabIndex = 2;
-            layoutState31.Location = new System.Drawing.Point(3, 247);
-            layoutState31.Size = new System.Drawing.Size(194, 35);
-            layoutState31.Visible = true;
-            this.homeBtn.Tag = layoutState31;
+            layoutState18.Location = new System.Drawing.Point(3, 247);
+            layoutState18.Size = new System.Drawing.Size(194, 35);
+            layoutState18.Visible = true;
+            this.homeBtn.Tag = layoutState18;
             this.homeBtn.Text = "Home";
             this.homeBtn.UseVisualStyleBackColor = false;
             this.homeBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.homeBtn_MouseClick);
@@ -352,10 +352,10 @@
             this.moviesBtn.Name = "moviesBtn";
             this.moviesBtn.Size = new System.Drawing.Size(194, 35);
             this.moviesBtn.TabIndex = 9;
-            layoutState32.Location = new System.Drawing.Point(3, 288);
-            layoutState32.Size = new System.Drawing.Size(194, 35);
-            layoutState32.Visible = true;
-            this.moviesBtn.Tag = layoutState32;
+            layoutState19.Location = new System.Drawing.Point(3, 288);
+            layoutState19.Size = new System.Drawing.Size(194, 35);
+            layoutState19.Visible = true;
+            this.moviesBtn.Tag = layoutState19;
             this.moviesBtn.Text = "Movies";
             this.moviesBtn.UseVisualStyleBackColor = false;
             this.moviesBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.moviesBtn_MouseClick);
@@ -378,10 +378,10 @@
             this.cinemaBtn.Name = "cinemaBtn";
             this.cinemaBtn.Size = new System.Drawing.Size(194, 35);
             this.cinemaBtn.TabIndex = 10;
-            layoutState33.Location = new System.Drawing.Point(3, 329);
-            layoutState33.Size = new System.Drawing.Size(194, 35);
-            layoutState33.Visible = true;
-            this.cinemaBtn.Tag = layoutState33;
+            layoutState20.Location = new System.Drawing.Point(3, 329);
+            layoutState20.Size = new System.Drawing.Size(194, 35);
+            layoutState20.Visible = true;
+            this.cinemaBtn.Tag = layoutState20;
             this.cinemaBtn.Text = "Cinema";
             this.cinemaBtn.UseVisualStyleBackColor = false;
             this.cinemaBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cinemaBtn_MouseClick);
@@ -404,10 +404,10 @@
             this.eventsBtn.Name = "eventsBtn";
             this.eventsBtn.Size = new System.Drawing.Size(194, 35);
             this.eventsBtn.TabIndex = 12;
-            layoutState34.Location = new System.Drawing.Point(3, 370);
-            layoutState34.Size = new System.Drawing.Size(194, 35);
-            layoutState34.Visible = true;
-            this.eventsBtn.Tag = layoutState34;
+            layoutState21.Location = new System.Drawing.Point(3, 370);
+            layoutState21.Size = new System.Drawing.Size(194, 35);
+            layoutState21.Visible = true;
+            this.eventsBtn.Tag = layoutState21;
             this.eventsBtn.Text = "Events";
             this.eventsBtn.UseVisualStyleBackColor = false;
             this.eventsBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.eventsBtn_MouseClick);
@@ -430,10 +430,10 @@
             this.ticketsBtn.Name = "ticketsBtn";
             this.ticketsBtn.Size = new System.Drawing.Size(194, 35);
             this.ticketsBtn.TabIndex = 11;
-            layoutState35.Location = new System.Drawing.Point(3, 411);
-            layoutState35.Size = new System.Drawing.Size(194, 35);
-            layoutState35.Visible = true;
-            this.ticketsBtn.Tag = layoutState35;
+            layoutState22.Location = new System.Drawing.Point(3, 411);
+            layoutState22.Size = new System.Drawing.Size(194, 35);
+            layoutState22.Visible = true;
+            this.ticketsBtn.Tag = layoutState22;
             this.ticketsBtn.Text = "My Tickets";
             this.ticketsBtn.UseVisualStyleBackColor = false;
             this.ticketsBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ticketsBtn_MouseClick);
@@ -456,10 +456,10 @@
             this.settingsBtn.Name = "settingsBtn";
             this.settingsBtn.Size = new System.Drawing.Size(194, 35);
             this.settingsBtn.TabIndex = 13;
-            layoutState36.Location = new System.Drawing.Point(3, 452);
-            layoutState36.Size = new System.Drawing.Size(194, 35);
-            layoutState36.Visible = true;
-            this.settingsBtn.Tag = layoutState36;
+            layoutState23.Location = new System.Drawing.Point(3, 452);
+            layoutState23.Size = new System.Drawing.Size(194, 35);
+            layoutState23.Visible = true;
+            this.settingsBtn.Tag = layoutState23;
             this.settingsBtn.Text = "Settings";
             this.settingsBtn.UseVisualStyleBackColor = false;
             this.settingsBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.settingsBtn_MouseClick);
@@ -473,10 +473,10 @@
             this.logoutContainer.Name = "logoutContainer";
             this.logoutContainer.Size = new System.Drawing.Size(194, 188);
             this.logoutContainer.TabIndex = 15;
-            layoutState38.Location = new System.Drawing.Point(3, 493);
-            layoutState38.Size = new System.Drawing.Size(194, 188);
-            layoutState38.Visible = true;
-            this.logoutContainer.Tag = layoutState38;
+            layoutState25.Location = new System.Drawing.Point(3, 493);
+            layoutState25.Size = new System.Drawing.Size(194, 188);
+            layoutState25.Visible = true;
+            this.logoutContainer.Tag = layoutState25;
             // 
             // logoutBtn
             // 
@@ -497,10 +497,10 @@
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(194, 49);
             this.logoutBtn.TabIndex = 14;
-            layoutState37.Location = new System.Drawing.Point(3, 493);
-            layoutState37.Size = new System.Drawing.Size(194, 35);
-            layoutState37.Visible = true;
-            this.logoutBtn.Tag = layoutState37;
+            layoutState24.Location = new System.Drawing.Point(3, 493);
+            layoutState24.Size = new System.Drawing.Size(194, 35);
+            layoutState24.Visible = true;
+            this.logoutBtn.Tag = layoutState24;
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.UseVisualStyleBackColor = false;
             this.logoutBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.logoutBtn_MouseClick);
@@ -564,10 +564,10 @@
             this.siticoneAdvancedPanel1.Size = new System.Drawing.Size(200, 100);
             this.siticoneAdvancedPanel1.SlideDirection = new System.Drawing.Point(0, -30);
             this.siticoneAdvancedPanel1.TabIndex = 16;
-            layoutState39.Location = new System.Drawing.Point(3, 687);
-            layoutState39.Size = new System.Drawing.Size(200, 100);
-            layoutState39.Visible = true;
-            this.siticoneAdvancedPanel1.Tag = layoutState39;
+            layoutState26.Location = new System.Drawing.Point(3, 687);
+            layoutState26.Size = new System.Drawing.Size(200, 100);
+            layoutState26.Visible = true;
+            this.siticoneAdvancedPanel1.Tag = layoutState26;
             this.siticoneAdvancedPanel1.TopLeftRadius = 5;
             this.siticoneAdvancedPanel1.TopRightRadius = 5;
             // 
@@ -581,7 +581,7 @@
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(200, 0);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(1066, 675);
+            this.contentPanel.Size = new System.Drawing.Size(1070, 675);
             this.contentPanel.TabIndex = 2;
             // 
             // DashboardForm
@@ -590,7 +590,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ButtonSpecs.Add(this.buttonSpecAny1);
-            this.ClientSize = new System.Drawing.Size(1266, 675);
+            this.ClientSize = new System.Drawing.Size(1270, 675);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.sidebarFlowPanel);
             this.ForeColor = System.Drawing.Color.White;

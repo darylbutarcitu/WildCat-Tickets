@@ -124,6 +124,14 @@ namespace WildCat_Tickets
             resetSideBarColors();
             userBtn.IconColor = Color.FromArgb(255, 219, 12);
             userBtn.ForeColor = Color.FromArgb(255, 219, 12);
+
+            ProfileForm profileForm = new ProfileForm();
+            profileForm.TopLevel = false;
+            profileForm.FormBorderStyle = FormBorderStyle.None;
+            profileForm.Dock = DockStyle.Fill;
+            contentPanel.Controls.Clear();
+            contentPanel.Controls.Add(profileForm);
+            profileForm.Show();
         }
 
         private void homeBtn_MouseClick(object sender, MouseEventArgs e)
@@ -132,6 +140,14 @@ namespace WildCat_Tickets
             homeBtn.IconColor = Color.FromArgb(255, 219, 12);
             homeBtn.ForeColor = Color.FromArgb(255, 219, 12);
             homeBtn.Font = new Font(homeBtn.Font, FontStyle.Bold);
+
+            HomeForm homeForm = new HomeForm();
+            homeForm.TopLevel = false;
+            homeForm.FormBorderStyle = FormBorderStyle.None;
+            homeForm.Dock = DockStyle.Fill;
+            contentPanel.Controls.Clear();
+            contentPanel.Controls.Add(homeForm);
+            homeForm.Show();
         }
 
         private void moviesBtn_MouseClick(object sender, MouseEventArgs e)
@@ -143,7 +159,7 @@ namespace WildCat_Tickets
 
             MoviesForm moviesForm = new MoviesForm();
             moviesForm.TopLevel = false;
-            moviesForm.FormBorderStyle = FormBorderStyle.None; // Add this line
+            moviesForm.FormBorderStyle = FormBorderStyle.None;
             moviesForm.Dock = DockStyle.Fill;
             contentPanel.Controls.Clear();
             contentPanel.Controls.Add(moviesForm);
@@ -156,6 +172,14 @@ namespace WildCat_Tickets
             cinemaBtn.IconColor = Color.FromArgb(255, 219, 12);
             cinemaBtn.ForeColor = Color.FromArgb(255, 219, 12);
             cinemaBtn.Font = new Font(cinemaBtn.Font, FontStyle.Bold);
+
+            CinemasForm cinemasForm = new CinemasForm();
+            cinemasForm.TopLevel = false;
+            cinemasForm.FormBorderStyle = FormBorderStyle.None;
+            cinemasForm.Dock = DockStyle.Fill;
+            contentPanel.Controls.Clear();
+            contentPanel.Controls.Add(cinemasForm);
+            cinemasForm.Show();
         }
 
         private void eventsBtn_MouseClick(object sender, MouseEventArgs e)
@@ -164,6 +188,14 @@ namespace WildCat_Tickets
             eventsBtn.IconColor = Color.FromArgb(255, 219, 12);
             eventsBtn.ForeColor = Color.FromArgb(255, 219, 12);
             eventsBtn.Font = new Font(eventsBtn.Font, FontStyle.Bold);
+
+            EventsForm eventsForm = new EventsForm();
+            eventsForm.TopLevel = false;
+            eventsForm.FormBorderStyle = FormBorderStyle.None;
+            eventsForm.Dock = DockStyle.Fill;
+            contentPanel.Controls.Clear();
+            contentPanel.Controls.Add(eventsForm);
+            eventsForm.Show();
         }
 
         private void ticketsBtn_MouseClick(object sender, MouseEventArgs e)
@@ -172,6 +204,14 @@ namespace WildCat_Tickets
             ticketsBtn.IconColor = Color.FromArgb(255, 219, 12);
             ticketsBtn.ForeColor = Color.FromArgb(255, 219, 12);
             ticketsBtn.Font = new Font(ticketsBtn.Font, FontStyle.Bold);
+
+            MyTicketsForm ticketsForm = new MyTicketsForm();
+            ticketsForm.TopLevel = false;
+            ticketsForm.FormBorderStyle = FormBorderStyle.None;
+            ticketsForm.Dock = DockStyle.Fill;
+            contentPanel.Controls.Clear();
+            contentPanel.Controls.Add(ticketsForm);
+            ticketsForm.Show();
         }
 
         private void settingsBtn_MouseClick(object sender, MouseEventArgs e)
@@ -180,6 +220,14 @@ namespace WildCat_Tickets
             settingsBtn.IconColor = Color.FromArgb(255, 219, 12);
             settingsBtn.ForeColor = Color.FromArgb(255, 219, 12);
             settingsBtn.Font = new Font(settingsBtn.Font, FontStyle.Bold);
+
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.TopLevel = false;
+            settingsForm.FormBorderStyle = FormBorderStyle.None;
+            settingsForm.Dock = DockStyle.Fill;
+            contentPanel.Controls.Clear();
+            contentPanel.Controls.Add(settingsForm);
+            settingsForm.Show();
         }
 
         private void logoutBtn_MouseClick(object sender, MouseEventArgs e)

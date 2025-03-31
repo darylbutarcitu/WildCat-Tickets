@@ -1,6 +1,6 @@
 ﻿namespace WildCat_Tickets
 {
-    partial class MoviesForm
+    partial class ProfileForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.moviesFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // moviesFlowLayoutPanel
-            // 
-            this.moviesFlowLayoutPanel.AutoScroll = true;
-            this.moviesFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.moviesFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.moviesFlowLayoutPanel.Name = "moviesFlowLayoutPanel";
-            this.moviesFlowLayoutPanel.Size = new System.Drawing.Size(954, 549);
-            this.moviesFlowLayoutPanel.TabIndex = 0;
-            this.moviesFlowLayoutPanel.Resize += new System.EventHandler(this.moviesFlowLayoutPanel_Resize);
-            // 
-            // MoviesForm
+            // ProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 549);
-            this.Controls.Add(this.moviesFlowLayoutPanel);
-            this.Name = "MoviesForm";
+            this.ClientSize = new System.Drawing.Size(1066, 661);
+            this.Name = "ProfileForm";
             this.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.Load += new System.EventHandler(this.MoviesForm_Load);
+            this.Load += new System.EventHandler(this.ProfileForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel moviesFlowLayoutPanel;
     }
 }

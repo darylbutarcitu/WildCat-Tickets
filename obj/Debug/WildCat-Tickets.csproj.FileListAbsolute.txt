@@ -127,3 +127,4 @@ D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.E
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.HomeForm.resources
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.MyTicketsForm.resources
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.SettingsForm.resources
+D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.ProfileForm.resources
