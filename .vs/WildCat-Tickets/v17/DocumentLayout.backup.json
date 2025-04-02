@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\cloudinaryhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:cloudinaryhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\moviesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,10 +31,6 @@
       "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:moviesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\cloudinaryhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:cloudinaryhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\firebasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:firebasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -42,24 +42,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 323,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "CloudinaryHelper.cs",
               "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\CloudinaryHelper.cs",
               "RelativeDocumentMoniker": "CloudinaryHelper.cs",
               "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\CloudinaryHelper.cs",
               "RelativeToolTip": "CloudinaryHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T13:48:32.345Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MoviesForm.cs",
               "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\MoviesForm.cs",
               "RelativeDocumentMoniker": "MoviesForm.cs",
@@ -72,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "MoviesForm.cs [Design]",
               "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\MoviesForm.cs",
               "RelativeDocumentMoniker": "MoviesForm.cs",
@@ -84,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ProfileForm.cs",
               "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\ProfileForm.cs",
               "RelativeDocumentMoniker": "ProfileForm.cs",
@@ -97,7 +97,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ProfileForm.cs [Design]",
               "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\ProfileForm.cs",
               "RelativeDocumentMoniker": "ProfileForm.cs",
@@ -109,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "DashboardForm.cs [Design]",
               "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\DashboardForm.cs",
               "RelativeDocumentMoniker": "DashboardForm.cs",
@@ -121,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "DashboardForm.cs",
               "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\DashboardForm.cs",
               "RelativeDocumentMoniker": "DashboardForm.cs",
