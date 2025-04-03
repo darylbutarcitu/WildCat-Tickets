@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bin",
+    "\\bin\\Debug"
   ],
-  "SelectedNode": "\\DashboardForm.cs",
+  "SelectedNode": "\\bin\\Debug",
   "PreviewInSolutionExplorer": false
 }

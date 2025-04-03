@@ -11,26 +11,35 @@ using System.Windows.Forms;
 
 namespace WildCat_Tickets
 {
-    public partial class DashboardForm: KryptonForm
+    public partial class CustomerDashboardForm : KryptonForm
     {
         private bool isSideBarExpanded;
         private int previousHeight;
+        private Customer _currentCustomer;
 
-        public DashboardForm()
+        public CustomerDashboardForm(Customer customer)
         {
             InitializeComponent();
+            _currentCustomer = customer;
             isSideBarExpanded = true;
             previousHeight = this.Height;
         }
 
         private async void Dashboard_Load(object sender, EventArgs e)
         {
-            // If not logged in, show login form
-            // ------
             this.Size = new Size(1280, 720);
-            FireBaseHelper.InitializeFirebase();
-            await FireBaseHelper.TestFirestoreConnection();
-            await FireBaseHelper.LoginUser("daryl.butar@cit.edu", "09261999!Db");
+
+            await Task.Run(() =>
+            {
+                var customerId = _currentCustomer.Id;
+                if (customerId != null)
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        currentUserTbx.Text = customerId;
+                    }));
+                }
+            });
         }
 
         private void tabsBtn_Click(object sender, EventArgs e)
@@ -125,12 +134,13 @@ namespace WildCat_Tickets
             userBtn.IconColor = Color.FromArgb(255, 219, 12);
             userBtn.ForeColor = Color.FromArgb(255, 219, 12);
 
-            ProfileForm profileForm = new ProfileForm();
+            ProfileForm profileForm = new ProfileForm(_currentCustomer);
             profileForm.TopLevel = false;
             profileForm.FormBorderStyle = FormBorderStyle.None;
             profileForm.Dock = DockStyle.Fill;
             contentPanel.Controls.Clear();
             contentPanel.Controls.Add(profileForm);
+            profileForm.displayUserInfo();
             profileForm.Show();
         }
 
