@@ -256,7 +256,6 @@ namespace WildCat_Tickets
                 DocumentReference docRef = usersCollection.Document(this.Id);
 
                 var updateData = new Dictionary<string, object>();
-                //
 
                 if (!string.IsNullOrEmpty(firstName))
                 {
