@@ -2,28 +2,30 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FirebaseAdmin.Auth;
-using Google.Cloud.Firestore;
+using System.Security.Cryptography;
+using System.Windows.Controls;
 
 namespace WildCat_Tickets
 {
     public partial class SignUpForm : TabForm
     {
-        private static string profilePhotoUrl;
+        private static string profilePhotoPath;
 
         public SignUpForm()
         {
             InitializeComponent();
+            DatabaseHelper.InitializeDatabase();
         }
 
         private void SignUp_Load(object sender, EventArgs e)
         {
-            this.Size = new Size(605, 560);
+            this.Size = new Size(605, 580);
             profilePictureBox.Size = new Size(150, 150);
         }
 
@@ -44,6 +46,8 @@ namespace WildCat_Tickets
             var result = MessageBox.Show("Are you sure you want to cancel?", "Confirm Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
+                profilePhotoPath = "";
+                profilePictureBox.Image = null;
                 this.Close();
             }
         }
@@ -68,8 +72,8 @@ namespace WildCat_Tickets
 
                 if (filePath != null)
                 {
-                    profilePhotoUrl = filePath;
-                    profilePictureBox.Image = Image.FromFile(filePath);
+                    profilePhotoPath = filePath;
+                    profilePictureBox.Image = System.Drawing.Image.FromFile(filePath);
                 }
             }
             catch (Exception ex)
@@ -78,26 +82,37 @@ namespace WildCat_Tickets
             }
         }
 
-        private async void signUpBtn_Click(object sender, EventArgs e)
+        private void signUpBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                string email = emailTbx.Text;
+                string email = emailTbx.Text.Trim();
                 string password = passwordTbx.Text;
                 string confirmPassword = confirmPasswordTbx.Text;
-                string firstName = fNameTbx.Text;
-                string lastName = lNameTbx.Text;
-                string middleName = mNameTbx.Text;
-                DateTime birthDate;
-                if (!DateTime.TryParse(birthDateTbx.Text, out birthDate))
+                string firstName = fNameTbx.Text.Trim();
+                string lastName = lNameTbx.Text.Trim();
+                string middleName = mNameTbx.Text.Trim();
+                string program = programTbx.Text.Trim();
+                string year = yearTbx.Text.Trim();
+                string phone = phoneTbx.Text.Trim();
+                string idNumber = idNumberTbx.Text.Trim();
+                string birthDateText = birthDateTbx.Text.Trim();
+
+                // Check if any field is empty
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword) ||
+                    string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(program) ||
+                    string.IsNullOrEmpty(year) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(idNumber) ||
+                    string.IsNullOrEmpty(birthDateText))
+                {
+                    MessageBox.Show("All fields are required. Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (!DateTime.TryParse(birthDateText, out DateTime birthDate))
                 {
                     MessageBox.Show("Invalid birth date format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                string program = programTbx.Text;
-                string year = yearTbx.Text;
-                string phone = phoneTbx.Text;
-                string idNumber = idNumberTbx.Text;
 
                 if (password != confirmPassword)
                 {
@@ -105,42 +120,74 @@ namespace WildCat_Tickets
                     return;
                 }
 
-                // Use Firebase Admin SDK to create the user with email and password
-                var userRecordArgs = new UserRecordArgs()
+                // Hash the password
+                string hashedPassword = DatabaseHelper.HashPassword(password);
+
+                using (SQLiteConnection conn = new SQLiteConnection("Data Source=wildcattickets.db;Version=3;"))
                 {
-                    Email = email,
-                    Password = password,
-                };
+                    conn.Open();
 
-                UserRecord userRecord = await FirebaseAuth.DefaultInstance.CreateUserAsync(userRecordArgs);
-
-                if (userRecord != null)
-                {
-                    // Store user details in Firestore
-                    var userDoc = new Dictionary<string, object>
+                    // Ensure the Users table exists
+                    string createTableQuery = @"
+                    CREATE TABLE IF NOT EXISTS Users (
+                        IDNumber TEXT PRIMARY KEY,
+                        FirstName TEXT,
+                        MiddleName TEXT,
+                        LastName TEXT,
+                        BirthDate TEXT,
+                        Program TEXT,
+                        Year TEXT,
+                        Phone TEXT,
+                        Email TEXT UNIQUE,
+                        Password TEXT,
+                        ProfilePhotoPath TEXT
+                    );";
+                    using (SQLiteCommand createCmd = new SQLiteCommand(createTableQuery, conn))
                     {
-                        { "firstName", firstName },
-                        { "lastName", lastName },
-                        { "middleName", middleName },
-                        { "birthDate", birthDate },
-                        { "program", program },
-                        { "year", year },
-                        { "contact", new Dictionary<string, string> { { "phone", phone }, { "email", email } } }
-                    };
-
-                    DocumentReference docRef = FireBaseHelper.db.Collection("users").Document(idNumber);
-                    await docRef.SetAsync(userDoc);
-
-                    if (!string.IsNullOrEmpty(profilePhotoUrl))
-                    {
-                        string photoPublicID = CloudinaryHelper.UploadFile(profilePhotoUrl);
-                        string profilePhotoUrlFromCloudinary = CloudinaryHelper.GetCloudinaryUrl(photoPublicID, "jpg");
-                        await FireBaseHelper.StoreProfileImageUrl(profilePhotoUrlFromCloudinary, idNumber);
+                        createCmd.ExecuteNonQuery();
                     }
 
-                    MessageBox.Show("Sign up successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    // Optional: Check if email or ID number already exists
+                    string checkQuery = "SELECT COUNT(*) FROM Users WHERE Email = @Email OR IDNumber = @IDNumber";
+                    using (SQLiteCommand checkCmd = new SQLiteCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@Email", email);
+                        checkCmd.Parameters.AddWithValue("@IDNumber", idNumber);
+                        long count = (long)checkCmd.ExecuteScalar();
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Email or ID number already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+
+                    // Insert user
+                    string insertQuery = @"
+                    INSERT INTO Users (IDNumber, FirstName, MiddleName, LastName, BirthDate, Program, Year, Phone, Email, Password, ProfilePhotoPath)
+                    VALUES (@IDNumber, @FirstName, @MiddleName, @LastName, @BirthDate, @Program, @Year, @Phone, @Email, @Password, @ProfilePhotoPath)";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@IDNumber", idNumber);
+                        cmd.Parameters.AddWithValue("@FirstName", firstName);
+                        cmd.Parameters.AddWithValue("@MiddleName", middleName);
+                        cmd.Parameters.AddWithValue("@LastName", lastName);
+                        cmd.Parameters.AddWithValue("@BirthDate", birthDate);
+                        cmd.Parameters.AddWithValue("@Program", program);
+                        cmd.Parameters.AddWithValue("@Year", year);
+                        cmd.Parameters.AddWithValue("@Phone", phone);
+                        cmd.Parameters.AddWithValue("@Email", email);
+                        cmd.Parameters.AddWithValue("@Password", hashedPassword); // Store hashed password
+                        cmd.Parameters.AddWithValue("@ProfilePhotoPath", profilePhotoPath ?? "");
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    conn.Close();
                 }
+
+                MessageBox.Show("Sign up successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -148,5 +195,18 @@ namespace WildCat_Tickets
                 MessageBox.Show("Error signing up: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void SignUpForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                signUpBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                cancelBtn.PerformClick();
+            }
+        }
+
     }
 }

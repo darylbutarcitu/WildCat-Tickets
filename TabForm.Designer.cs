@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tabPalette = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
+            this.mySiticoneLicenseSettings1 = new SiticoneNetFrameworkUI.MySiticoneLicenseSettings();
             this.SuspendLayout();
             // 
             // tabPalette
@@ -43,12 +44,16 @@
             this.tabPalette.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.tabPalette.UseThemeFormChromeBorderWidth = Krypton.Toolkit.InheritBool.True;
             // 
+            // mySiticoneLicenseSettings1
+            // 
+            this.mySiticoneLicenseSettings1.OpenLicenseSettings = null;
+            // 
             // TabForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(1010, 605);
+            this.ClientSize = new System.Drawing.Size(982, 577);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.LocalCustomPalette = this.tabPalette;
@@ -63,5 +68,6 @@
         #endregion
 
         private Krypton.Toolkit.KryptonCustomPaletteBase tabPalette;
+        private SiticoneNetFrameworkUI.MySiticoneLicenseSettings mySiticoneLicenseSettings1;
     }
 }

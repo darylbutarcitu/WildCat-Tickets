@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState1 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            this.components = new System.ComponentModel.Container();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState2 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUpForm));
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState1 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             this.profileContainer = new System.Windows.Forms.Panel();
+            this.pictureTitle = new System.Windows.Forms.PictureBox();
+            this.backgroundLogo = new SiticoneNetFrameworkUI.SiticonePictureBox();
+            this.idNumberLabel = new System.Windows.Forms.Label();
+            this.idNumberTbx = new SiticoneNetFrameworkUI.SiticoneTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.birthDateTbx = new SiticoneNetFrameworkUI.SiticoneTextBox();
             this.confirmPasswordTbx = new SiticoneNetFrameworkUI.SiticoneTextBox();
@@ -55,15 +61,18 @@
             this.programTbx = new SiticoneNetFrameworkUI.SiticoneTextBox();
             this.fnameLabel = new System.Windows.Forms.Label();
             this.yearTbx = new SiticoneNetFrameworkUI.SiticoneTextBox();
-            this.idNumberTbx = new SiticoneNetFrameworkUI.SiticoneTextBox();
-            this.idNumberLabel = new System.Windows.Forms.Label();
+            this.mySiticoneLicenseSettings1 = new SiticoneNetFrameworkUI.MySiticoneLicenseSettings();
+            this.mainPalette = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
             this.profileContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTitle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // profileContainer
             // 
             this.profileContainer.BackColor = System.Drawing.Color.Transparent;
+            this.profileContainer.Controls.Add(this.pictureTitle);
+            this.profileContainer.Controls.Add(this.backgroundLogo);
             this.profileContainer.Controls.Add(this.idNumberLabel);
             this.profileContainer.Controls.Add(this.idNumberTbx);
             this.profileContainer.Controls.Add(this.label1);
@@ -92,12 +101,136 @@
             this.profileContainer.Controls.Add(this.yearTbx);
             this.profileContainer.Location = new System.Drawing.Point(12, 12);
             this.profileContainer.Name = "profileContainer";
-            this.profileContainer.Size = new System.Drawing.Size(565, 517);
+            this.profileContainer.Size = new System.Drawing.Size(565, 507);
             this.profileContainer.TabIndex = 19;
-            layoutState1.Location = new System.Drawing.Point(3, 493);
-            layoutState1.Size = new System.Drawing.Size(194, 188);
+            layoutState2.Location = new System.Drawing.Point(3, 493);
+            layoutState2.Size = new System.Drawing.Size(194, 188);
+            layoutState2.Visible = true;
+            this.profileContainer.Tag = layoutState2;
+            // 
+            // pictureTitle
+            // 
+            this.pictureTitle.Image = ((System.Drawing.Image)(resources.GetObject("pictureTitle.Image")));
+            this.pictureTitle.Location = new System.Drawing.Point(416, 0);
+            this.pictureTitle.Name = "pictureTitle";
+            this.pictureTitle.Size = new System.Drawing.Size(149, 64);
+            this.pictureTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureTitle.TabIndex = 30;
+            this.pictureTitle.TabStop = false;
+            // 
+            // backgroundLogo
+            // 
+            this.backgroundLogo.BackColor = System.Drawing.Color.Transparent;
+            this.backgroundLogo.BorderColor = System.Drawing.Color.Transparent;
+            this.backgroundLogo.BorderWidth = 1;
+            this.backgroundLogo.Brightness = 1F;
+            this.backgroundLogo.Contrast = 1F;
+            this.backgroundLogo.CornerRadius = 0;
+            this.backgroundLogo.DraggingSpeed = 3.15F;
+            this.backgroundLogo.EnableAsyncLoading = false;
+            this.backgroundLogo.EnableCaching = false;
+            this.backgroundLogo.EnableDragDrop = false;
+            this.backgroundLogo.EnableExtendedImageSources = false;
+            this.backgroundLogo.EnableFilters = false;
+            this.backgroundLogo.EnableFlipping = false;
+            this.backgroundLogo.EnableGlow = false;
+            this.backgroundLogo.EnableHighDpiSupport = false;
+            this.backgroundLogo.EnableMouseInteraction = false;
+            this.backgroundLogo.EnablePlaceholder = false;
+            this.backgroundLogo.EnableRotation = false;
+            this.backgroundLogo.EnableShadow = false;
+            this.backgroundLogo.EnableSlideshow = false;
+            this.backgroundLogo.FlipHorizontal = false;
+            this.backgroundLogo.FlipVertical = false;
+            this.backgroundLogo.Grayscale = false;
+            this.backgroundLogo.Image = ((System.Drawing.Image)(resources.GetObject("backgroundLogo.Image")));
+            this.backgroundLogo.ImageOpacity = 1F;
+            this.backgroundLogo.Images = ((System.Collections.Generic.List<System.Drawing.Image>)(resources.GetObject("backgroundLogo.Images")));
+            this.backgroundLogo.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            this.backgroundLogo.IsCircular = true;
+            this.backgroundLogo.Location = new System.Drawing.Point(0, 0);
+            this.backgroundLogo.MaintainAspectRatio = true;
+            this.backgroundLogo.Name = "backgroundLogo";
+            this.backgroundLogo.PlaceholderImage = null;
+            this.backgroundLogo.RotationAngle = 0F;
+            this.backgroundLogo.Saturation = 1F;
+            this.backgroundLogo.ShowBorder = true;
+            this.backgroundLogo.Size = new System.Drawing.Size(64, 64);
+            this.backgroundLogo.SizeMode = SiticoneNetFrameworkUI.Helpers.Enum.SiticonePictureBoxSizeMode.Zoom;
+            this.backgroundLogo.TabIndex = 27;
+            layoutState1.Location = new System.Drawing.Point(3, 44);
+            layoutState1.Size = new System.Drawing.Size(197, 197);
             layoutState1.Visible = true;
-            this.profileContainer.Tag = layoutState1;
+            this.backgroundLogo.Tag = layoutState1;
+            this.backgroundLogo.Text = "siticonePictureBox1";
+            // 
+            // idNumberLabel
+            // 
+            this.idNumberLabel.AutoSize = true;
+            this.idNumberLabel.Location = new System.Drawing.Point(364, 261);
+            this.idNumberLabel.Name = "idNumberLabel";
+            this.idNumberLabel.Size = new System.Drawing.Size(58, 13);
+            this.idNumberLabel.TabIndex = 26;
+            this.idNumberLabel.Text = "ID Number";
+            // 
+            // idNumberTbx
+            // 
+            this.idNumberTbx.AccessibleDescription = "A customizable text input field.";
+            this.idNumberTbx.AccessibleName = "Text Box";
+            this.idNumberTbx.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
+            this.idNumberTbx.BackColor = System.Drawing.Color.Transparent;
+            this.idNumberTbx.BlinkCount = 3;
+            this.idNumberTbx.BlinkShadow = false;
+            this.idNumberTbx.BorderColor1 = System.Drawing.Color.LightSlateGray;
+            this.idNumberTbx.BorderColor2 = System.Drawing.Color.LightSlateGray;
+            this.idNumberTbx.BorderFocusColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.idNumberTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.idNumberTbx.CanShake = true;
+            this.idNumberTbx.ContinuousBlink = false;
+            this.idNumberTbx.CornerRadiusBottomLeft = 10;
+            this.idNumberTbx.CornerRadiusBottomRight = 10;
+            this.idNumberTbx.CornerRadiusTopLeft = 10;
+            this.idNumberTbx.CornerRadiusTopRight = 10;
+            this.idNumberTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.idNumberTbx.CursorBlinkRate = 500;
+            this.idNumberTbx.CursorColor = System.Drawing.Color.Black;
+            this.idNumberTbx.CursorHeight = 0;
+            this.idNumberTbx.CursorOffset = 0;
+            this.idNumberTbx.CursorStyle = SiticoneNetFrameworkUI.Helpers.DrawingStyle.SiticoneDrawingStyle.Solid;
+            this.idNumberTbx.CursorWidth = 1;
+            this.idNumberTbx.DisabledBackColor = System.Drawing.Color.WhiteSmoke;
+            this.idNumberTbx.DisabledBorderColor = System.Drawing.Color.LightGray;
+            this.idNumberTbx.DisabledTextColor = System.Drawing.Color.Gray;
+            this.idNumberTbx.EnableDropShadow = false;
+            this.idNumberTbx.FillColor1 = System.Drawing.Color.White;
+            this.idNumberTbx.FillColor2 = System.Drawing.Color.White;
+            this.idNumberTbx.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.idNumberTbx.ForeColor = System.Drawing.Color.DimGray;
+            this.idNumberTbx.HoverBorderColor1 = System.Drawing.Color.Gray;
+            this.idNumberTbx.HoverBorderColor2 = System.Drawing.Color.Gray;
+            this.idNumberTbx.IsEnabled = true;
+            this.idNumberTbx.Location = new System.Drawing.Point(367, 277);
+            this.idNumberTbx.Name = "idNumberTbx";
+            this.idNumberTbx.PlaceholderColor = System.Drawing.Color.Gray;
+            this.idNumberTbx.PlaceholderText = "ID Number";
+            this.idNumberTbx.ReadOnlyBorderColor1 = System.Drawing.Color.LightGray;
+            this.idNumberTbx.ReadOnlyBorderColor2 = System.Drawing.Color.LightGray;
+            this.idNumberTbx.ReadOnlyFillColor1 = System.Drawing.Color.WhiteSmoke;
+            this.idNumberTbx.ReadOnlyFillColor2 = System.Drawing.Color.WhiteSmoke;
+            this.idNumberTbx.ReadOnlyPlaceholderColor = System.Drawing.Color.DarkGray;
+            this.idNumberTbx.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.idNumberTbx.ShadowAnimationDuration = 1;
+            this.idNumberTbx.ShadowBlur = 10;
+            this.idNumberTbx.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.idNumberTbx.Size = new System.Drawing.Size(150, 40);
+            this.idNumberTbx.SolidBorderColor = System.Drawing.Color.LightSlateGray;
+            this.idNumberTbx.SolidBorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.idNumberTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
+            this.idNumberTbx.SolidFillColor = System.Drawing.Color.White;
+            this.idNumberTbx.TabIndex = 7;
+            this.idNumberTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
+            this.idNumberTbx.ValidationErrorMessage = "Invalid input.";
+            this.idNumberTbx.ValidationFunction = null;
             // 
             // label1
             // 
@@ -122,6 +255,10 @@
             this.birthDateTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.birthDateTbx.CanShake = true;
             this.birthDateTbx.ContinuousBlink = false;
+            this.birthDateTbx.CornerRadiusBottomLeft = 10;
+            this.birthDateTbx.CornerRadiusBottomRight = 10;
+            this.birthDateTbx.CornerRadiusTopLeft = 10;
+            this.birthDateTbx.CornerRadiusTopRight = 10;
             this.birthDateTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.birthDateTbx.CursorBlinkRate = 500;
             this.birthDateTbx.CursorColor = System.Drawing.Color.Black;
@@ -158,7 +295,7 @@
             this.birthDateTbx.SolidBorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.birthDateTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
             this.birthDateTbx.SolidFillColor = System.Drawing.Color.White;
-            this.birthDateTbx.TabIndex = 9;
+            this.birthDateTbx.TabIndex = 10;
             this.birthDateTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
             this.birthDateTbx.ValidationErrorMessage = "Invalid input.";
             this.birthDateTbx.ValidationFunction = null;
@@ -177,6 +314,10 @@
             this.confirmPasswordTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.confirmPasswordTbx.CanShake = true;
             this.confirmPasswordTbx.ContinuousBlink = false;
+            this.confirmPasswordTbx.CornerRadiusBottomLeft = 10;
+            this.confirmPasswordTbx.CornerRadiusBottomRight = 10;
+            this.confirmPasswordTbx.CornerRadiusTopLeft = 10;
+            this.confirmPasswordTbx.CornerRadiusTopRight = 10;
             this.confirmPasswordTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.confirmPasswordTbx.CursorBlinkRate = 500;
             this.confirmPasswordTbx.CursorColor = System.Drawing.Color.Black;
@@ -213,7 +354,7 @@
             this.confirmPasswordTbx.SolidBorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.confirmPasswordTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
             this.confirmPasswordTbx.SolidFillColor = System.Drawing.Color.White;
-            this.confirmPasswordTbx.TabIndex = 23;
+            this.confirmPasswordTbx.TabIndex = 12;
             this.confirmPasswordTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
             this.confirmPasswordTbx.UseSystemPasswordChar = true;
             this.confirmPasswordTbx.ValidationErrorMessage = "Invalid input.";
@@ -242,6 +383,10 @@
             this.passwordTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.passwordTbx.CanShake = true;
             this.passwordTbx.ContinuousBlink = false;
+            this.passwordTbx.CornerRadiusBottomLeft = 10;
+            this.passwordTbx.CornerRadiusBottomRight = 10;
+            this.passwordTbx.CornerRadiusTopLeft = 10;
+            this.passwordTbx.CornerRadiusTopRight = 10;
             this.passwordTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.passwordTbx.CursorBlinkRate = 500;
             this.passwordTbx.CursorColor = System.Drawing.Color.Black;
@@ -278,7 +423,7 @@
             this.passwordTbx.SolidBorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.passwordTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
             this.passwordTbx.SolidFillColor = System.Drawing.Color.White;
-            this.passwordTbx.TabIndex = 21;
+            this.passwordTbx.TabIndex = 11;
             this.passwordTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
             this.passwordTbx.UseSystemPasswordChar = true;
             this.passwordTbx.ValidationErrorMessage = "Invalid input.";
@@ -302,10 +447,10 @@
             this.signUpBtn.CanGlow = false;
             this.signUpBtn.CanShake = true;
             this.signUpBtn.ContextMenuStripEx = null;
-            this.signUpBtn.CornerRadiusBottomLeft = 0;
-            this.signUpBtn.CornerRadiusBottomRight = 0;
-            this.signUpBtn.CornerRadiusTopLeft = 0;
-            this.signUpBtn.CornerRadiusTopRight = 0;
+            this.signUpBtn.CornerRadiusBottomLeft = 10;
+            this.signUpBtn.CornerRadiusBottomRight = 10;
+            this.signUpBtn.CornerRadiusTopLeft = 10;
+            this.signUpBtn.CornerRadiusTopRight = 10;
             this.signUpBtn.CustomCursor = System.Windows.Forms.Cursors.Default;
             this.signUpBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.signUpBtn.EnableLongPress = false;
@@ -380,10 +525,10 @@
             this.cancelBtn.CanGlow = false;
             this.cancelBtn.CanShake = true;
             this.cancelBtn.ContextMenuStripEx = null;
-            this.cancelBtn.CornerRadiusBottomLeft = 0;
-            this.cancelBtn.CornerRadiusBottomRight = 0;
-            this.cancelBtn.CornerRadiusTopLeft = 0;
-            this.cancelBtn.CornerRadiusTopRight = 0;
+            this.cancelBtn.CornerRadiusBottomLeft = 10;
+            this.cancelBtn.CornerRadiusBottomRight = 10;
+            this.cancelBtn.CornerRadiusTopLeft = 10;
+            this.cancelBtn.CornerRadiusTopRight = 10;
             this.cancelBtn.CustomCursor = System.Windows.Forms.Cursors.Default;
             this.cancelBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.cancelBtn.EnableLongPress = false;
@@ -482,10 +627,10 @@
             this.uploadProfilePhotoBtn.CanGlow = false;
             this.uploadProfilePhotoBtn.CanShake = true;
             this.uploadProfilePhotoBtn.ContextMenuStripEx = null;
-            this.uploadProfilePhotoBtn.CornerRadiusBottomLeft = 0;
-            this.uploadProfilePhotoBtn.CornerRadiusBottomRight = 0;
-            this.uploadProfilePhotoBtn.CornerRadiusTopLeft = 0;
-            this.uploadProfilePhotoBtn.CornerRadiusTopRight = 0;
+            this.uploadProfilePhotoBtn.CornerRadiusBottomLeft = 10;
+            this.uploadProfilePhotoBtn.CornerRadiusBottomRight = 10;
+            this.uploadProfilePhotoBtn.CornerRadiusTopLeft = 10;
+            this.uploadProfilePhotoBtn.CornerRadiusTopRight = 10;
             this.uploadProfilePhotoBtn.CustomCursor = System.Windows.Forms.Cursors.Default;
             this.uploadProfilePhotoBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.uploadProfilePhotoBtn.EnableLongPress = false;
@@ -565,6 +710,10 @@
             this.fNameTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.fNameTbx.CanShake = true;
             this.fNameTbx.ContinuousBlink = false;
+            this.fNameTbx.CornerRadiusBottomLeft = 10;
+            this.fNameTbx.CornerRadiusBottomRight = 10;
+            this.fNameTbx.CornerRadiusTopLeft = 10;
+            this.fNameTbx.CornerRadiusTopRight = 10;
             this.fNameTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fNameTbx.CursorBlinkRate = 500;
             this.fNameTbx.CursorColor = System.Drawing.Color.Black;
@@ -629,6 +778,10 @@
             this.mNameTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.mNameTbx.CanShake = true;
             this.mNameTbx.ContinuousBlink = false;
+            this.mNameTbx.CornerRadiusBottomLeft = 10;
+            this.mNameTbx.CornerRadiusBottomRight = 10;
+            this.mNameTbx.CornerRadiusTopLeft = 10;
+            this.mNameTbx.CornerRadiusTopRight = 10;
             this.mNameTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.mNameTbx.CursorBlinkRate = 500;
             this.mNameTbx.CursorColor = System.Drawing.Color.Black;
@@ -693,6 +846,10 @@
             this.lNameTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.lNameTbx.CanShake = true;
             this.lNameTbx.ContinuousBlink = false;
+            this.lNameTbx.CornerRadiusBottomLeft = 10;
+            this.lNameTbx.CornerRadiusBottomRight = 10;
+            this.lNameTbx.CornerRadiusTopLeft = 10;
+            this.lNameTbx.CornerRadiusTopRight = 10;
             this.lNameTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lNameTbx.CursorBlinkRate = 500;
             this.lNameTbx.CursorColor = System.Drawing.Color.Black;
@@ -757,6 +914,10 @@
             this.emailTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.emailTbx.CanShake = true;
             this.emailTbx.ContinuousBlink = false;
+            this.emailTbx.CornerRadiusBottomLeft = 10;
+            this.emailTbx.CornerRadiusBottomRight = 10;
+            this.emailTbx.CornerRadiusTopLeft = 10;
+            this.emailTbx.CornerRadiusTopRight = 10;
             this.emailTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.emailTbx.CursorBlinkRate = 500;
             this.emailTbx.CursorColor = System.Drawing.Color.Black;
@@ -793,7 +954,7 @@
             this.emailTbx.SolidBorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.emailTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
             this.emailTbx.SolidFillColor = System.Drawing.Color.White;
-            this.emailTbx.TabIndex = 7;
+            this.emailTbx.TabIndex = 8;
             this.emailTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
             this.emailTbx.ValidationErrorMessage = "Invalid input.";
             this.emailTbx.ValidationFunction = null;
@@ -821,6 +982,10 @@
             this.phoneTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.phoneTbx.CanShake = true;
             this.phoneTbx.ContinuousBlink = false;
+            this.phoneTbx.CornerRadiusBottomLeft = 10;
+            this.phoneTbx.CornerRadiusBottomRight = 10;
+            this.phoneTbx.CornerRadiusTopLeft = 10;
+            this.phoneTbx.CornerRadiusTopRight = 10;
             this.phoneTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.phoneTbx.CursorBlinkRate = 500;
             this.phoneTbx.CursorColor = System.Drawing.Color.Black;
@@ -857,7 +1022,7 @@
             this.phoneTbx.SolidBorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.phoneTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
             this.phoneTbx.SolidFillColor = System.Drawing.Color.White;
-            this.phoneTbx.TabIndex = 8;
+            this.phoneTbx.TabIndex = 9;
             this.phoneTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
             this.phoneTbx.ValidationErrorMessage = "Invalid input.";
             this.phoneTbx.ValidationFunction = null;
@@ -885,6 +1050,10 @@
             this.programTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.programTbx.CanShake = true;
             this.programTbx.ContinuousBlink = false;
+            this.programTbx.CornerRadiusBottomLeft = 10;
+            this.programTbx.CornerRadiusBottomRight = 10;
+            this.programTbx.CornerRadiusTopLeft = 10;
+            this.programTbx.CornerRadiusTopRight = 10;
             this.programTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.programTbx.CursorBlinkRate = 500;
             this.programTbx.CursorColor = System.Drawing.Color.Black;
@@ -949,6 +1118,10 @@
             this.yearTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
             this.yearTbx.CanShake = true;
             this.yearTbx.ContinuousBlink = false;
+            this.yearTbx.CornerRadiusBottomLeft = 10;
+            this.yearTbx.CornerRadiusBottomRight = 10;
+            this.yearTbx.CornerRadiusTopLeft = 10;
+            this.yearTbx.CornerRadiusTopRight = 10;
             this.yearTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.yearTbx.CursorBlinkRate = 500;
             this.yearTbx.CursorColor = System.Drawing.Color.Black;
@@ -990,86 +1163,133 @@
             this.yearTbx.ValidationErrorMessage = "Invalid input.";
             this.yearTbx.ValidationFunction = null;
             // 
-            // idNumberTbx
+            // mySiticoneLicenseSettings1
             // 
-            this.idNumberTbx.AccessibleDescription = "A customizable text input field.";
-            this.idNumberTbx.AccessibleName = "Text Box";
-            this.idNumberTbx.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.idNumberTbx.BackColor = System.Drawing.Color.Transparent;
-            this.idNumberTbx.BlinkCount = 3;
-            this.idNumberTbx.BlinkShadow = false;
-            this.idNumberTbx.BorderColor1 = System.Drawing.Color.LightSlateGray;
-            this.idNumberTbx.BorderColor2 = System.Drawing.Color.LightSlateGray;
-            this.idNumberTbx.BorderFocusColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
-            this.idNumberTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
-            this.idNumberTbx.CanShake = true;
-            this.idNumberTbx.ContinuousBlink = false;
-            this.idNumberTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.idNumberTbx.CursorBlinkRate = 500;
-            this.idNumberTbx.CursorColor = System.Drawing.Color.Black;
-            this.idNumberTbx.CursorHeight = 0;
-            this.idNumberTbx.CursorOffset = 0;
-            this.idNumberTbx.CursorStyle = SiticoneNetFrameworkUI.Helpers.DrawingStyle.SiticoneDrawingStyle.Solid;
-            this.idNumberTbx.CursorWidth = 1;
-            this.idNumberTbx.DisabledBackColor = System.Drawing.Color.WhiteSmoke;
-            this.idNumberTbx.DisabledBorderColor = System.Drawing.Color.LightGray;
-            this.idNumberTbx.DisabledTextColor = System.Drawing.Color.Gray;
-            this.idNumberTbx.EnableDropShadow = false;
-            this.idNumberTbx.FillColor1 = System.Drawing.Color.White;
-            this.idNumberTbx.FillColor2 = System.Drawing.Color.White;
-            this.idNumberTbx.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.idNumberTbx.ForeColor = System.Drawing.Color.DimGray;
-            this.idNumberTbx.HoverBorderColor1 = System.Drawing.Color.Gray;
-            this.idNumberTbx.HoverBorderColor2 = System.Drawing.Color.Gray;
-            this.idNumberTbx.IsEnabled = true;
-            this.idNumberTbx.Location = new System.Drawing.Point(367, 277);
-            this.idNumberTbx.Name = "idNumberTbx";
-            this.idNumberTbx.PlaceholderColor = System.Drawing.Color.Gray;
-            this.idNumberTbx.PlaceholderText = "ID Number";
-            this.idNumberTbx.ReadOnlyBorderColor1 = System.Drawing.Color.LightGray;
-            this.idNumberTbx.ReadOnlyBorderColor2 = System.Drawing.Color.LightGray;
-            this.idNumberTbx.ReadOnlyFillColor1 = System.Drawing.Color.WhiteSmoke;
-            this.idNumberTbx.ReadOnlyFillColor2 = System.Drawing.Color.WhiteSmoke;
-            this.idNumberTbx.ReadOnlyPlaceholderColor = System.Drawing.Color.DarkGray;
-            this.idNumberTbx.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
-            this.idNumberTbx.ShadowAnimationDuration = 1;
-            this.idNumberTbx.ShadowBlur = 10;
-            this.idNumberTbx.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.idNumberTbx.Size = new System.Drawing.Size(150, 40);
-            this.idNumberTbx.SolidBorderColor = System.Drawing.Color.LightSlateGray;
-            this.idNumberTbx.SolidBorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
-            this.idNumberTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
-            this.idNumberTbx.SolidFillColor = System.Drawing.Color.White;
-            this.idNumberTbx.TabIndex = 25;
-            this.idNumberTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
-            this.idNumberTbx.ValidationErrorMessage = "Invalid input.";
-            this.idNumberTbx.ValidationFunction = null;
+            this.mySiticoneLicenseSettings1.OpenLicenseSettings = null;
             // 
-            // idNumberLabel
+            // mainPalette
             // 
-            this.idNumberLabel.AutoSize = true;
-            this.idNumberLabel.Location = new System.Drawing.Point(364, 261);
-            this.idNumberLabel.Name = "idNumberLabel";
-            this.idNumberLabel.Size = new System.Drawing.Size(58, 13);
-            this.idNumberLabel.TabIndex = 26;
-            this.idNumberLabel.Text = "ID Number";
+            this.mainPalette.BaseFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainPalette.ButtonSpecs.FormClose.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.mainPalette.ButtonSpecs.FormClose.ImageStates.ImageCheckedNormal = ((System.Drawing.Image)(resources.GetObject("resource.ImageCheckedNormal")));
+            this.mainPalette.ButtonSpecs.FormClose.ImageStates.ImageCheckedPressed = ((System.Drawing.Image)(resources.GetObject("resource.ImageCheckedPressed")));
+            this.mainPalette.ButtonSpecs.FormClose.ImageStates.ImageCheckedTracking = ((System.Drawing.Image)(resources.GetObject("resource.ImageCheckedTracking")));
+            this.mainPalette.ButtonSpecs.FormClose.ImageStates.ImageDisabled = ((System.Drawing.Image)(resources.GetObject("resource.ImageDisabled")));
+            this.mainPalette.ButtonSpecs.FormClose.ImageStates.ImageNormal = ((System.Drawing.Image)(resources.GetObject("resource.ImageNormal")));
+            this.mainPalette.ButtonSpecs.FormClose.ImageStates.ImagePressed = ((System.Drawing.Image)(resources.GetObject("resource.ImagePressed")));
+            this.mainPalette.ButtonSpecs.FormClose.ImageStates.ImageTracking = ((System.Drawing.Image)(resources.GetObject("resource.ImageTracking")));
+            this.mainPalette.ButtonSpecs.FormMax.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.mainPalette.ButtonSpecs.FormMax.ImageStates.ImageCheckedNormal = ((System.Drawing.Image)(resources.GetObject("resource.ImageCheckedNormal1")));
+            this.mainPalette.ButtonSpecs.FormMax.ImageStates.ImageCheckedPressed = ((System.Drawing.Image)(resources.GetObject("resource.ImageCheckedPressed1")));
+            this.mainPalette.ButtonSpecs.FormMax.ImageStates.ImageCheckedTracking = ((System.Drawing.Image)(resources.GetObject("resource.ImageCheckedTracking1")));
+            this.mainPalette.ButtonSpecs.FormMax.ImageStates.ImageDisabled = ((System.Drawing.Image)(resources.GetObject("resource.ImageDisabled1")));
+            this.mainPalette.ButtonSpecs.FormMax.ImageStates.ImageNormal = ((System.Drawing.Image)(resources.GetObject("resource.ImageNormal1")));
+            this.mainPalette.ButtonSpecs.FormMax.ImageStates.ImagePressed = ((System.Drawing.Image)(resources.GetObject("resource.ImagePressed1")));
+            this.mainPalette.ButtonSpecs.FormMax.ImageStates.ImageTracking = ((System.Drawing.Image)(resources.GetObject("resource.ImageTracking1")));
+            this.mainPalette.ButtonSpecs.FormMin.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.mainPalette.ButtonSpecs.FormMin.ImageStates.ImageCheckedNormal = ((System.Drawing.Image)(resources.GetObject("resource.ImageCheckedNormal2")));
+            this.mainPalette.ButtonSpecs.FormMin.ImageStates.ImageCheckedPressed = ((System.Drawing.Image)(resources.GetObject("resource.ImageCheckedPressed2")));
+            this.mainPalette.ButtonSpecs.FormMin.ImageStates.ImageCheckedTracking = ((System.Drawing.Image)(resources.GetObject("resource.ImageCheckedTracking2")));
+            this.mainPalette.ButtonSpecs.FormMin.ImageStates.ImageDisabled = ((System.Drawing.Image)(resources.GetObject("resource.ImageDisabled2")));
+            this.mainPalette.ButtonSpecs.FormMin.ImageStates.ImageNormal = ((System.Drawing.Image)(resources.GetObject("resource.ImageNormal2")));
+            this.mainPalette.ButtonSpecs.FormMin.ImageStates.ImagePressed = ((System.Drawing.Image)(resources.GetObject("resource.ImagePressed2")));
+            this.mainPalette.ButtonSpecs.FormMin.ImageStates.ImageTracking = ((System.Drawing.Image)(resources.GetObject("resource.ImageTracking2")));
+            this.mainPalette.ButtonSpecs.FormRestore.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.mainPalette.ButtonSpecs.FormRestore.ImageStates.ImageCheckedNormal = ((System.Drawing.Image)(resources.GetObject("resource.ImageCheckedNormal3")));
+            this.mainPalette.ButtonSpecs.FormRestore.ImageStates.ImageCheckedPressed = ((System.Drawing.Image)(resources.GetObject("resource.ImageCheckedPressed3")));
+            this.mainPalette.ButtonSpecs.FormRestore.ImageStates.ImageCheckedTracking = ((System.Drawing.Image)(resources.GetObject("resource.ImageCheckedTracking3")));
+            this.mainPalette.ButtonSpecs.FormRestore.ImageStates.ImageDisabled = ((System.Drawing.Image)(resources.GetObject("resource.ImageDisabled3")));
+            this.mainPalette.ButtonSpecs.FormRestore.ImageStates.ImageNormal = ((System.Drawing.Image)(resources.GetObject("resource.ImageNormal3")));
+            this.mainPalette.ButtonSpecs.FormRestore.ImageStates.ImagePressed = ((System.Drawing.Image)(resources.GetObject("resource.ImagePressed3")));
+            this.mainPalette.ButtonSpecs.FormRestore.ImageStates.ImageTracking = ((System.Drawing.Image)(resources.GetObject("resource.ImageTracking3")));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCheckedNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCheckedNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCheckedNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCheckedNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCheckedPressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCheckedPressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCheckedPressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCheckedPressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCheckedTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCheckedTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCheckedTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCheckedTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonCommon.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateCheckedNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateCheckedNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateCheckedNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateCheckedNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateCheckedTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateCheckedTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateCheckedTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateCheckedTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.ButtonStyles.ButtonFormClose.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.FormStyles.FormMain.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.FormStyles.FormMain.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.FormStyles.FormMain.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.mainPalette.FormStyles.FormMain.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
+            this.mainPalette.FormStyles.FormMain.StateCommon.Border.Rounding = 0F;
+            this.mainPalette.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mainPalette.HeaderStyles.HeaderForm.StateCommon.Border.Color1 = System.Drawing.Color.Magenta;
+            this.mainPalette.HeaderStyles.HeaderForm.StateCommon.Border.Color2 = System.Drawing.Color.Magenta;
+            this.mainPalette.HeaderStyles.HeaderForm.StateCommon.ButtonEdgeInset = 10;
+            this.mainPalette.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.mainPalette.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.mainPalette.UseThemeFormChromeBorderWidth = Krypton.Toolkit.InheritBool.True;
             // 
             // SignUpForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = false;
-            this.ClientSize = new System.Drawing.Size(591, 546);
+            this.ClientSize = new System.Drawing.Size(591, 535);
             this.Controls.Add(this.profileContainer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(605, 560);
-            this.MinimumSize = new System.Drawing.Size(605, 560);
+            this.KeyPreview = true;
+            this.LocalCustomPalette = this.mainPalette;
+            this.MaximumSize = new System.Drawing.Size(605, 580);
+            this.MinimumSize = new System.Drawing.Size(605, 580);
             this.Name = "SignUpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.Text = "WildCat Tickets - Sign Up";
             this.Load += new System.EventHandler(this.SignUp_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SignUpForm_KeyDown);
             this.profileContainer.ResumeLayout(false);
             this.profileContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTitle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -1104,5 +1324,9 @@
         private SiticoneNetFrameworkUI.SiticoneTextBox confirmPasswordTbx;
         private System.Windows.Forms.Label idNumberLabel;
         private SiticoneNetFrameworkUI.SiticoneTextBox idNumberTbx;
+        private SiticoneNetFrameworkUI.MySiticoneLicenseSettings mySiticoneLicenseSettings1;
+        private SiticoneNetFrameworkUI.SiticonePictureBox backgroundLogo;
+        private System.Windows.Forms.PictureBox pictureTitle;
+        private Krypton.Toolkit.KryptonCustomPaletteBase mainPalette;
     }
 }

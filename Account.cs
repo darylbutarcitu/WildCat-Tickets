@@ -11,6 +11,5 @@ namespace WildCat_Tickets
         public string Id { get; set; }
         public string Email { get; set; }
 
-        public abstract Task<string> Login(string idNumber, string password);
     }
 }

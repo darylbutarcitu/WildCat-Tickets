@@ -28,13 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.mySiticoneLicenseSettings1 = new SiticoneNetFrameworkUI.MySiticoneLicenseSettings();
             this.SuspendLayout();
+            // 
+            // mySiticoneLicenseSettings1
+            // 
+            this.mySiticoneLicenseSettings1.OpenLicenseSettings = null;
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 436);
+            this.ClientSize = new System.Drawing.Size(772, 422);
             this.Name = "HomeForm";
             this.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
@@ -43,5 +48,7 @@
         }
 
         #endregion
+
+        private SiticoneNetFrameworkUI.MySiticoneLicenseSettings mySiticoneLicenseSettings1;
     }
 }
