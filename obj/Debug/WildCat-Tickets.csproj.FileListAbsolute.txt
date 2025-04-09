@@ -128,3 +128,4 @@ D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.M
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.SettingsForm.resources
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.ProfileForm.resources
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.CustomerDashboardForm.resources
+D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.SignUpForm.resources

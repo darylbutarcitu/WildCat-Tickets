@@ -50,6 +50,8 @@
             this.phoneLabel = new System.Windows.Forms.Label();
             this.profilePictureBox = new FontAwesome.Sharp.IconPictureBox();
             this.profileContainer = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.idNumberTbx = new SiticoneNetFrameworkUI.SiticoneTextBox();
             this.saveBtn = new SiticoneNetFrameworkUI.SiticoneButton();
             this.cancelBtn = new SiticoneNetFrameworkUI.SiticoneButton();
             this.editBtn = new SiticoneNetFrameworkUI.SiticoneButton();
@@ -94,10 +96,10 @@
             this.birthDateTbx.HoverBorderColor2 = System.Drawing.Color.Gray;
             this.birthDateTbx.IsEnabled = true;
             this.birthDateTbx.IsReadOnly = true;
-            this.birthDateTbx.Location = new System.Drawing.Point(211, 336);
+            this.birthDateTbx.Location = new System.Drawing.Point(367, 336);
             this.birthDateTbx.Name = "birthDateTbx";
             this.birthDateTbx.PlaceholderColor = System.Drawing.Color.Gray;
-            this.birthDateTbx.PlaceholderText = "Enter text here...";
+            this.birthDateTbx.PlaceholderText = "BirthDate";
             this.birthDateTbx.ReadOnlyBorderColor1 = System.Drawing.Color.LightGray;
             this.birthDateTbx.ReadOnlyBorderColor2 = System.Drawing.Color.LightGray;
             this.birthDateTbx.ReadOnlyFillColor1 = System.Drawing.Color.WhiteSmoke;
@@ -113,8 +115,6 @@
             this.birthDateTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
             this.birthDateTbx.SolidFillColor = System.Drawing.Color.White;
             this.birthDateTbx.TabIndex = 9;
-            this.birthDateTbx.Text = "BirthDate";
-            this.birthDateTbx.TextAlign = SiticoneNetFrameworkUI.Helpers.Text.TextAlignment.Center;
             this.birthDateTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
             this.birthDateTbx.ValidationErrorMessage = "Invalid input.";
             this.birthDateTbx.ValidationFunction = null;
@@ -155,7 +155,7 @@
             this.yearTbx.Location = new System.Drawing.Point(367, 277);
             this.yearTbx.Name = "yearTbx";
             this.yearTbx.PlaceholderColor = System.Drawing.Color.Gray;
-            this.yearTbx.PlaceholderText = "Enter text here...";
+            this.yearTbx.PlaceholderText = "Year";
             this.yearTbx.ReadOnlyBorderColor1 = System.Drawing.Color.LightGray;
             this.yearTbx.ReadOnlyBorderColor2 = System.Drawing.Color.LightGray;
             this.yearTbx.ReadOnlyFillColor1 = System.Drawing.Color.WhiteSmoke;
@@ -171,8 +171,6 @@
             this.yearTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
             this.yearTbx.SolidFillColor = System.Drawing.Color.White;
             this.yearTbx.TabIndex = 6;
-            this.yearTbx.Text = "Year";
-            this.yearTbx.TextAlign = SiticoneNetFrameworkUI.Helpers.Text.TextAlignment.Center;
             this.yearTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
             this.yearTbx.ValidationErrorMessage = "Invalid input.";
             this.yearTbx.ValidationFunction = null;
@@ -180,9 +178,10 @@
             // fnameLabel
             // 
             this.fnameLabel.AutoSize = true;
+            this.fnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fnameLabel.Location = new System.Drawing.Point(52, 202);
             this.fnameLabel.Name = "fnameLabel";
-            this.fnameLabel.Size = new System.Drawing.Size(57, 13);
+            this.fnameLabel.Size = new System.Drawing.Size(56, 13);
             this.fnameLabel.TabIndex = 10;
             this.fnameLabel.Text = "First Name";
             // 
@@ -222,7 +221,7 @@
             this.programTbx.Location = new System.Drawing.Point(55, 277);
             this.programTbx.Name = "programTbx";
             this.programTbx.PlaceholderColor = System.Drawing.Color.Gray;
-            this.programTbx.PlaceholderText = "Enter text here...";
+            this.programTbx.PlaceholderText = "Program";
             this.programTbx.ReadOnlyBorderColor1 = System.Drawing.Color.LightGray;
             this.programTbx.ReadOnlyBorderColor2 = System.Drawing.Color.LightGray;
             this.programTbx.ReadOnlyFillColor1 = System.Drawing.Color.WhiteSmoke;
@@ -238,8 +237,6 @@
             this.programTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
             this.programTbx.SolidFillColor = System.Drawing.Color.White;
             this.programTbx.TabIndex = 5;
-            this.programTbx.Text = "Program";
-            this.programTbx.TextAlign = SiticoneNetFrameworkUI.Helpers.Text.TextAlignment.Center;
             this.programTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
             this.programTbx.ValidationErrorMessage = "Invalid input.";
             this.programTbx.ValidationFunction = null;
@@ -247,6 +244,7 @@
             // mnameLabel
             // 
             this.mnameLabel.AutoSize = true;
+            this.mnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnameLabel.Location = new System.Drawing.Point(208, 202);
             this.mnameLabel.Name = "mnameLabel";
             this.mnameLabel.Size = new System.Drawing.Size(38, 13);
@@ -289,7 +287,7 @@
             this.phoneTbx.Location = new System.Drawing.Point(367, 395);
             this.phoneTbx.Name = "phoneTbx";
             this.phoneTbx.PlaceholderColor = System.Drawing.Color.Gray;
-            this.phoneTbx.PlaceholderText = "Enter text here...";
+            this.phoneTbx.PlaceholderText = "Phone1";
             this.phoneTbx.ReadOnlyBorderColor1 = System.Drawing.Color.LightGray;
             this.phoneTbx.ReadOnlyBorderColor2 = System.Drawing.Color.LightGray;
             this.phoneTbx.ReadOnlyFillColor1 = System.Drawing.Color.WhiteSmoke;
@@ -305,8 +303,6 @@
             this.phoneTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
             this.phoneTbx.SolidFillColor = System.Drawing.Color.White;
             this.phoneTbx.TabIndex = 8;
-            this.phoneTbx.Text = "Phone1";
-            this.phoneTbx.TextAlign = SiticoneNetFrameworkUI.Helpers.Text.TextAlignment.Center;
             this.phoneTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
             this.phoneTbx.ValidationErrorMessage = "Invalid input.";
             this.phoneTbx.ValidationFunction = null;
@@ -314,9 +310,10 @@
             // lnameLabel
             // 
             this.lnameLabel.AutoSize = true;
+            this.lnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnameLabel.Location = new System.Drawing.Point(364, 202);
             this.lnameLabel.Name = "lnameLabel";
-            this.lnameLabel.Size = new System.Drawing.Size(58, 13);
+            this.lnameLabel.Size = new System.Drawing.Size(57, 13);
             this.lnameLabel.TabIndex = 12;
             this.lnameLabel.Text = "Last Name";
             // 
@@ -356,7 +353,7 @@
             this.emailTbx.Location = new System.Drawing.Point(55, 395);
             this.emailTbx.Name = "emailTbx";
             this.emailTbx.PlaceholderColor = System.Drawing.Color.Gray;
-            this.emailTbx.PlaceholderText = "Enter text here...";
+            this.emailTbx.PlaceholderText = "Email";
             this.emailTbx.ReadOnlyBorderColor1 = System.Drawing.Color.LightGray;
             this.emailTbx.ReadOnlyBorderColor2 = System.Drawing.Color.LightGray;
             this.emailTbx.ReadOnlyFillColor1 = System.Drawing.Color.WhiteSmoke;
@@ -372,8 +369,6 @@
             this.emailTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
             this.emailTbx.SolidFillColor = System.Drawing.Color.White;
             this.emailTbx.TabIndex = 7;
-            this.emailTbx.Text = "Email";
-            this.emailTbx.TextAlign = SiticoneNetFrameworkUI.Helpers.Text.TextAlignment.Center;
             this.emailTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
             this.emailTbx.ValidationErrorMessage = "Invalid input.";
             this.emailTbx.ValidationFunction = null;
@@ -381,6 +376,7 @@
             // programLabel
             // 
             this.programLabel.AutoSize = true;
+            this.programLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.programLabel.Location = new System.Drawing.Point(52, 261);
             this.programLabel.Name = "programLabel";
             this.programLabel.Size = new System.Drawing.Size(46, 13);
@@ -423,7 +419,7 @@
             this.lNameTbx.Location = new System.Drawing.Point(367, 218);
             this.lNameTbx.Name = "lNameTbx";
             this.lNameTbx.PlaceholderColor = System.Drawing.Color.Gray;
-            this.lNameTbx.PlaceholderText = "Enter text here...";
+            this.lNameTbx.PlaceholderText = "Last Name";
             this.lNameTbx.ReadOnlyBorderColor1 = System.Drawing.Color.LightGray;
             this.lNameTbx.ReadOnlyBorderColor2 = System.Drawing.Color.LightGray;
             this.lNameTbx.ReadOnlyFillColor1 = System.Drawing.Color.WhiteSmoke;
@@ -439,8 +435,6 @@
             this.lNameTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
             this.lNameTbx.SolidFillColor = System.Drawing.Color.White;
             this.lNameTbx.TabIndex = 4;
-            this.lNameTbx.Text = "Last Name";
-            this.lNameTbx.TextAlign = SiticoneNetFrameworkUI.Helpers.Text.TextAlignment.Center;
             this.lNameTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
             this.lNameTbx.ValidationErrorMessage = "Invalid input.";
             this.lNameTbx.ValidationFunction = null;
@@ -448,6 +442,7 @@
             // yearLabel
             // 
             this.yearLabel.AutoSize = true;
+            this.yearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yearLabel.Location = new System.Drawing.Point(367, 261);
             this.yearLabel.Name = "yearLabel";
             this.yearLabel.Size = new System.Drawing.Size(29, 13);
@@ -490,7 +485,7 @@
             this.mNameTbx.Location = new System.Drawing.Point(211, 218);
             this.mNameTbx.Name = "mNameTbx";
             this.mNameTbx.PlaceholderColor = System.Drawing.Color.Gray;
-            this.mNameTbx.PlaceholderText = "Enter text here...";
+            this.mNameTbx.PlaceholderText = "Middle";
             this.mNameTbx.ReadOnlyBorderColor1 = System.Drawing.Color.LightGray;
             this.mNameTbx.ReadOnlyBorderColor2 = System.Drawing.Color.LightGray;
             this.mNameTbx.ReadOnlyFillColor1 = System.Drawing.Color.WhiteSmoke;
@@ -506,8 +501,6 @@
             this.mNameTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
             this.mNameTbx.SolidFillColor = System.Drawing.Color.White;
             this.mNameTbx.TabIndex = 3;
-            this.mNameTbx.Text = "Middle";
-            this.mNameTbx.TextAlign = SiticoneNetFrameworkUI.Helpers.Text.TextAlignment.Center;
             this.mNameTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
             this.mNameTbx.ValidationErrorMessage = "Invalid input.";
             this.mNameTbx.ValidationFunction = null;
@@ -515,7 +508,8 @@
             // bdateLabel
             // 
             this.bdateLabel.AutoSize = true;
-            this.bdateLabel.Location = new System.Drawing.Point(208, 320);
+            this.bdateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bdateLabel.Location = new System.Drawing.Point(364, 320);
             this.bdateLabel.Name = "bdateLabel";
             this.bdateLabel.Size = new System.Drawing.Size(126, 13);
             this.bdateLabel.TabIndex = 15;
@@ -557,7 +551,7 @@
             this.fNameTbx.Location = new System.Drawing.Point(55, 218);
             this.fNameTbx.Name = "fNameTbx";
             this.fNameTbx.PlaceholderColor = System.Drawing.Color.Gray;
-            this.fNameTbx.PlaceholderText = "Enter text here...";
+            this.fNameTbx.PlaceholderText = "First Name";
             this.fNameTbx.ReadOnlyBorderColor1 = System.Drawing.Color.LightGray;
             this.fNameTbx.ReadOnlyBorderColor2 = System.Drawing.Color.LightGray;
             this.fNameTbx.ReadOnlyFillColor1 = System.Drawing.Color.WhiteSmoke;
@@ -573,8 +567,6 @@
             this.fNameTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
             this.fNameTbx.SolidFillColor = System.Drawing.Color.White;
             this.fNameTbx.TabIndex = 2;
-            this.fNameTbx.Text = "First Name";
-            this.fNameTbx.TextAlign = SiticoneNetFrameworkUI.Helpers.Text.TextAlignment.Center;
             this.fNameTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
             this.fNameTbx.ValidationErrorMessage = "Invalid input.";
             this.fNameTbx.ValidationFunction = null;
@@ -582,6 +574,7 @@
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
+            this.emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailLabel.Location = new System.Drawing.Point(52, 379);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(32, 13);
@@ -669,6 +662,7 @@
             // phoneLabel
             // 
             this.phoneLabel.AutoSize = true;
+            this.phoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneLabel.Location = new System.Drawing.Point(367, 379);
             this.phoneLabel.Name = "phoneLabel";
             this.phoneLabel.Size = new System.Drawing.Size(38, 13);
@@ -693,6 +687,8 @@
             // profileContainer
             // 
             this.profileContainer.BackColor = System.Drawing.Color.Transparent;
+            this.profileContainer.Controls.Add(this.label1);
+            this.profileContainer.Controls.Add(this.idNumberTbx);
             this.profileContainer.Controls.Add(this.saveBtn);
             this.profileContainer.Controls.Add(this.cancelBtn);
             this.profileContainer.Controls.Add(this.editBtn);
@@ -722,6 +718,72 @@
             layoutState1.Size = new System.Drawing.Size(194, 188);
             layoutState1.Visible = true;
             this.profileContainer.Tag = layoutState1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(52, 320);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "ID Number";
+            // 
+            // idNumberTbx
+            // 
+            this.idNumberTbx.AccessibleDescription = "A customizable text input field.";
+            this.idNumberTbx.AccessibleName = "Text Box";
+            this.idNumberTbx.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
+            this.idNumberTbx.BackColor = System.Drawing.Color.Transparent;
+            this.idNumberTbx.BlinkCount = 3;
+            this.idNumberTbx.BlinkShadow = false;
+            this.idNumberTbx.BorderColor1 = System.Drawing.Color.LightSlateGray;
+            this.idNumberTbx.BorderColor2 = System.Drawing.Color.LightSlateGray;
+            this.idNumberTbx.BorderFocusColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.idNumberTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.idNumberTbx.CanShake = true;
+            this.idNumberTbx.ContinuousBlink = false;
+            this.idNumberTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.idNumberTbx.CursorBlinkRate = 500;
+            this.idNumberTbx.CursorColor = System.Drawing.Color.Black;
+            this.idNumberTbx.CursorHeight = 0;
+            this.idNumberTbx.CursorOffset = 0;
+            this.idNumberTbx.CursorStyle = SiticoneNetFrameworkUI.Helpers.DrawingStyle.SiticoneDrawingStyle.Solid;
+            this.idNumberTbx.CursorWidth = 1;
+            this.idNumberTbx.DisabledBackColor = System.Drawing.Color.WhiteSmoke;
+            this.idNumberTbx.DisabledBorderColor = System.Drawing.Color.LightGray;
+            this.idNumberTbx.DisabledTextColor = System.Drawing.Color.Gray;
+            this.idNumberTbx.EnableDropShadow = false;
+            this.idNumberTbx.FillColor1 = System.Drawing.Color.White;
+            this.idNumberTbx.FillColor2 = System.Drawing.Color.White;
+            this.idNumberTbx.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.idNumberTbx.ForeColor = System.Drawing.Color.DimGray;
+            this.idNumberTbx.HoverBorderColor1 = System.Drawing.Color.Gray;
+            this.idNumberTbx.HoverBorderColor2 = System.Drawing.Color.Gray;
+            this.idNumberTbx.IsEnabled = true;
+            this.idNumberTbx.IsReadOnly = true;
+            this.idNumberTbx.Location = new System.Drawing.Point(55, 336);
+            this.idNumberTbx.Name = "idNumberTbx";
+            this.idNumberTbx.PlaceholderColor = System.Drawing.Color.Gray;
+            this.idNumberTbx.PlaceholderText = "ID Number";
+            this.idNumberTbx.ReadOnlyBorderColor1 = System.Drawing.Color.LightGray;
+            this.idNumberTbx.ReadOnlyBorderColor2 = System.Drawing.Color.LightGray;
+            this.idNumberTbx.ReadOnlyFillColor1 = System.Drawing.Color.WhiteSmoke;
+            this.idNumberTbx.ReadOnlyFillColor2 = System.Drawing.Color.WhiteSmoke;
+            this.idNumberTbx.ReadOnlyPlaceholderColor = System.Drawing.Color.DarkGray;
+            this.idNumberTbx.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.idNumberTbx.ShadowAnimationDuration = 1;
+            this.idNumberTbx.ShadowBlur = 10;
+            this.idNumberTbx.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.idNumberTbx.Size = new System.Drawing.Size(306, 40);
+            this.idNumberTbx.SolidBorderColor = System.Drawing.Color.LightSlateGray;
+            this.idNumberTbx.SolidBorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.idNumberTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
+            this.idNumberTbx.SolidFillColor = System.Drawing.Color.White;
+            this.idNumberTbx.TabIndex = 21;
+            this.idNumberTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
+            this.idNumberTbx.ValidationErrorMessage = "Invalid input.";
+            this.idNumberTbx.ValidationFunction = null;
             // 
             // saveBtn
             // 
@@ -961,9 +1023,9 @@
             // 
             // ProfileForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 543);
+            this.ClientSize = new System.Drawing.Size(898, 634);
             this.Controls.Add(this.profileContainer);
             this.Name = "ProfileForm";
             this.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
@@ -1001,5 +1063,7 @@
         private SiticoneNetFrameworkUI.SiticoneButton editBtn;
         private SiticoneNetFrameworkUI.SiticoneButton cancelBtn;
         private SiticoneNetFrameworkUI.SiticoneButton saveBtn;
+        private System.Windows.Forms.Label label1;
+        private SiticoneNetFrameworkUI.SiticoneTextBox idNumberTbx;
     }
 }

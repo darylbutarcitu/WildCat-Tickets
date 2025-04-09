@@ -93,6 +93,7 @@ namespace WildCat_Tickets
             lNameTbx.Text = _currentCustomer.LastName;
             programTbx.Text = _currentCustomer.Program;
             yearTbx.Text = _currentCustomer.Year.ToString();
+            idNumberTbx.Text = _currentCustomer.Id;
             birthDateTbx.Text = _currentCustomer.BirthDate.ToString("yyyy-MM-dd");
             emailTbx.Text = _currentCustomer.Email;
             phoneTbx.Text = _currentCustomer.Phone;

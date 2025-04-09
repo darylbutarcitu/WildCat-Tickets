@@ -20,6 +20,7 @@ namespace WildCat_Tickets
             // Run Login Form
             // Authenticate user
 
+            //Application.Run(new SignUpForm());
             if (isAdmin)
             {
 

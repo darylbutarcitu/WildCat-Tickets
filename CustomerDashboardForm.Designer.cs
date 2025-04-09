@@ -222,7 +222,7 @@
             this.sidebarFlowPanel.ItemSpacing = 5;
             this.sidebarFlowPanel.Location = new System.Drawing.Point(0, 0);
             this.sidebarFlowPanel.Name = "sidebarFlowPanel";
-            this.sidebarFlowPanel.Size = new System.Drawing.Size(200, 675);
+            this.sidebarFlowPanel.Size = new System.Drawing.Size(200, 666);
             this.sidebarFlowPanel.TabIndex = 1;
             this.sidebarFlowPanel.VirtualizationThreshold = 100;
             // 
@@ -270,7 +270,7 @@
             this.currentUserTbx.EnableDropShadow = false;
             this.currentUserTbx.FillColor1 = System.Drawing.Color.Transparent;
             this.currentUserTbx.FillColor2 = System.Drawing.Color.Transparent;
-            this.currentUserTbx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic);
+            this.currentUserTbx.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic);
             this.currentUserTbx.ForeColor = System.Drawing.Color.White;
             this.currentUserTbx.HoverBorderColor1 = System.Drawing.Color.Transparent;
             this.currentUserTbx.HoverBorderColor2 = System.Drawing.Color.Transparent;
@@ -643,7 +643,7 @@
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(200, 0);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(1086, 675);
+            this.contentPanel.Size = new System.Drawing.Size(1090, 666);
             this.contentPanel.TabIndex = 2;
             // 
             // CustomerDashboardForm
@@ -652,7 +652,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ButtonSpecs.Add(this.buttonSpecAny1);
-            this.ClientSize = new System.Drawing.Size(1286, 675);
+            this.ClientSize = new System.Drawing.Size(1290, 666);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.sidebarFlowPanel);
             this.ForeColor = System.Drawing.Color.White;
