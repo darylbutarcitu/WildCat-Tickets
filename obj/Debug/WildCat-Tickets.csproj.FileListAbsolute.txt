@@ -58,9 +58,7 @@ D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\bin\Debug\System.CodeDom.xm
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\bin\Debug\System.Linq.Async.xml
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\bin\Debug\System.Net.Http.WinHttpHandler.xml
-D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.EventsForm.resources
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.HomeForm.resources
-D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.SettingsForm.resources
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.SignUpForm.resources
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.ViewProfileForm.resources
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\bin\Debug\EntityFramework.dll
@@ -75,5 +73,6 @@ D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.L
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.DashboardForm.resources
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.AddMovieForm.resources
 D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.CatalogForm.resources
-D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.MovieDetails.resources
-D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.TicketsForm.resources
+D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.CreateBookingForm.resources
+D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.MovieDetailsForm.resources
+D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\obj\Debug\WildCat_Tickets.BookingsForm.resources

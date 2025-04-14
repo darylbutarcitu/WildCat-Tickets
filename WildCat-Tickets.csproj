@@ -203,11 +203,17 @@
       <DependentUpon>AddMovieForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin.cs" />
-    <Compile Include="MovieDetails.cs">
+    <Compile Include="CreateBookingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MovieDetails.Designer.cs">
-      <DependentUpon>MovieDetails.cs</DependentUpon>
+    <Compile Include="CreateBookingForm.Designer.cs">
+      <DependentUpon>CreateBookingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieDetailsForm.Designer.cs">
+      <DependentUpon>MovieDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="DashboardForm.cs">
@@ -217,13 +223,6 @@
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseHelper.cs" />
-    <Compile Include="EventsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EventsForm.Designer.cs">
-      <DependentUpon>EventsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Guest.cs" />
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,11 +241,11 @@
     <Compile Include="CatalogForm.Designer.cs">
       <DependentUpon>CatalogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TicketsForm.cs">
+    <Compile Include="BookingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TicketsForm.Designer.cs">
-      <DependentUpon>TicketsForm.cs</DependentUpon>
+    <Compile Include="BookingsForm.Designer.cs">
+      <DependentUpon>BookingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Account.cs" />
     <Compile Include="ViewProfileForm.cs">
@@ -254,12 +253,6 @@
     </Compile>
     <Compile Include="ViewProfileForm.Designer.cs">
       <DependentUpon>ViewProfileForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SettingsForm.Designer.cs">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SignUpForm.cs">
       <SubType>Form</SubType>
@@ -278,11 +271,11 @@
     <EmbeddedResource Include="AddMovieForm.resx">
       <DependentUpon>AddMovieForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateBookingForm.resx">
+      <DependentUpon>CreateBookingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EventsForm.resx">
-      <DependentUpon>EventsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
@@ -293,17 +286,14 @@
     <EmbeddedResource Include="CatalogForm.resx">
       <DependentUpon>CatalogForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MovieDetails.resx">
-      <DependentUpon>MovieDetails.cs</DependentUpon>
+    <EmbeddedResource Include="MovieDetailsForm.resx">
+      <DependentUpon>MovieDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TicketsForm.resx">
-      <DependentUpon>TicketsForm.cs</DependentUpon>
+    <EmbeddedResource Include="BookingsForm.resx">
+      <DependentUpon>BookingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewProfileForm.resx">
       <DependentUpon>ViewProfileForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsForm.resx">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>

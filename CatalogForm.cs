@@ -266,8 +266,9 @@ namespace WildCat_Tickets
                                     string posterPath = reader["PosterPath"].ToString();
 
                                     // Open the MovieDetails form and pass the movie details
-                                    MovieDetails movieDetailsForm = new MovieDetails(currentUser)
+                                    MovieDetailsForm movieDetailsForm = new MovieDetailsForm(currentUser)
                                     {
+                                        MovieID = movieId,
                                         MovieTitle = title,
                                         MovieDuration = duration,
                                         MovieGenre = genre,

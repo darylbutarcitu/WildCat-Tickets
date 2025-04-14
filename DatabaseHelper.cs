@@ -26,108 +26,161 @@ namespace WildCat_Tickets
             {
                 conn.Open();
 
-                // Enable WAL mode
+                // Enable Write-Ahead Logging (WAL) mode
                 using (var cmd = new SQLiteCommand("PRAGMA journal_mode=WAL;", conn))
                 {
                     cmd.ExecuteNonQuery();
                 }
 
-                // Check and create the Users table if it doesn't exist
-                string createUsersTableQuery = @"
-                CREATE TABLE IF NOT EXISTS Users (
-                    IDNumber TEXT PRIMARY KEY,
-                    FirstName TEXT,
-                    MiddleName TEXT,
-                    LastName TEXT,
-                    BirthDate TEXT,
-                    Program TEXT,
-                    Year TEXT,
-                    Phone TEXT,
-                    Email TEXT UNIQUE,
-                    Password TEXT,
-                    ProfilePhotoPath TEXT
-                    Role TEXT
-                );";
-
-                using (var cmd = new SQLiteCommand(createUsersTableQuery, conn))
-                {
-                    cmd.ExecuteNonQuery();
-                }
-
-                // Check and create the Movies table if it doesn't exist
-                string createMoviesTableQuery = @"
-                CREATE TABLE IF NOT EXISTS Movies (
-                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    Title TEXT NOT NULL,
-                    Duration TEXT NOT NULL,
-                    Genre TEXT NOT NULL,
-                    Rating TEXT NOT NULL,
-                    ReleaseDate TEXT NOT NULL,
-                    Description TEXT NOT NULL,
-                    PosterPath TEXT NOT NULL,
-                    Status TEXT NOT NULL,
-                    NumberOfRatings INTEGER DEFAULT 0,
-                    TotalRatings INTEGER DEFAULT 0
-                );";
-
-                using (var cmd = new SQLiteCommand(createMoviesTableQuery, conn))
-                {
-                    cmd.ExecuteNonQuery();
-                }
-
-                // Check and create the Venues table if it doesn't exist
-                string createVenuesTableQuery = @"
-                CREATE TABLE IF NOT EXISTS Venues (
-                    VenueID INTEGER PRIMARY KEY AUTOINCREMENT,
-                    Name TEXT NOT NULL,
-                    Location TEXT NOT NULL,
-                    SeatCapacity INTEGER NOT NULL
-                );";
-
-                using (var cmd = new SQLiteCommand(createVenuesTableQuery, conn))
-                {
-                    cmd.ExecuteNonQuery();
-                }
-
-                // Check and create the Showtimes table if it doesn't exist
-                string createShowtimesTableQuery = @"
-                CREATE TABLE IF NOT EXISTS Showtimes (
-                    ShowtimeID INTEGER PRIMARY KEY AUTOINCREMENT,
-                    MovieID INTEGER NOT NULL,
-                    VenueID INTEGER NOT NULL,
-                    StartTime DATETIME NOT NULL,
-                    EndTime DATETIME NOT NULL,
-                    TicketPrice REAL NOT NULL,
-                    FOREIGN KEY (MovieID) REFERENCES Movies(Id),
-                    FOREIGN KEY (VenueID) REFERENCES Venues(VenueID)
-                );";
-
-                using (var cmd = new SQLiteCommand(createShowtimesTableQuery, conn))
-                {
-                    cmd.ExecuteNonQuery();
-                }
-
-                // Check and create the Bookings table if it doesn't exist
-                string createBookingsTableQuery = @"
-                CREATE TABLE IF NOT EXISTS Bookings (
-                    BookingID INTEGER PRIMARY KEY AUTOINCREMENT,
-                    UserID TEXT NOT NULL,
-                    ShowtimeID INTEGER NOT NULL,
-                    SeatNumber TEXT NOT NULL,
-                    BookingTime DATETIME DEFAULT CURRENT_TIMESTAMP,
-                    FOREIGN KEY (UserID) REFERENCES Users(IDNumber),
-                    FOREIGN KEY (ShowtimeID) REFERENCES Showtimes(ShowtimeID)
-                );";
-
-                using (var cmd = new SQLiteCommand(createBookingsTableQuery, conn))
-                {
-                    cmd.ExecuteNonQuery();
-                }
+                // Ensure all tables are created
+                CreateTables(conn);
 
                 conn.Close();
             }
-
         }
+
+        private static void CreateTables(SQLiteConnection conn)
+        {
+            string[] tableCreationQueries = new string[]
+            {
+        @"
+        CREATE TABLE IF NOT EXISTS Users (
+            IDNumber TEXT PRIMARY KEY,
+            FirstName TEXT,
+            MiddleName TEXT,
+            LastName TEXT,
+            BirthDate TEXT,
+            Program TEXT,
+            Year TEXT,
+            Phone TEXT,
+            Email TEXT UNIQUE,
+            Password TEXT,
+            ProfilePhotoPath TEXT,
+            Role TEXT
+        );",
+        @"
+        CREATE TABLE IF NOT EXISTS Movies (
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            Title TEXT NOT NULL,
+            Duration TEXT NOT NULL,
+            Genre TEXT NOT NULL,
+            Rating TEXT NOT NULL,
+            ReleaseDate TEXT NOT NULL,
+            Description TEXT NOT NULL,
+            PosterPath TEXT NOT NULL,
+            Status TEXT NOT NULL,
+            NumberOfRatings INTEGER DEFAULT 0,
+            TotalRatings INTEGER DEFAULT 0
+        );",
+        @"
+        CREATE TABLE IF NOT EXISTS Venues (
+            VenueID INTEGER PRIMARY KEY AUTOINCREMENT,
+            Name TEXT NOT NULL,
+            Location TEXT NOT NULL,
+            SeatCapacity INTEGER NOT NULL
+        );",
+        @"
+        CREATE TABLE IF NOT EXISTS Showtimes (
+            ShowtimeID INTEGER PRIMARY KEY AUTOINCREMENT,
+            MovieID INTEGER NOT NULL,
+            VenueID INTEGER NOT NULL,
+            StartTime DATETIME NOT NULL,
+            EndTime DATETIME NOT NULL,
+            TicketPrice REAL NOT NULL,
+            FOREIGN KEY (MovieID) REFERENCES Movies(Id),
+            FOREIGN KEY (VenueID) REFERENCES Venues(VenueID)
+        );",
+        @"
+        CREATE TABLE IF NOT EXISTS Seats (
+            SeatID INTEGER PRIMARY KEY AUTOINCREMENT,
+            VenueID INTEGER NOT NULL,
+            SeatNumber TEXT NOT NULL UNIQUE,
+            FOREIGN KEY (VenueID) REFERENCES Venues(VenueID)
+        );",
+        @"
+        CREATE TABLE IF NOT EXISTS Bookings (
+            BookingID INTEGER PRIMARY KEY AUTOINCREMENT,
+            UserID TEXT NOT NULL,
+            ShowtimeID INTEGER NOT NULL,
+            SeatNumber TEXT NOT NULL,
+            BookingTime DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (UserID) REFERENCES Users(IDNumber),
+            FOREIGN KEY (ShowtimeID) REFERENCES Showtimes(ShowtimeID)
+        );",
+        @"
+        CREATE TABLE IF NOT EXISTS Ratings (
+            RatingID INTEGER PRIMARY KEY AUTOINCREMENT,
+            UserID TEXT NOT NULL,
+            MovieID INTEGER NOT NULL,
+            Rating INTEGER NOT NULL CHECK (Rating >= 1 AND Rating <= 5),
+            FOREIGN KEY (UserID) REFERENCES Users(IDNumber),
+            FOREIGN KEY (MovieID) REFERENCES Movies(Id)
+        );"
+            };
+
+            foreach (var query in tableCreationQueries)
+            {
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static int GetShowtimeID(string selectedShowtime, int movieId)
+        {
+            try
+            {
+                using (SQLiteConnection conn = new SQLiteConnection("Data Source=wildcattickets.db;Version=3;"))
+                {
+                    conn.Open();
+
+                    // Enable Write-Ahead Logging (WAL) mode
+                    using (SQLiteCommand walCmd = new SQLiteCommand("PRAGMA journal_mode=WAL;", conn))
+                    {
+                        walCmd.ExecuteNonQuery();
+                    }
+
+                    string query = @"
+                        SELECT ShowtimeID 
+                        FROM Showtimes 
+                        WHERE MovieID = @movieId 
+                          AND StartTime = @startTime";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@movieId", movieId);
+
+                        // Extract the StartTime from the selected dropdown item
+                        string startTimeString = selectedShowtime.Split('-')[0].Trim(); // Extract StartTime
+                        DateTime startTime = DateTime.Parse(startTimeString);
+
+                        cmd.Parameters.AddWithValue("@startTime", startTime.ToString("yyyy-MM-dd HH:mm:ss"));
+
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            return Convert.ToInt32(result);
+                        }
+                        else
+                        {
+                            throw new Exception("Showtime ID not found for the selected showtime.");
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1; // Return an invalid ID to indicate failure
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error fetching Showtime ID: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1; // Return an invalid ID to indicate failure
+            }
+        }
+
 
         internal static string HashPassword(string password)
         {

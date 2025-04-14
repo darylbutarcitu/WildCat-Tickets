@@ -37,9 +37,8 @@
             SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState5 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState6 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState7 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState8 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState10 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState9 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState8 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             this.mainPalette = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
             this.buttonSpecAny1 = new Krypton.Toolkit.ButtonSpecAny();
             this.tabsBtn = new FontAwesome.Sharp.IconButton();
@@ -50,7 +49,6 @@
             this.backgroundLogo = new SiticoneNetFrameworkUI.SiticonePictureBox();
             this.homeBtn = new FontAwesome.Sharp.IconButton();
             this.moviesBtn = new FontAwesome.Sharp.IconButton();
-            this.eventsBtn = new FontAwesome.Sharp.IconButton();
             this.ticketsBtn = new FontAwesome.Sharp.IconButton();
             this.logoutContainer = new System.Windows.Forms.Panel();
             this.logoutBtn = new FontAwesome.Sharp.IconButton();
@@ -196,7 +194,6 @@
             this.sidebarFlowPanel.Controls.Add(this.backgroundLogo);
             this.sidebarFlowPanel.Controls.Add(this.homeBtn);
             this.sidebarFlowPanel.Controls.Add(this.moviesBtn);
-            this.sidebarFlowPanel.Controls.Add(this.eventsBtn);
             this.sidebarFlowPanel.Controls.Add(this.ticketsBtn);
             this.sidebarFlowPanel.Controls.Add(this.logoutContainer);
             this.sidebarFlowPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -214,7 +211,7 @@
             this.sidebarFlowPanel.ItemSpacing = 5;
             this.sidebarFlowPanel.Location = new System.Drawing.Point(0, 0);
             this.sidebarFlowPanel.Name = "sidebarFlowPanel";
-            this.sidebarFlowPanel.Size = new System.Drawing.Size(200, 675);
+            this.sidebarFlowPanel.Size = new System.Drawing.Size(200, 725);
             this.sidebarFlowPanel.TabIndex = 1;
             this.sidebarFlowPanel.VirtualizationThreshold = 100;
             // 
@@ -386,6 +383,7 @@
             this.homeBtn.Tag = layoutState5;
             this.homeBtn.Text = "Home";
             this.homeBtn.UseVisualStyleBackColor = false;
+            this.homeBtn.Visible = false;
             this.homeBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.homeBtn_MouseClick);
             // 
             // moviesBtn
@@ -414,32 +412,6 @@
             this.moviesBtn.UseVisualStyleBackColor = false;
             this.moviesBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.moviesBtn_MouseClick);
             // 
-            // eventsBtn
-            // 
-            this.eventsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.eventsBtn.FlatAppearance.BorderSize = 0;
-            this.eventsBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.eventsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.eventsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eventsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventsBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.eventsBtn.IconChar = FontAwesome.Sharp.IconChar.CalendarAlt;
-            this.eventsBtn.IconColor = System.Drawing.Color.White;
-            this.eventsBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.eventsBtn.IconSize = 36;
-            this.eventsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.eventsBtn.Location = new System.Drawing.Point(3, 329);
-            this.eventsBtn.Name = "eventsBtn";
-            this.eventsBtn.Size = new System.Drawing.Size(194, 35);
-            this.eventsBtn.TabIndex = 12;
-            layoutState7.Location = new System.Drawing.Point(3, 329);
-            layoutState7.Size = new System.Drawing.Size(194, 35);
-            layoutState7.Visible = true;
-            this.eventsBtn.Tag = layoutState7;
-            this.eventsBtn.Text = "Events";
-            this.eventsBtn.UseVisualStyleBackColor = false;
-            this.eventsBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.eventsBtn_MouseClick);
-            // 
             // ticketsBtn
             // 
             this.ticketsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -454,15 +426,15 @@
             this.ticketsBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ticketsBtn.IconSize = 36;
             this.ticketsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ticketsBtn.Location = new System.Drawing.Point(3, 370);
+            this.ticketsBtn.Location = new System.Drawing.Point(3, 329);
             this.ticketsBtn.Name = "ticketsBtn";
             this.ticketsBtn.Size = new System.Drawing.Size(194, 35);
             this.ticketsBtn.TabIndex = 11;
-            layoutState8.Location = new System.Drawing.Point(3, 370);
-            layoutState8.Size = new System.Drawing.Size(194, 35);
-            layoutState8.Visible = true;
-            this.ticketsBtn.Tag = layoutState8;
-            this.ticketsBtn.Text = "Tickets";
+            layoutState7.Location = new System.Drawing.Point(3, 329);
+            layoutState7.Size = new System.Drawing.Size(194, 35);
+            layoutState7.Visible = true;
+            this.ticketsBtn.Tag = layoutState7;
+            this.ticketsBtn.Text = "Bookings";
             this.ticketsBtn.UseVisualStyleBackColor = false;
             this.ticketsBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ticketsBtn_MouseClick);
             // 
@@ -471,14 +443,14 @@
             this.logoutContainer.BackColor = System.Drawing.Color.Transparent;
             this.logoutContainer.Controls.Add(this.logoutBtn);
             this.logoutContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.logoutContainer.Location = new System.Drawing.Point(3, 411);
+            this.logoutContainer.Location = new System.Drawing.Point(3, 370);
             this.logoutContainer.Name = "logoutContainer";
-            this.logoutContainer.Size = new System.Drawing.Size(194, 262);
+            this.logoutContainer.Size = new System.Drawing.Size(194, 368);
             this.logoutContainer.TabIndex = 15;
-            layoutState10.Location = new System.Drawing.Point(3, 411);
-            layoutState10.Size = new System.Drawing.Size(194, 262);
-            layoutState10.Visible = true;
-            this.logoutContainer.Tag = layoutState10;
+            layoutState9.Location = new System.Drawing.Point(3, 370);
+            layoutState9.Size = new System.Drawing.Size(194, 344);
+            layoutState9.Visible = true;
+            this.logoutContainer.Tag = layoutState9;
             // 
             // logoutBtn
             // 
@@ -495,14 +467,14 @@
             this.logoutBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.logoutBtn.IconSize = 36;
             this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoutBtn.Location = new System.Drawing.Point(0, 213);
+            this.logoutBtn.Location = new System.Drawing.Point(0, 319);
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(194, 49);
             this.logoutBtn.TabIndex = 14;
-            layoutState9.Location = new System.Drawing.Point(3, 493);
-            layoutState9.Size = new System.Drawing.Size(194, 35);
-            layoutState9.Visible = true;
-            this.logoutBtn.Tag = layoutState9;
+            layoutState8.Location = new System.Drawing.Point(3, 493);
+            layoutState8.Size = new System.Drawing.Size(194, 35);
+            layoutState8.Visible = true;
+            this.logoutBtn.Tag = layoutState8;
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.UseVisualStyleBackColor = false;
             this.logoutBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.logoutBtn_MouseClick);
@@ -517,7 +489,7 @@
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(200, 0);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(1170, 675);
+            this.contentPanel.Size = new System.Drawing.Size(1178, 725);
             this.contentPanel.TabIndex = 2;
             // 
             // mySiticoneLicenseSettings1
@@ -530,13 +502,13 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ButtonSpecs.Add(this.buttonSpecAny1);
-            this.ClientSize = new System.Drawing.Size(1370, 675);
+            this.ClientSize = new System.Drawing.Size(1378, 725);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.sidebarFlowPanel);
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.LocalCustomPalette = this.mainPalette;
-            this.MinimumSize = new System.Drawing.Size(1380, 720);
+            this.MinimumSize = new System.Drawing.Size(1380, 770);
             this.Name = "DashboardForm";
             this.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -564,7 +536,6 @@
         private FontAwesome.Sharp.IconButton userBtn;
         private FontAwesome.Sharp.IconButton homeBtn;
         private FontAwesome.Sharp.IconButton moviesBtn;
-        private FontAwesome.Sharp.IconButton eventsBtn;
         private FontAwesome.Sharp.IconButton ticketsBtn;
         internal FontAwesome.Sharp.IconButton logoutBtn;
         private System.Windows.Forms.Timer menuTransitionTimer;

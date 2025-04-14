@@ -13,12 +13,19 @@ using System.Data.SQLite;
 
 namespace WildCat_Tickets
 {
-    public partial class MovieDetails : KryptonForm
+    public partial class MovieDetailsForm : KryptonForm
     {
-        private int totalRatings, numberOfRatings;
+        private int totalRatings, numberOfRatings, movieId;
+        private string _currentUser;
+        public int MovieID
+        {
+            set { movieId = value; }
+            get { return movieId; }
+        }
         public string MovieTitle
         {
             set { movieTitleTbx.Text = value; }
+            get { return movieTitleTbx.Text; }
         }
 
         public string MovieDuration
@@ -86,28 +93,31 @@ namespace WildCat_Tickets
             return Math.Round((double)totalRatings / numberOfRatings, 2);
         }
 
-        public MovieDetails(string userRole)
+        public MovieDetailsForm(string currentUser)
         {
             InitializeComponent();
-
+            this._currentUser = currentUser;
             // Adjust button visibility based on the user's role
-            if (userRole == "admin")
+            if (currentUser == "admin")
             {
                 showtimeBtn.Visible = true;
                 bookBtn.Visible = false;
                 viewShowtimesBtn.Visible = true;
+                starBtn.Visible = false;
             }
             else
             {
                 showtimeBtn.Visible = false;
                 bookBtn.Visible = true;
                 viewShowtimesBtn.Visible = false;
+                starBtn.Visible = true;
             }
         }
 
         private void MovieDetails_Load(object sender, EventArgs e)
         {
             starsTbx.Text = getStars().ToString();
+            UpdateStarButton();
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
@@ -118,11 +128,11 @@ namespace WildCat_Tickets
         private bool IsShowtimeOverlapping(SQLiteConnection conn, SQLiteTransaction transaction, int venueId, string startTime, string endTime)
         {
             string query = @"
-        SELECT COUNT(*) 
-        FROM Showtimes 
-        WHERE VenueID = @venueId 
-          AND StartTime < @endTime 
-          AND EndTime > @startTime";
+            SELECT COUNT(*) 
+            FROM Showtimes 
+            WHERE VenueID = @venueId 
+              AND StartTime < @endTime 
+              AND EndTime > @startTime";
 
             using (SQLiteCommand cmd = new SQLiteCommand(query, conn, transaction))
             {
@@ -203,8 +213,8 @@ namespace WildCat_Tickets
             addShowtimeBtn.Click += (s, args) =>
             {
                 string date = datePicker.Value.ToString("yyyy-MM-dd");
-                string startTime = startTimePicker.Value.ToString("hh:mm tt"); // Updated to include AM/PM
-                string endTime = endTimeTbx.Text;
+                string startTime = startTimePicker.Value.ToString("HH:mm:ss"); // 24-hour format for SQLite
+                string endTime = DateTime.Parse(endTimeTbx.Text).ToString("HH:mm:ss"); // Convert to 24-hour format
                 string ticketPriceText = ticketPriceTbx.Text.Trim();
                 decimal ticketPrice;
 
@@ -244,7 +254,9 @@ namespace WildCat_Tickets
                             }
 
                             // Check for overlapping showtimes
-                            if (IsShowtimeOverlapping(conn, transaction, venueId, $"{date} {startTime}", $"{date} {endTime}"))
+                            string startDateTime = $"{date} {startTime}"; // Combine date and time
+                            string endDateTime = $"{date} {endTime}";     // Combine date and time
+                            if (IsShowtimeOverlapping(conn, transaction, venueId, startDateTime, endDateTime))
                             {
                                 MessageBox.Show("A conflicting showtime already exists.", "Conflict Detected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 transaction.Rollback();
@@ -253,15 +265,15 @@ namespace WildCat_Tickets
 
                             // Insert the new showtime
                             string insertQuery = @"
-                INSERT INTO Showtimes (MovieID, VenueID, StartTime, EndTime, TicketPrice) 
-                VALUES (@movieId, @venueId, @startTime, @endTime, @ticketPrice)";
+                            INSERT INTO Showtimes (MovieID, VenueID, StartTime, EndTime, TicketPrice) 
+                            VALUES (@movieId, @venueId, @startTime, @endTime, @ticketPrice)";
 
                             using (SQLiteCommand insertCmd = new SQLiteCommand(insertQuery, conn, transaction))
                             {
-                                insertCmd.Parameters.AddWithValue("@movieId", 1); // Replace with the actual MovieID
+                                insertCmd.Parameters.AddWithValue("@movieId", this.movieId); // Replace with the actual MovieID
                                 insertCmd.Parameters.AddWithValue("@venueId", venueId);
-                                insertCmd.Parameters.AddWithValue("@startTime", $"{date} {startTime}");
-                                insertCmd.Parameters.AddWithValue("@endTime", $"{date} {endTime}");
+                                insertCmd.Parameters.AddWithValue("@startTime", startDateTime);
+                                insertCmd.Parameters.AddWithValue("@endTime", endDateTime);
                                 insertCmd.Parameters.AddWithValue("@ticketPrice", ticketPrice);
 
                                 insertCmd.ExecuteNonQuery();
@@ -297,6 +309,124 @@ namespace WildCat_Tickets
 
             // Show the form as a dialog
             addShowtimeForm.ShowDialog();
+        }
+
+        private void starBtn_Click(object sender, EventArgs e)
+        {
+            // Create a new form for rating input
+            Form ratingForm = new Form
+            {
+                Text = "Rate the Movie",
+                Size = new Size(300, 200),
+                StartPosition = FormStartPosition.CenterParent
+            };
+
+            // Create and configure controls
+            Label ratingLabel = new Label
+            {
+                Text = "Enter your rating (1 to 5):",
+                Location = new Point(20, 20),
+                AutoSize = true
+            };
+
+            NumericUpDown ratingInput = new NumericUpDown
+            {
+                Minimum = 1,
+                Maximum = 5,
+                Location = new Point(20, 50),
+                Width = 50
+            };
+
+            Button submitButton = new Button
+            {
+                Text = "Submit",
+                Location = new Point(20, 100),
+                Width = 80
+            };
+
+            Button cancelButton = new Button
+            {
+                Text = "Cancel",
+                Location = new Point(120, 100),
+                Width = 80
+            };
+
+            // Add controls to the form
+            ratingForm.Controls.Add(ratingLabel);
+            ratingForm.Controls.Add(ratingInput);
+            ratingForm.Controls.Add(submitButton);
+            ratingForm.Controls.Add(cancelButton);
+
+            // Handle the Submit button click
+            submitButton.Click += (s, args) =>
+            {
+                int rating = (int)ratingInput.Value;
+
+                try
+                {
+                    using (SQLiteConnection conn = new SQLiteConnection("Data Source=wildcattickets.db;Version=3;"))
+                    {
+                        conn.Open();
+
+                        using (var transaction = conn.BeginTransaction())
+                        {
+                            // Insert the new rating into the Ratings table
+                            string insertQuery = @"
+                                INSERT INTO Ratings (UserID, MovieID, Rating) 
+                                VALUES (@userID, @movieID, @rating)";
+
+                            using (SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn, transaction))
+                            {
+                                cmd.Parameters.AddWithValue("@userID", _currentUser);
+                                cmd.Parameters.AddWithValue("@movieID", MovieID);
+                                cmd.Parameters.AddWithValue("@rating", rating);
+
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            // Update the Movies table to increment NumberOfRatings and add the new rating to TotalRatings
+                            string updateMovieQuery = @"
+                                UPDATE Movies
+                                SET NumberOfRatings = NumberOfRatings + 1,
+                                    TotalRatings = TotalRatings + @rating
+                                WHERE Id = @movieID";
+
+                            using (SQLiteCommand cmd = new SQLiteCommand(updateMovieQuery, conn, transaction))
+                            {
+                                cmd.Parameters.AddWithValue("@rating", rating);
+                                cmd.Parameters.AddWithValue("@movieID", MovieID);
+
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            // Commit the transaction
+                            transaction.Commit();
+                        }
+
+                        // Update the star button after successful submission
+                        MessageBox.Show("Rating submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        UpdateStarButton();
+                        ratingForm.Close();
+                    }
+                }
+                catch (SQLiteException ex)
+                {
+                    MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error submitting rating: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            };
+
+            // Handle the Cancel button click
+            cancelButton.Click += (s, args) =>
+            {
+                ratingForm.Close();
+            };
+
+            // Show the form as a dialog
+            ratingForm.ShowDialog();
         }
 
         private void viewShowtimesBtn_Click(object sender, EventArgs e)
@@ -342,10 +472,10 @@ namespace WildCat_Tickets
 
                     // Query to fetch showtimes for the current movie
                     string query = @"
-                SELECT s.ShowtimeID, v.Name AS Venue, s.StartTime, s.EndTime, s.TicketPrice
-                FROM Showtimes s
-                INNER JOIN Venues v ON s.VenueID = v.VenueID
-                WHERE s.MovieID = (SELECT Id FROM Movies WHERE Title = @MovieTitle COLLATE NOCASE)";
+                    SELECT s.ShowtimeID, v.Name AS Venue, s.StartTime, s.EndTime, s.TicketPrice
+                    FROM Showtimes s
+                    INNER JOIN Venues v ON s.VenueID = v.VenueID
+                    WHERE s.MovieID = (SELECT Id FROM Movies WHERE Title = @MovieTitle COLLATE NOCASE)";
 
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     {
@@ -361,6 +491,35 @@ namespace WildCat_Tickets
                                 MessageBox.Show("No showtimes found for the selected movie.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 return;
                             }
+
+                            // Add formatted columns for Date, Start Time, and End Time
+                            showtimesTable.Columns.Add("FormattedDate", typeof(string));
+                            showtimesTable.Columns.Add("FormattedStartTime", typeof(string));
+                            showtimesTable.Columns.Add("FormattedEndTime", typeof(string));
+
+                            foreach (DataRow row in showtimesTable.Rows)
+                            {
+                                // Parse the StartTime and EndTime to ensure they are valid DateTime objects
+                                if (DateTime.TryParse(row["StartTime"].ToString(), out DateTime startTime))
+                                {
+                                    row["FormattedDate"] = startTime.ToString("MMMM dd, yyyy"); // Add the date
+                                    row["FormattedStartTime"] = startTime.ToString("hh:mm tt"); // Add the time
+                                }
+
+                                if (DateTime.TryParse(row["EndTime"].ToString(), out DateTime endTime))
+                                {
+                                    row["FormattedEndTime"] = endTime.ToString("hh:mm tt"); // Add the time
+                                }
+                            }
+
+                            // Remove original StartTime and EndTime columns from the grid and display the formatted ones
+                            showtimesTable.Columns.Remove("StartTime");
+                            showtimesTable.Columns.Remove("EndTime");
+
+                            // Rename the formatted columns for display purposes
+                            showtimesTable.Columns["FormattedDate"].ColumnName = "Date";
+                            showtimesTable.Columns["FormattedStartTime"].ColumnName = "Start Time";
+                            showtimesTable.Columns["FormattedEndTime"].ColumnName = "End Time";
 
                             // Bind the DataTable to the DataGridView
                             showtimesGrid.DataSource = showtimesTable;
@@ -383,7 +542,86 @@ namespace WildCat_Tickets
 
         private void bookBtn_Click(object sender, EventArgs e)
         {
+            CreateBookingForm bookMovieForm = new CreateBookingForm(_currentUser)
+            {
+                MovieID = this.MovieID,
+                MovieTitle = this.MovieTitle
+            };
 
+            bookMovieForm.ShowDialog();
+        }
+
+        private void UpdateStarButton()
+        {
+            try
+            {
+                using (SQLiteConnection conn = new SQLiteConnection("Data Source=wildcattickets.db;Version=3;"))
+                {
+                    conn.Open();
+
+                    // Check if the user has already rated the movie
+                    string userRatingQuery = @"
+                        SELECT Rating 
+                        FROM Ratings 
+                        WHERE UserID = @userID AND MovieID = @movieID";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(userRatingQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userID", _currentUser); // Fixed parameter name
+                        cmd.Parameters.AddWithValue("@movieID", MovieID);
+
+                        object userRatingResult = cmd.ExecuteScalar();
+
+                        if (userRatingResult != null)
+                        {
+                            // User has already rated the movie
+                            int userRating = Convert.ToInt32(userRatingResult);
+                            starBtn.Text = $"Your Rating: {userRating} ★";
+                            starBtn.TextColor = Color.White;
+                            starBtn.Enabled = false; // Disable the button
+                            return;
+                        }
+                    }
+
+                    // Calculate the average rating for the movie
+                    string averageRatingQuery = @"
+                        SELECT TotalRatings, NumberOfRatings 
+                        FROM Movies 
+                        WHERE Id = @movieID";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(averageRatingQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@movieID", MovieID);
+
+                        using (SQLiteDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                int totalRatings = reader.GetInt32(reader.GetOrdinal("TotalRatings"));
+                                int numberOfRatings = reader.GetInt32(reader.GetOrdinal("NumberOfRatings"));
+
+                                if (numberOfRatings > 0)
+                                {
+                                    double averageRating = (double)totalRatings / numberOfRatings;
+                                    starBtn.Text = $"Avg Rating: {averageRating:F1} ★";
+                                }
+                                else
+                                {
+                                    starBtn.Text = "⭐Add Stars⭐";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating star button: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
