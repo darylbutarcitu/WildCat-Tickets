@@ -33,25 +33,25 @@
             SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState1 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             this.mainPalette = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
             this.addMovieContainer = new System.Windows.Forms.Panel();
-            this.releaseDatePicker = new Krypton.Toolkit.KryptonDateTimePicker();
+            this.averageTbx = new System.Windows.Forms.Label();
+            this.starsTbx = new FontAwesome.Sharp.IconButton();
+            this.genreTbx = new SiticoneNetFrameworkUI.SiticoneTextBox();
+            this.releaseDateTbx = new SiticoneNetFrameworkUI.SiticoneTextBox();
+            this.ratingTbx = new SiticoneNetFrameworkUI.SiticoneTextBox();
+            this.durationTbx = new SiticoneNetFrameworkUI.SiticoneTextBox();
             this.movieDescriptionTbx = new Krypton.Toolkit.KryptonTextBox();
             this.releaseDateLabel = new System.Windows.Forms.Label();
-            this.ratingComboBox = new Krypton.Toolkit.KryptonComboBox();
             this.ratingLabel = new System.Windows.Forms.Label();
             this.genreLabel = new System.Windows.Forms.Label();
-            this.durationUpDown = new Krypton.Toolkit.KryptonNumericUpDown();
-            this.genreComboBox = new Krypton.Toolkit.KryptonComboBox();
-            this.addMovieBtn = new SiticoneNetFrameworkUI.SiticoneButton();
-            this.cancelBtn = new SiticoneNetFrameworkUI.SiticoneButton();
+            this.bookBtn = new SiticoneNetFrameworkUI.SiticoneButton();
             this.moviePosterBox = new FontAwesome.Sharp.IconPictureBox();
-            this.uploadMoviePosterBtn = new SiticoneNetFrameworkUI.SiticoneButton();
             this.movieTitleTbx = new SiticoneNetFrameworkUI.SiticoneTextBox();
             this.movieDescriptionLabel = new System.Windows.Forms.Label();
             this.durationLabel = new System.Windows.Forms.Label();
             this.movieTitleLabel = new System.Windows.Forms.Label();
+            this.showtimeBtn = new SiticoneNetFrameworkUI.SiticoneButton();
+            this.viewShowtimesBtn = new SiticoneNetFrameworkUI.SiticoneButton();
             this.addMovieContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ratingComboBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genreComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moviePosterBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,80 +159,322 @@
             // addMovieContainer
             // 
             this.addMovieContainer.BackColor = System.Drawing.Color.Transparent;
-            this.addMovieContainer.Controls.Add(this.releaseDatePicker);
+            this.addMovieContainer.Controls.Add(this.viewShowtimesBtn);
+            this.addMovieContainer.Controls.Add(this.showtimeBtn);
+            this.addMovieContainer.Controls.Add(this.averageTbx);
+            this.addMovieContainer.Controls.Add(this.starsTbx);
+            this.addMovieContainer.Controls.Add(this.genreTbx);
+            this.addMovieContainer.Controls.Add(this.releaseDateTbx);
+            this.addMovieContainer.Controls.Add(this.ratingTbx);
+            this.addMovieContainer.Controls.Add(this.durationTbx);
             this.addMovieContainer.Controls.Add(this.movieDescriptionTbx);
             this.addMovieContainer.Controls.Add(this.releaseDateLabel);
-            this.addMovieContainer.Controls.Add(this.ratingComboBox);
             this.addMovieContainer.Controls.Add(this.ratingLabel);
             this.addMovieContainer.Controls.Add(this.genreLabel);
-            this.addMovieContainer.Controls.Add(this.durationUpDown);
-            this.addMovieContainer.Controls.Add(this.genreComboBox);
-            this.addMovieContainer.Controls.Add(this.addMovieBtn);
-            this.addMovieContainer.Controls.Add(this.cancelBtn);
+            this.addMovieContainer.Controls.Add(this.bookBtn);
             this.addMovieContainer.Controls.Add(this.moviePosterBox);
-            this.addMovieContainer.Controls.Add(this.uploadMoviePosterBtn);
             this.addMovieContainer.Controls.Add(this.movieTitleTbx);
             this.addMovieContainer.Controls.Add(this.movieDescriptionLabel);
             this.addMovieContainer.Controls.Add(this.durationLabel);
             this.addMovieContainer.Controls.Add(this.movieTitleLabel);
             this.addMovieContainer.Location = new System.Drawing.Point(12, 12);
             this.addMovieContainer.Name = "addMovieContainer";
-            this.addMovieContainer.Size = new System.Drawing.Size(723, 397);
+            this.addMovieContainer.Size = new System.Drawing.Size(723, 361);
             this.addMovieContainer.TabIndex = 21;
             layoutState1.Location = new System.Drawing.Point(3, 493);
             layoutState1.Size = new System.Drawing.Size(194, 188);
             layoutState1.Visible = true;
             this.addMovieContainer.Tag = layoutState1;
             // 
-            // releaseDatePicker
+            // averageTbx
             // 
-            this.releaseDatePicker.Location = new System.Drawing.Point(195, 181);
-            this.releaseDatePicker.Name = "releaseDatePicker";
-            this.releaseDatePicker.Size = new System.Drawing.Size(290, 33);
-            this.releaseDatePicker.StateCommon.Border.Rounding = 10F;
-            this.releaseDatePicker.TabIndex = 41;
+            this.averageTbx.AutoSize = true;
+            this.averageTbx.Location = new System.Drawing.Point(407, 107);
+            this.averageTbx.Name = "averageTbx";
+            this.averageTbx.Size = new System.Drawing.Size(31, 13);
+            this.averageTbx.TabIndex = 47;
+            this.averageTbx.Text = "Stars";
+            // 
+            // starsTbx
+            // 
+            this.starsTbx.Enabled = false;
+            this.starsTbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.starsTbx.ForeColor = System.Drawing.Color.Black;
+            this.starsTbx.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.starsTbx.IconColor = System.Drawing.Color.Black;
+            this.starsTbx.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.starsTbx.Location = new System.Drawing.Point(410, 123);
+            this.starsTbx.Name = "starsTbx";
+            this.starsTbx.Size = new System.Drawing.Size(75, 83);
+            this.starsTbx.TabIndex = 46;
+            this.starsTbx.Text = "0.0";
+            this.starsTbx.UseVisualStyleBackColor = true;
+            // 
+            // genreTbx
+            // 
+            this.genreTbx.AccessibleDescription = "A customizable text input field.";
+            this.genreTbx.AccessibleName = "Text Box";
+            this.genreTbx.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
+            this.genreTbx.BackColor = System.Drawing.Color.Transparent;
+            this.genreTbx.BlinkCount = 3;
+            this.genreTbx.BlinkShadow = false;
+            this.genreTbx.BorderColor1 = System.Drawing.Color.LightSlateGray;
+            this.genreTbx.BorderColor2 = System.Drawing.Color.LightSlateGray;
+            this.genreTbx.BorderFocusColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.genreTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.genreTbx.BorderGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.genreTbx.CanShake = true;
+            this.genreTbx.ContinuousBlink = false;
+            this.genreTbx.CornerRadiusBottomLeft = 10;
+            this.genreTbx.CornerRadiusBottomRight = 10;
+            this.genreTbx.CornerRadiusTopLeft = 10;
+            this.genreTbx.CornerRadiusTopRight = 10;
+            this.genreTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.genreTbx.CursorBlinkRate = 500;
+            this.genreTbx.CursorColor = System.Drawing.Color.Black;
+            this.genreTbx.CursorHeight = 0;
+            this.genreTbx.CursorOffset = 0;
+            this.genreTbx.CursorStyle = SiticoneNetFrameworkUI.Helpers.DrawingStyle.SiticoneDrawingStyle.Solid;
+            this.genreTbx.CursorWidth = 1;
+            this.genreTbx.DisabledBackColor = System.Drawing.Color.WhiteSmoke;
+            this.genreTbx.DisabledBorderColor = System.Drawing.Color.LightGray;
+            this.genreTbx.DisabledTextColor = System.Drawing.Color.Gray;
+            this.genreTbx.EnableDropShadow = false;
+            this.genreTbx.FillColor1 = System.Drawing.Color.White;
+            this.genreTbx.FillColor2 = System.Drawing.Color.White;
+            this.genreTbx.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.genreTbx.ForeColor = System.Drawing.Color.DimGray;
+            this.genreTbx.HoverBorderColor1 = System.Drawing.Color.Gray;
+            this.genreTbx.HoverBorderColor2 = System.Drawing.Color.Gray;
+            this.genreTbx.IsEnabled = true;
+            this.genreTbx.IsReadOnly = true;
+            this.genreTbx.Location = new System.Drawing.Point(332, 19);
+            this.genreTbx.Name = "genreTbx";
+            this.genreTbx.PlaceholderColor = System.Drawing.Color.Gray;
+            this.genreTbx.PlaceholderText = "Genre";
+            this.genreTbx.ReadOnlyBorderColor1 = System.Drawing.Color.LightGray;
+            this.genreTbx.ReadOnlyBorderColor2 = System.Drawing.Color.LightGray;
+            this.genreTbx.ReadOnlyFillColor1 = System.Drawing.Color.WhiteSmoke;
+            this.genreTbx.ReadOnlyFillColor2 = System.Drawing.Color.WhiteSmoke;
+            this.genreTbx.ReadOnlyPlaceholderColor = System.Drawing.Color.DarkGray;
+            this.genreTbx.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.genreTbx.ShadowAnimationDuration = 1;
+            this.genreTbx.ShadowBlur = 10;
+            this.genreTbx.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.genreTbx.Size = new System.Drawing.Size(153, 34);
+            this.genreTbx.SolidBorderColor = System.Drawing.Color.LightSlateGray;
+            this.genreTbx.SolidBorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.genreTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
+            this.genreTbx.SolidFillColor = System.Drawing.Color.White;
+            this.genreTbx.TabIndex = 45;
+            this.genreTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
+            this.genreTbx.ValidationErrorMessage = "Invalid input.";
+            this.genreTbx.ValidationFunction = null;
+            // 
+            // releaseDateTbx
+            // 
+            this.releaseDateTbx.AccessibleDescription = "A customizable text input field.";
+            this.releaseDateTbx.AccessibleName = "Text Box";
+            this.releaseDateTbx.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
+            this.releaseDateTbx.BackColor = System.Drawing.Color.Transparent;
+            this.releaseDateTbx.BlinkCount = 3;
+            this.releaseDateTbx.BlinkShadow = false;
+            this.releaseDateTbx.BorderColor1 = System.Drawing.Color.LightSlateGray;
+            this.releaseDateTbx.BorderColor2 = System.Drawing.Color.LightSlateGray;
+            this.releaseDateTbx.BorderFocusColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.releaseDateTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.releaseDateTbx.CanShake = true;
+            this.releaseDateTbx.ContinuousBlink = false;
+            this.releaseDateTbx.CornerRadiusBottomLeft = 10;
+            this.releaseDateTbx.CornerRadiusBottomRight = 10;
+            this.releaseDateTbx.CornerRadiusTopLeft = 10;
+            this.releaseDateTbx.CornerRadiusTopRight = 10;
+            this.releaseDateTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.releaseDateTbx.CursorBlinkRate = 500;
+            this.releaseDateTbx.CursorColor = System.Drawing.Color.Black;
+            this.releaseDateTbx.CursorHeight = 0;
+            this.releaseDateTbx.CursorOffset = 0;
+            this.releaseDateTbx.CursorStyle = SiticoneNetFrameworkUI.Helpers.DrawingStyle.SiticoneDrawingStyle.Solid;
+            this.releaseDateTbx.CursorWidth = 1;
+            this.releaseDateTbx.DisabledBackColor = System.Drawing.Color.WhiteSmoke;
+            this.releaseDateTbx.DisabledBorderColor = System.Drawing.Color.LightGray;
+            this.releaseDateTbx.DisabledTextColor = System.Drawing.Color.Gray;
+            this.releaseDateTbx.EnableDropShadow = false;
+            this.releaseDateTbx.FillColor1 = System.Drawing.Color.White;
+            this.releaseDateTbx.FillColor2 = System.Drawing.Color.White;
+            this.releaseDateTbx.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.releaseDateTbx.ForeColor = System.Drawing.Color.DimGray;
+            this.releaseDateTbx.HoverBorderColor1 = System.Drawing.Color.Gray;
+            this.releaseDateTbx.HoverBorderColor2 = System.Drawing.Color.Gray;
+            this.releaseDateTbx.IsEnabled = true;
+            this.releaseDateTbx.IsReadOnly = true;
+            this.releaseDateTbx.Location = new System.Drawing.Point(294, 266);
+            this.releaseDateTbx.Name = "releaseDateTbx";
+            this.releaseDateTbx.PlaceholderColor = System.Drawing.Color.Gray;
+            this.releaseDateTbx.PlaceholderText = "Release Date";
+            this.releaseDateTbx.ReadOnlyBorderColor1 = System.Drawing.Color.LightGray;
+            this.releaseDateTbx.ReadOnlyBorderColor2 = System.Drawing.Color.LightGray;
+            this.releaseDateTbx.ReadOnlyFillColor1 = System.Drawing.Color.WhiteSmoke;
+            this.releaseDateTbx.ReadOnlyFillColor2 = System.Drawing.Color.WhiteSmoke;
+            this.releaseDateTbx.ReadOnlyPlaceholderColor = System.Drawing.Color.DarkGray;
+            this.releaseDateTbx.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.releaseDateTbx.ShadowAnimationDuration = 1;
+            this.releaseDateTbx.ShadowBlur = 10;
+            this.releaseDateTbx.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.releaseDateTbx.Size = new System.Drawing.Size(188, 34);
+            this.releaseDateTbx.SolidBorderColor = System.Drawing.Color.LightSlateGray;
+            this.releaseDateTbx.SolidBorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.releaseDateTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
+            this.releaseDateTbx.SolidFillColor = System.Drawing.Color.White;
+            this.releaseDateTbx.TabIndex = 44;
+            this.releaseDateTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
+            this.releaseDateTbx.ValidationErrorMessage = "Invalid input.";
+            this.releaseDateTbx.ValidationFunction = null;
+            // 
+            // ratingTbx
+            // 
+            this.ratingTbx.AccessibleDescription = "A customizable text input field.";
+            this.ratingTbx.AccessibleName = "Text Box";
+            this.ratingTbx.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
+            this.ratingTbx.BackColor = System.Drawing.Color.Transparent;
+            this.ratingTbx.BlinkCount = 3;
+            this.ratingTbx.BlinkShadow = false;
+            this.ratingTbx.BorderColor1 = System.Drawing.Color.LightSlateGray;
+            this.ratingTbx.BorderColor2 = System.Drawing.Color.LightSlateGray;
+            this.ratingTbx.BorderFocusColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.ratingTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.ratingTbx.CanShake = true;
+            this.ratingTbx.ContinuousBlink = false;
+            this.ratingTbx.CornerRadiusBottomLeft = 10;
+            this.ratingTbx.CornerRadiusBottomRight = 10;
+            this.ratingTbx.CornerRadiusTopLeft = 10;
+            this.ratingTbx.CornerRadiusTopRight = 10;
+            this.ratingTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ratingTbx.CursorBlinkRate = 500;
+            this.ratingTbx.CursorColor = System.Drawing.Color.Black;
+            this.ratingTbx.CursorHeight = 0;
+            this.ratingTbx.CursorOffset = 0;
+            this.ratingTbx.CursorStyle = SiticoneNetFrameworkUI.Helpers.DrawingStyle.SiticoneDrawingStyle.Solid;
+            this.ratingTbx.CursorWidth = 1;
+            this.ratingTbx.DisabledBackColor = System.Drawing.Color.WhiteSmoke;
+            this.ratingTbx.DisabledBorderColor = System.Drawing.Color.LightGray;
+            this.ratingTbx.DisabledTextColor = System.Drawing.Color.Gray;
+            this.ratingTbx.EnableDropShadow = false;
+            this.ratingTbx.FillColor1 = System.Drawing.Color.White;
+            this.ratingTbx.FillColor2 = System.Drawing.Color.White;
+            this.ratingTbx.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.ratingTbx.ForeColor = System.Drawing.Color.DimGray;
+            this.ratingTbx.HoverBorderColor1 = System.Drawing.Color.Gray;
+            this.ratingTbx.HoverBorderColor2 = System.Drawing.Color.Gray;
+            this.ratingTbx.IsEnabled = true;
+            this.ratingTbx.IsReadOnly = true;
+            this.ratingTbx.Location = new System.Drawing.Point(3, 266);
+            this.ratingTbx.Name = "ratingTbx";
+            this.ratingTbx.PlaceholderColor = System.Drawing.Color.Gray;
+            this.ratingTbx.PlaceholderText = "Rating";
+            this.ratingTbx.ReadOnlyBorderColor1 = System.Drawing.Color.LightGray;
+            this.ratingTbx.ReadOnlyBorderColor2 = System.Drawing.Color.LightGray;
+            this.ratingTbx.ReadOnlyFillColor1 = System.Drawing.Color.WhiteSmoke;
+            this.ratingTbx.ReadOnlyFillColor2 = System.Drawing.Color.WhiteSmoke;
+            this.ratingTbx.ReadOnlyPlaceholderColor = System.Drawing.Color.DarkGray;
+            this.ratingTbx.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.ratingTbx.ShadowAnimationDuration = 1;
+            this.ratingTbx.ShadowBlur = 10;
+            this.ratingTbx.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ratingTbx.Size = new System.Drawing.Size(285, 34);
+            this.ratingTbx.SolidBorderColor = System.Drawing.Color.LightSlateGray;
+            this.ratingTbx.SolidBorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.ratingTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
+            this.ratingTbx.SolidFillColor = System.Drawing.Color.White;
+            this.ratingTbx.TabIndex = 43;
+            this.ratingTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
+            this.ratingTbx.ValidationErrorMessage = "Invalid input.";
+            this.ratingTbx.ValidationFunction = null;
+            // 
+            // durationTbx
+            // 
+            this.durationTbx.AccessibleDescription = "A customizable text input field.";
+            this.durationTbx.AccessibleName = "Text Box";
+            this.durationTbx.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
+            this.durationTbx.BackColor = System.Drawing.Color.Transparent;
+            this.durationTbx.BlinkCount = 3;
+            this.durationTbx.BlinkShadow = false;
+            this.durationTbx.BorderColor1 = System.Drawing.Color.LightSlateGray;
+            this.durationTbx.BorderColor2 = System.Drawing.Color.LightSlateGray;
+            this.durationTbx.BorderFocusColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.durationTbx.BorderFocusColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.durationTbx.CanShake = true;
+            this.durationTbx.ContinuousBlink = false;
+            this.durationTbx.CornerRadiusBottomLeft = 10;
+            this.durationTbx.CornerRadiusBottomRight = 10;
+            this.durationTbx.CornerRadiusTopLeft = 10;
+            this.durationTbx.CornerRadiusTopRight = 10;
+            this.durationTbx.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.durationTbx.CursorBlinkRate = 500;
+            this.durationTbx.CursorColor = System.Drawing.Color.Black;
+            this.durationTbx.CursorHeight = 0;
+            this.durationTbx.CursorOffset = 0;
+            this.durationTbx.CursorStyle = SiticoneNetFrameworkUI.Helpers.DrawingStyle.SiticoneDrawingStyle.Solid;
+            this.durationTbx.CursorWidth = 1;
+            this.durationTbx.DisabledBackColor = System.Drawing.Color.WhiteSmoke;
+            this.durationTbx.DisabledBorderColor = System.Drawing.Color.LightGray;
+            this.durationTbx.DisabledTextColor = System.Drawing.Color.Gray;
+            this.durationTbx.EnableDropShadow = false;
+            this.durationTbx.FillColor1 = System.Drawing.Color.White;
+            this.durationTbx.FillColor2 = System.Drawing.Color.White;
+            this.durationTbx.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.durationTbx.ForeColor = System.Drawing.Color.DimGray;
+            this.durationTbx.HoverBorderColor1 = System.Drawing.Color.Gray;
+            this.durationTbx.HoverBorderColor2 = System.Drawing.Color.Gray;
+            this.durationTbx.IsEnabled = true;
+            this.durationTbx.IsReadOnly = true;
+            this.durationTbx.Location = new System.Drawing.Point(231, 19);
+            this.durationTbx.Name = "durationTbx";
+            this.durationTbx.PlaceholderColor = System.Drawing.Color.Gray;
+            this.durationTbx.PlaceholderText = "Duration";
+            this.durationTbx.ReadOnlyBorderColor1 = System.Drawing.Color.LightGray;
+            this.durationTbx.ReadOnlyBorderColor2 = System.Drawing.Color.LightGray;
+            this.durationTbx.ReadOnlyFillColor1 = System.Drawing.Color.WhiteSmoke;
+            this.durationTbx.ReadOnlyFillColor2 = System.Drawing.Color.WhiteSmoke;
+            this.durationTbx.ReadOnlyPlaceholderColor = System.Drawing.Color.DarkGray;
+            this.durationTbx.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.durationTbx.ShadowAnimationDuration = 1;
+            this.durationTbx.ShadowBlur = 10;
+            this.durationTbx.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.durationTbx.Size = new System.Drawing.Size(95, 34);
+            this.durationTbx.SolidBorderColor = System.Drawing.Color.LightSlateGray;
+            this.durationTbx.SolidBorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(255)))));
+            this.durationTbx.SolidBorderHoverColor = System.Drawing.Color.Gray;
+            this.durationTbx.SolidFillColor = System.Drawing.Color.White;
+            this.durationTbx.TabIndex = 42;
+            this.durationTbx.TextPadding = new System.Windows.Forms.Padding(16, 0, 6, 0);
+            this.durationTbx.ValidationErrorMessage = "Invalid input.";
+            this.durationTbx.ValidationFunction = null;
             // 
             // movieDescriptionTbx
             // 
             this.movieDescriptionTbx.Location = new System.Drawing.Point(3, 77);
             this.movieDescriptionTbx.Multiline = true;
             this.movieDescriptionTbx.Name = "movieDescriptionTbx";
-            this.movieDescriptionTbx.Size = new System.Drawing.Size(482, 83);
+            this.movieDescriptionTbx.ReadOnly = true;
+            this.movieDescriptionTbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.movieDescriptionTbx.Size = new System.Drawing.Size(379, 168);
             this.movieDescriptionTbx.StateCommon.Border.Rounding = 10F;
             this.movieDescriptionTbx.TabIndex = 40;
             // 
             // releaseDateLabel
             // 
             this.releaseDateLabel.AutoSize = true;
-            this.releaseDateLabel.Location = new System.Drawing.Point(192, 165);
+            this.releaseDateLabel.Location = new System.Drawing.Point(291, 248);
             this.releaseDateLabel.Name = "releaseDateLabel";
             this.releaseDateLabel.Size = new System.Drawing.Size(72, 13);
             this.releaseDateLabel.TabIndex = 38;
             this.releaseDateLabel.Text = "Release Date";
             // 
-            // ratingComboBox
-            // 
-            this.ratingComboBox.DropDownWidth = 241;
-            this.ratingComboBox.Items.AddRange(new object[] {
-            "G – General Audiences",
-            "PG – Parental Guidance Suggested",
-            "PG-13 – Parents Strongly Cautioned",
-            "R – Restricted",
-            "NC-17 – Adults Only",
-            "Unrated",
-            "Not Yet Rated"});
-            this.ratingComboBox.Location = new System.Drawing.Point(3, 181);
-            this.ratingComboBox.Name = "ratingComboBox";
-            this.ratingComboBox.Size = new System.Drawing.Size(186, 34);
-            this.ratingComboBox.StateCommon.ComboBox.Border.Rounding = 10F;
-            this.ratingComboBox.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.ratingComboBox.TabIndex = 35;
-            this.ratingComboBox.Text = "Rating";
-            // 
             // ratingLabel
             // 
             this.ratingLabel.AutoSize = true;
-            this.ratingLabel.Location = new System.Drawing.Point(3, 165);
+            this.ratingLabel.Location = new System.Drawing.Point(0, 250);
             this.ratingLabel.Name = "ratingLabel";
             this.ratingLabel.Size = new System.Drawing.Size(38, 13);
             this.ratingLabel.TabIndex = 34;
@@ -247,220 +489,83 @@
             this.genreLabel.TabIndex = 33;
             this.genreLabel.Text = "Genre";
             // 
-            // durationUpDown
+            // bookBtn
             // 
-            this.durationUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.durationUpDown.Location = new System.Drawing.Point(241, 19);
-            this.durationUpDown.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.durationUpDown.Minimum = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.durationUpDown.Name = "durationUpDown";
-            this.durationUpDown.Size = new System.Drawing.Size(75, 34);
-            this.durationUpDown.StateCommon.Border.Rounding = 10F;
-            this.durationUpDown.StateNormal.Border.Rounding = 15F;
-            this.durationUpDown.TabIndex = 32;
-            this.durationUpDown.Value = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            // 
-            // genreComboBox
-            // 
-            this.genreComboBox.DropDownWidth = 153;
-            this.genreComboBox.Items.AddRange(new object[] {
-            "Action",
-            "Adventure",
-            "Animation",
-            "Biography",
-            "Comedy",
-            "Crime",
-            "Documentary",
-            "Drama",
-            "Family",
-            "Fantasy",
-            "History",
-            "Horror",
-            "Musical",
-            "Mystery",
-            "Romance",
-            "Sci-Fi",
-            "Sport",
-            "Thriller",
-            "War",
-            "Western"});
-            this.genreComboBox.Location = new System.Drawing.Point(332, 19);
-            this.genreComboBox.Name = "genreComboBox";
-            this.genreComboBox.Size = new System.Drawing.Size(153, 34);
-            this.genreComboBox.StateCommon.ComboBox.Border.Rounding = 10F;
-            this.genreComboBox.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.genreComboBox.TabIndex = 31;
-            this.genreComboBox.Text = "Genre";
-            // 
-            // addMovieBtn
-            // 
-            this.addMovieBtn.AccessibleDescription = "";
-            this.addMovieBtn.AccessibleName = "SUBMIT";
-            this.addMovieBtn.AutoSizeBasedOnText = false;
-            this.addMovieBtn.BackColor = System.Drawing.Color.Transparent;
-            this.addMovieBtn.BadgeBackColor = System.Drawing.Color.Red;
-            this.addMovieBtn.BadgeFont = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.addMovieBtn.BadgeValue = 0;
-            this.addMovieBtn.BadgeValueForeColor = System.Drawing.Color.White;
-            this.addMovieBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.addMovieBtn.BorderWidth = 2;
-            this.addMovieBtn.ButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.addMovieBtn.ButtonImage = null;
-            this.addMovieBtn.CanBeep = true;
-            this.addMovieBtn.CanGlow = false;
-            this.addMovieBtn.CanShake = true;
-            this.addMovieBtn.ContextMenuStripEx = null;
-            this.addMovieBtn.CornerRadiusBottomLeft = 10;
-            this.addMovieBtn.CornerRadiusBottomRight = 10;
-            this.addMovieBtn.CornerRadiusTopLeft = 10;
-            this.addMovieBtn.CornerRadiusTopRight = 10;
-            this.addMovieBtn.CustomCursor = System.Windows.Forms.Cursors.Default;
-            this.addMovieBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.addMovieBtn.EnableLongPress = false;
-            this.addMovieBtn.EnablePressAnimation = true;
-            this.addMovieBtn.EnableRippleEffect = true;
-            this.addMovieBtn.EnableShadow = false;
-            this.addMovieBtn.EnableTextWrapping = false;
-            this.addMovieBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.addMovieBtn.ForeColor = System.Drawing.Color.White;
-            this.addMovieBtn.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.addMovieBtn.GlowIntensity = 100;
-            this.addMovieBtn.GlowRadius = 20F;
-            this.addMovieBtn.GradientBackground = false;
-            this.addMovieBtn.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.addMovieBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.addMovieBtn.HintText = null;
-            this.addMovieBtn.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.addMovieBtn.HoverFontStyle = System.Drawing.FontStyle.Regular;
-            this.addMovieBtn.HoverTextColor = System.Drawing.Color.White;
-            this.addMovieBtn.HoverTransitionDuration = 250;
-            this.addMovieBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addMovieBtn.ImagePadding = 5;
-            this.addMovieBtn.ImageSize = new System.Drawing.Size(16, 16);
-            this.addMovieBtn.IsRadial = false;
-            this.addMovieBtn.IsReadOnly = false;
-            this.addMovieBtn.IsToggleButton = false;
-            this.addMovieBtn.IsToggled = false;
-            this.addMovieBtn.Location = new System.Drawing.Point(85, 255);
-            this.addMovieBtn.LongPressDurationMS = 1000;
-            this.addMovieBtn.Name = "addMovieBtn";
-            this.addMovieBtn.NormalFontStyle = System.Drawing.FontStyle.Regular;
-            this.addMovieBtn.ParticleColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.addMovieBtn.ParticleCount = 15;
-            this.addMovieBtn.PressAnimationScale = 0.97F;
-            this.addMovieBtn.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.addMovieBtn.PressedFontStyle = System.Drawing.FontStyle.Regular;
-            this.addMovieBtn.PressTransitionDuration = 150;
-            this.addMovieBtn.ReadOnlyTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.addMovieBtn.RippleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.addMovieBtn.RippleOpacity = 0.3F;
-            this.addMovieBtn.RippleRadiusMultiplier = 0.6F;
-            this.addMovieBtn.ShadowBlur = 5;
-            this.addMovieBtn.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.addMovieBtn.ShadowOffset = new System.Drawing.Point(2, 2);
-            this.addMovieBtn.ShakeDuration = 500;
-            this.addMovieBtn.ShakeIntensity = 5;
-            this.addMovieBtn.Size = new System.Drawing.Size(150, 27);
-            this.addMovieBtn.TabIndex = 20;
-            this.addMovieBtn.Text = "SUBMIT";
-            this.addMovieBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.addMovieBtn.TextColor = System.Drawing.Color.White;
-            this.addMovieBtn.TooltipText = null;
-            this.addMovieBtn.UseAdvancedRendering = true;
-            this.addMovieBtn.UseParticles = false;
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.AccessibleDescription = "";
-            this.cancelBtn.AccessibleName = "CANCEL";
-            this.cancelBtn.AutoSizeBasedOnText = false;
-            this.cancelBtn.BackColor = System.Drawing.Color.Transparent;
-            this.cancelBtn.BadgeBackColor = System.Drawing.Color.Red;
-            this.cancelBtn.BadgeFont = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.cancelBtn.BadgeValue = 0;
-            this.cancelBtn.BadgeValueForeColor = System.Drawing.Color.White;
-            this.cancelBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.cancelBtn.BorderWidth = 2;
-            this.cancelBtn.ButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cancelBtn.ButtonImage = null;
-            this.cancelBtn.CanBeep = true;
-            this.cancelBtn.CanGlow = false;
-            this.cancelBtn.CanShake = true;
-            this.cancelBtn.ContextMenuStripEx = null;
-            this.cancelBtn.CornerRadiusBottomLeft = 10;
-            this.cancelBtn.CornerRadiusBottomRight = 10;
-            this.cancelBtn.CornerRadiusTopLeft = 10;
-            this.cancelBtn.CornerRadiusTopRight = 10;
-            this.cancelBtn.CustomCursor = System.Windows.Forms.Cursors.Default;
-            this.cancelBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.cancelBtn.EnableLongPress = false;
-            this.cancelBtn.EnablePressAnimation = true;
-            this.cancelBtn.EnableRippleEffect = true;
-            this.cancelBtn.EnableShadow = false;
-            this.cancelBtn.EnableTextWrapping = false;
-            this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.cancelBtn.ForeColor = System.Drawing.Color.White;
-            this.cancelBtn.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cancelBtn.GlowIntensity = 100;
-            this.cancelBtn.GlowRadius = 20F;
-            this.cancelBtn.GradientBackground = false;
-            this.cancelBtn.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cancelBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.cancelBtn.HintText = null;
-            this.cancelBtn.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cancelBtn.HoverFontStyle = System.Drawing.FontStyle.Regular;
-            this.cancelBtn.HoverTextColor = System.Drawing.Color.White;
-            this.cancelBtn.HoverTransitionDuration = 250;
-            this.cancelBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cancelBtn.ImagePadding = 5;
-            this.cancelBtn.ImageSize = new System.Drawing.Size(16, 16);
-            this.cancelBtn.IsRadial = false;
-            this.cancelBtn.IsReadOnly = false;
-            this.cancelBtn.IsToggleButton = false;
-            this.cancelBtn.IsToggled = false;
-            this.cancelBtn.Location = new System.Drawing.Point(253, 255);
-            this.cancelBtn.LongPressDurationMS = 1000;
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.NormalFontStyle = System.Drawing.FontStyle.Regular;
-            this.cancelBtn.ParticleColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cancelBtn.ParticleCount = 15;
-            this.cancelBtn.PressAnimationScale = 0.97F;
-            this.cancelBtn.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cancelBtn.PressedFontStyle = System.Drawing.FontStyle.Regular;
-            this.cancelBtn.PressTransitionDuration = 150;
-            this.cancelBtn.ReadOnlyTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.cancelBtn.RippleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cancelBtn.RippleOpacity = 0.3F;
-            this.cancelBtn.RippleRadiusMultiplier = 0.6F;
-            this.cancelBtn.ShadowBlur = 5;
-            this.cancelBtn.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cancelBtn.ShadowOffset = new System.Drawing.Point(2, 2);
-            this.cancelBtn.ShakeDuration = 500;
-            this.cancelBtn.ShakeIntensity = 5;
-            this.cancelBtn.Size = new System.Drawing.Size(150, 27);
-            this.cancelBtn.TabIndex = 19;
-            this.cancelBtn.Text = "CANCEL";
-            this.cancelBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.cancelBtn.TextColor = System.Drawing.Color.White;
-            this.cancelBtn.TooltipText = null;
-            this.cancelBtn.UseAdvancedRendering = true;
-            this.cancelBtn.UseParticles = false;
+            this.bookBtn.AccessibleDescription = "";
+            this.bookBtn.AccessibleName = "BOOK TICKET";
+            this.bookBtn.AutoSizeBasedOnText = false;
+            this.bookBtn.BackColor = System.Drawing.Color.Transparent;
+            this.bookBtn.BadgeBackColor = System.Drawing.Color.Red;
+            this.bookBtn.BadgeFont = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.bookBtn.BadgeValue = 0;
+            this.bookBtn.BadgeValueForeColor = System.Drawing.Color.White;
+            this.bookBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.bookBtn.BorderWidth = 2;
+            this.bookBtn.ButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.bookBtn.ButtonImage = null;
+            this.bookBtn.CanBeep = true;
+            this.bookBtn.CanGlow = false;
+            this.bookBtn.CanShake = true;
+            this.bookBtn.ContextMenuStripEx = null;
+            this.bookBtn.CornerRadiusBottomLeft = 10;
+            this.bookBtn.CornerRadiusBottomRight = 10;
+            this.bookBtn.CornerRadiusTopLeft = 10;
+            this.bookBtn.CornerRadiusTopRight = 10;
+            this.bookBtn.CustomCursor = System.Windows.Forms.Cursors.Default;
+            this.bookBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.bookBtn.EnableLongPress = false;
+            this.bookBtn.EnablePressAnimation = true;
+            this.bookBtn.EnableRippleEffect = true;
+            this.bookBtn.EnableShadow = false;
+            this.bookBtn.EnableTextWrapping = false;
+            this.bookBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bookBtn.ForeColor = System.Drawing.Color.White;
+            this.bookBtn.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bookBtn.GlowIntensity = 100;
+            this.bookBtn.GlowRadius = 20F;
+            this.bookBtn.GradientBackground = false;
+            this.bookBtn.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bookBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.bookBtn.HintText = null;
+            this.bookBtn.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bookBtn.HoverFontStyle = System.Drawing.FontStyle.Regular;
+            this.bookBtn.HoverTextColor = System.Drawing.Color.White;
+            this.bookBtn.HoverTransitionDuration = 250;
+            this.bookBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bookBtn.ImagePadding = 5;
+            this.bookBtn.ImageSize = new System.Drawing.Size(16, 16);
+            this.bookBtn.IsRadial = false;
+            this.bookBtn.IsReadOnly = false;
+            this.bookBtn.IsToggleButton = false;
+            this.bookBtn.IsToggled = false;
+            this.bookBtn.Location = new System.Drawing.Point(548, 321);
+            this.bookBtn.LongPressDurationMS = 1000;
+            this.bookBtn.Name = "bookBtn";
+            this.bookBtn.NormalFontStyle = System.Drawing.FontStyle.Regular;
+            this.bookBtn.ParticleColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bookBtn.ParticleCount = 15;
+            this.bookBtn.PressAnimationScale = 0.97F;
+            this.bookBtn.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bookBtn.PressedFontStyle = System.Drawing.FontStyle.Regular;
+            this.bookBtn.PressTransitionDuration = 150;
+            this.bookBtn.ReadOnlyTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.bookBtn.RippleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bookBtn.RippleOpacity = 0.3F;
+            this.bookBtn.RippleRadiusMultiplier = 0.6F;
+            this.bookBtn.ShadowBlur = 5;
+            this.bookBtn.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bookBtn.ShadowOffset = new System.Drawing.Point(2, 2);
+            this.bookBtn.ShakeDuration = 500;
+            this.bookBtn.ShakeIntensity = 5;
+            this.bookBtn.Size = new System.Drawing.Size(150, 27);
+            this.bookBtn.TabIndex = 20;
+            this.bookBtn.Text = "BOOK TICKET";
+            this.bookBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bookBtn.TextColor = System.Drawing.Color.White;
+            this.bookBtn.TooltipText = null;
+            this.bookBtn.UseAdvancedRendering = true;
+            this.bookBtn.UseParticles = false;
+            this.bookBtn.Click += new System.EventHandler(this.bookBtn_Click);
             // 
             // moviePosterBox
             // 
@@ -476,83 +581,6 @@
             this.moviePosterBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.moviePosterBox.TabIndex = 1;
             this.moviePosterBox.TabStop = false;
-            // 
-            // uploadMoviePosterBtn
-            // 
-            this.uploadMoviePosterBtn.AccessibleDescription = "";
-            this.uploadMoviePosterBtn.AccessibleName = "UPLOAD POSTER";
-            this.uploadMoviePosterBtn.AutoSizeBasedOnText = false;
-            this.uploadMoviePosterBtn.BackColor = System.Drawing.Color.Transparent;
-            this.uploadMoviePosterBtn.BadgeBackColor = System.Drawing.Color.Red;
-            this.uploadMoviePosterBtn.BadgeFont = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.uploadMoviePosterBtn.BadgeValue = 0;
-            this.uploadMoviePosterBtn.BadgeValueForeColor = System.Drawing.Color.Black;
-            this.uploadMoviePosterBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.uploadMoviePosterBtn.BorderWidth = 2;
-            this.uploadMoviePosterBtn.ButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
-            this.uploadMoviePosterBtn.ButtonImage = null;
-            this.uploadMoviePosterBtn.CanBeep = true;
-            this.uploadMoviePosterBtn.CanGlow = false;
-            this.uploadMoviePosterBtn.CanShake = true;
-            this.uploadMoviePosterBtn.ContextMenuStripEx = null;
-            this.uploadMoviePosterBtn.CornerRadiusBottomLeft = 10;
-            this.uploadMoviePosterBtn.CornerRadiusBottomRight = 10;
-            this.uploadMoviePosterBtn.CornerRadiusTopLeft = 10;
-            this.uploadMoviePosterBtn.CornerRadiusTopRight = 10;
-            this.uploadMoviePosterBtn.CustomCursor = System.Windows.Forms.Cursors.Default;
-            this.uploadMoviePosterBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.uploadMoviePosterBtn.EnableLongPress = false;
-            this.uploadMoviePosterBtn.EnablePressAnimation = true;
-            this.uploadMoviePosterBtn.EnableRippleEffect = true;
-            this.uploadMoviePosterBtn.EnableShadow = false;
-            this.uploadMoviePosterBtn.EnableTextWrapping = false;
-            this.uploadMoviePosterBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.uploadMoviePosterBtn.ForeColor = System.Drawing.Color.Black;
-            this.uploadMoviePosterBtn.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.uploadMoviePosterBtn.GlowIntensity = 100;
-            this.uploadMoviePosterBtn.GlowRadius = 20F;
-            this.uploadMoviePosterBtn.GradientBackground = false;
-            this.uploadMoviePosterBtn.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
-            this.uploadMoviePosterBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.uploadMoviePosterBtn.HintText = null;
-            this.uploadMoviePosterBtn.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
-            this.uploadMoviePosterBtn.HoverFontStyle = System.Drawing.FontStyle.Regular;
-            this.uploadMoviePosterBtn.HoverTextColor = System.Drawing.Color.Black;
-            this.uploadMoviePosterBtn.HoverTransitionDuration = 250;
-            this.uploadMoviePosterBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uploadMoviePosterBtn.ImagePadding = 5;
-            this.uploadMoviePosterBtn.ImageSize = new System.Drawing.Size(16, 16);
-            this.uploadMoviePosterBtn.IsRadial = false;
-            this.uploadMoviePosterBtn.IsReadOnly = false;
-            this.uploadMoviePosterBtn.IsToggleButton = false;
-            this.uploadMoviePosterBtn.IsToggled = false;
-            this.uploadMoviePosterBtn.Location = new System.Drawing.Point(544, 306);
-            this.uploadMoviePosterBtn.LongPressDurationMS = 1000;
-            this.uploadMoviePosterBtn.Name = "uploadMoviePosterBtn";
-            this.uploadMoviePosterBtn.NormalFontStyle = System.Drawing.FontStyle.Regular;
-            this.uploadMoviePosterBtn.ParticleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
-            this.uploadMoviePosterBtn.ParticleCount = 15;
-            this.uploadMoviePosterBtn.PressAnimationScale = 0.97F;
-            this.uploadMoviePosterBtn.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
-            this.uploadMoviePosterBtn.PressedFontStyle = System.Drawing.FontStyle.Regular;
-            this.uploadMoviePosterBtn.PressTransitionDuration = 150;
-            this.uploadMoviePosterBtn.ReadOnlyTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.uploadMoviePosterBtn.RippleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.uploadMoviePosterBtn.RippleOpacity = 0.3F;
-            this.uploadMoviePosterBtn.RippleRadiusMultiplier = 0.6F;
-            this.uploadMoviePosterBtn.ShadowBlur = 5;
-            this.uploadMoviePosterBtn.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.uploadMoviePosterBtn.ShadowOffset = new System.Drawing.Point(2, 2);
-            this.uploadMoviePosterBtn.ShakeDuration = 500;
-            this.uploadMoviePosterBtn.ShakeIntensity = 5;
-            this.uploadMoviePosterBtn.Size = new System.Drawing.Size(150, 27);
-            this.uploadMoviePosterBtn.TabIndex = 0;
-            this.uploadMoviePosterBtn.Text = "UPLOAD POSTER";
-            this.uploadMoviePosterBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.uploadMoviePosterBtn.TextColor = System.Drawing.Color.Black;
-            this.uploadMoviePosterBtn.TooltipText = null;
-            this.uploadMoviePosterBtn.UseAdvancedRendering = true;
-            this.uploadMoviePosterBtn.UseParticles = false;
             // 
             // movieTitleTbx
             // 
@@ -590,6 +618,7 @@
             this.movieTitleTbx.HoverBorderColor1 = System.Drawing.Color.Gray;
             this.movieTitleTbx.HoverBorderColor2 = System.Drawing.Color.Gray;
             this.movieTitleTbx.IsEnabled = true;
+            this.movieTitleTbx.IsReadOnly = true;
             this.movieTitleTbx.Location = new System.Drawing.Point(3, 19);
             this.movieTitleTbx.Name = "movieTitleTbx";
             this.movieTitleTbx.PlaceholderColor = System.Drawing.Color.Gray;
@@ -640,25 +669,181 @@
             this.movieTitleLabel.TabIndex = 10;
             this.movieTitleLabel.Text = "Movie Title";
             // 
+            // showtimeBtn
+            // 
+            this.showtimeBtn.AccessibleDescription = "";
+            this.showtimeBtn.AccessibleName = "ADD SHOWTIME";
+            this.showtimeBtn.AutoSizeBasedOnText = false;
+            this.showtimeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.showtimeBtn.BadgeBackColor = System.Drawing.Color.Red;
+            this.showtimeBtn.BadgeFont = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.showtimeBtn.BadgeValue = 0;
+            this.showtimeBtn.BadgeValueForeColor = System.Drawing.SystemColors.WindowText;
+            this.showtimeBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.showtimeBtn.BorderWidth = 2;
+            this.showtimeBtn.ButtonBackColor = System.Drawing.Color.Yellow;
+            this.showtimeBtn.ButtonImage = null;
+            this.showtimeBtn.CanBeep = true;
+            this.showtimeBtn.CanGlow = false;
+            this.showtimeBtn.CanShake = true;
+            this.showtimeBtn.ContextMenuStripEx = null;
+            this.showtimeBtn.CornerRadiusBottomLeft = 10;
+            this.showtimeBtn.CornerRadiusBottomRight = 10;
+            this.showtimeBtn.CornerRadiusTopLeft = 10;
+            this.showtimeBtn.CornerRadiusTopRight = 10;
+            this.showtimeBtn.CustomCursor = System.Windows.Forms.Cursors.Default;
+            this.showtimeBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.showtimeBtn.EnableLongPress = false;
+            this.showtimeBtn.EnablePressAnimation = true;
+            this.showtimeBtn.EnableRippleEffect = true;
+            this.showtimeBtn.EnableShadow = false;
+            this.showtimeBtn.EnableTextWrapping = false;
+            this.showtimeBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.showtimeBtn.ForeColor = System.Drawing.Color.Black;
+            this.showtimeBtn.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.showtimeBtn.GlowIntensity = 100;
+            this.showtimeBtn.GlowRadius = 20F;
+            this.showtimeBtn.GradientBackground = false;
+            this.showtimeBtn.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.showtimeBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.showtimeBtn.HintText = null;
+            this.showtimeBtn.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.showtimeBtn.HoverFontStyle = System.Drawing.FontStyle.Regular;
+            this.showtimeBtn.HoverTextColor = System.Drawing.Color.White;
+            this.showtimeBtn.HoverTransitionDuration = 250;
+            this.showtimeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.showtimeBtn.ImagePadding = 5;
+            this.showtimeBtn.ImageSize = new System.Drawing.Size(16, 16);
+            this.showtimeBtn.IsRadial = false;
+            this.showtimeBtn.IsReadOnly = false;
+            this.showtimeBtn.IsToggleButton = false;
+            this.showtimeBtn.IsToggled = false;
+            this.showtimeBtn.Location = new System.Drawing.Point(435, 321);
+            this.showtimeBtn.LongPressDurationMS = 1000;
+            this.showtimeBtn.Name = "showtimeBtn";
+            this.showtimeBtn.NormalFontStyle = System.Drawing.FontStyle.Regular;
+            this.showtimeBtn.ParticleColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.showtimeBtn.ParticleCount = 15;
+            this.showtimeBtn.PressAnimationScale = 0.97F;
+            this.showtimeBtn.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.showtimeBtn.PressedFontStyle = System.Drawing.FontStyle.Regular;
+            this.showtimeBtn.PressTransitionDuration = 150;
+            this.showtimeBtn.ReadOnlyTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.showtimeBtn.RippleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.showtimeBtn.RippleOpacity = 0.3F;
+            this.showtimeBtn.RippleRadiusMultiplier = 0.6F;
+            this.showtimeBtn.ShadowBlur = 5;
+            this.showtimeBtn.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.showtimeBtn.ShadowOffset = new System.Drawing.Point(2, 2);
+            this.showtimeBtn.ShakeDuration = 500;
+            this.showtimeBtn.ShakeIntensity = 5;
+            this.showtimeBtn.Size = new System.Drawing.Size(150, 27);
+            this.showtimeBtn.TabIndex = 48;
+            this.showtimeBtn.Text = "ADD SHOWTIME";
+            this.showtimeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.showtimeBtn.TextColor = System.Drawing.Color.Black;
+            this.showtimeBtn.TooltipText = null;
+            this.showtimeBtn.UseAdvancedRendering = true;
+            this.showtimeBtn.UseParticles = false;
+            this.showtimeBtn.Click += new System.EventHandler(this.showtimeBtn_Click);
+            // 
+            // viewShowtimesBtn
+            // 
+            this.viewShowtimesBtn.AccessibleDescription = "";
+            this.viewShowtimesBtn.AccessibleName = "VIEW SHOWS";
+            this.viewShowtimesBtn.AutoSizeBasedOnText = false;
+            this.viewShowtimesBtn.BackColor = System.Drawing.Color.Transparent;
+            this.viewShowtimesBtn.BadgeBackColor = System.Drawing.Color.Red;
+            this.viewShowtimesBtn.BadgeFont = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.viewShowtimesBtn.BadgeValue = 0;
+            this.viewShowtimesBtn.BadgeValueForeColor = System.Drawing.SystemColors.WindowText;
+            this.viewShowtimesBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.viewShowtimesBtn.BorderWidth = 2;
+            this.viewShowtimesBtn.ButtonBackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.viewShowtimesBtn.ButtonImage = null;
+            this.viewShowtimesBtn.CanBeep = true;
+            this.viewShowtimesBtn.CanGlow = false;
+            this.viewShowtimesBtn.CanShake = true;
+            this.viewShowtimesBtn.ContextMenuStripEx = null;
+            this.viewShowtimesBtn.CornerRadiusBottomLeft = 10;
+            this.viewShowtimesBtn.CornerRadiusBottomRight = 10;
+            this.viewShowtimesBtn.CornerRadiusTopLeft = 10;
+            this.viewShowtimesBtn.CornerRadiusTopRight = 10;
+            this.viewShowtimesBtn.CustomCursor = System.Windows.Forms.Cursors.Default;
+            this.viewShowtimesBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.viewShowtimesBtn.EnableLongPress = false;
+            this.viewShowtimesBtn.EnablePressAnimation = true;
+            this.viewShowtimesBtn.EnableRippleEffect = true;
+            this.viewShowtimesBtn.EnableShadow = false;
+            this.viewShowtimesBtn.EnableTextWrapping = false;
+            this.viewShowtimesBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.viewShowtimesBtn.ForeColor = System.Drawing.Color.Black;
+            this.viewShowtimesBtn.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.viewShowtimesBtn.GlowIntensity = 100;
+            this.viewShowtimesBtn.GlowRadius = 20F;
+            this.viewShowtimesBtn.GradientBackground = false;
+            this.viewShowtimesBtn.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.viewShowtimesBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.viewShowtimesBtn.HintText = null;
+            this.viewShowtimesBtn.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.viewShowtimesBtn.HoverFontStyle = System.Drawing.FontStyle.Regular;
+            this.viewShowtimesBtn.HoverTextColor = System.Drawing.Color.White;
+            this.viewShowtimesBtn.HoverTransitionDuration = 250;
+            this.viewShowtimesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.viewShowtimesBtn.ImagePadding = 5;
+            this.viewShowtimesBtn.ImageSize = new System.Drawing.Size(16, 16);
+            this.viewShowtimesBtn.IsRadial = false;
+            this.viewShowtimesBtn.IsReadOnly = false;
+            this.viewShowtimesBtn.IsToggleButton = false;
+            this.viewShowtimesBtn.IsToggled = false;
+            this.viewShowtimesBtn.Location = new System.Drawing.Point(591, 321);
+            this.viewShowtimesBtn.LongPressDurationMS = 1000;
+            this.viewShowtimesBtn.Name = "viewShowtimesBtn";
+            this.viewShowtimesBtn.NormalFontStyle = System.Drawing.FontStyle.Regular;
+            this.viewShowtimesBtn.ParticleColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.viewShowtimesBtn.ParticleCount = 15;
+            this.viewShowtimesBtn.PressAnimationScale = 0.97F;
+            this.viewShowtimesBtn.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.viewShowtimesBtn.PressedFontStyle = System.Drawing.FontStyle.Regular;
+            this.viewShowtimesBtn.PressTransitionDuration = 150;
+            this.viewShowtimesBtn.ReadOnlyTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.viewShowtimesBtn.RippleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.viewShowtimesBtn.RippleOpacity = 0.3F;
+            this.viewShowtimesBtn.RippleRadiusMultiplier = 0.6F;
+            this.viewShowtimesBtn.ShadowBlur = 5;
+            this.viewShowtimesBtn.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.viewShowtimesBtn.ShadowOffset = new System.Drawing.Point(2, 2);
+            this.viewShowtimesBtn.ShakeDuration = 500;
+            this.viewShowtimesBtn.ShakeIntensity = 5;
+            this.viewShowtimesBtn.Size = new System.Drawing.Size(97, 27);
+            this.viewShowtimesBtn.TabIndex = 49;
+            this.viewShowtimesBtn.Text = "VIEW SHOWS";
+            this.viewShowtimesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.viewShowtimesBtn.TextColor = System.Drawing.Color.Black;
+            this.viewShowtimesBtn.TooltipText = null;
+            this.viewShowtimesBtn.UseAdvancedRendering = true;
+            this.viewShowtimesBtn.UseParticles = false;
+            this.viewShowtimesBtn.Click += new System.EventHandler(this.viewShowtimesBtn_Click);
+            // 
             // MovieDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 426);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.ClientSize = new System.Drawing.Size(748, 389);
             this.Controls.Add(this.addMovieContainer);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.LocalCustomPalette = this.mainPalette;
+            this.MaximumSize = new System.Drawing.Size(762, 434);
+            this.MinimumSize = new System.Drawing.Size(762, 434);
             this.Name = "MovieDetails";
+            this.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.Text = "Movie Details";
             this.Load += new System.EventHandler(this.MovieDetails_Load);
             this.addMovieContainer.ResumeLayout(false);
             this.addMovieContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ratingComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genreComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moviePosterBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -668,21 +853,23 @@
 
         private Krypton.Toolkit.KryptonCustomPaletteBase mainPalette;
         private System.Windows.Forms.Panel addMovieContainer;
-        private Krypton.Toolkit.KryptonDateTimePicker releaseDatePicker;
         private Krypton.Toolkit.KryptonTextBox movieDescriptionTbx;
         private System.Windows.Forms.Label releaseDateLabel;
-        private Krypton.Toolkit.KryptonComboBox ratingComboBox;
         private System.Windows.Forms.Label ratingLabel;
         private System.Windows.Forms.Label genreLabel;
-        private Krypton.Toolkit.KryptonNumericUpDown durationUpDown;
-        private Krypton.Toolkit.KryptonComboBox genreComboBox;
-        private SiticoneNetFrameworkUI.SiticoneButton addMovieBtn;
-        private SiticoneNetFrameworkUI.SiticoneButton cancelBtn;
+        private SiticoneNetFrameworkUI.SiticoneButton bookBtn;
         private FontAwesome.Sharp.IconPictureBox moviePosterBox;
-        private SiticoneNetFrameworkUI.SiticoneButton uploadMoviePosterBtn;
         private SiticoneNetFrameworkUI.SiticoneTextBox movieTitleTbx;
         private System.Windows.Forms.Label movieDescriptionLabel;
         private System.Windows.Forms.Label durationLabel;
         private System.Windows.Forms.Label movieTitleLabel;
+        private SiticoneNetFrameworkUI.SiticoneTextBox durationTbx;
+        private SiticoneNetFrameworkUI.SiticoneTextBox ratingTbx;
+        private SiticoneNetFrameworkUI.SiticoneTextBox releaseDateTbx;
+        private SiticoneNetFrameworkUI.SiticoneTextBox genreTbx;
+        private System.Windows.Forms.Label averageTbx;
+        private FontAwesome.Sharp.IconButton starsTbx;
+        private SiticoneNetFrameworkUI.SiticoneButton showtimeBtn;
+        private SiticoneNetFrameworkUI.SiticoneButton viewShowtimesBtn;
     }
 }

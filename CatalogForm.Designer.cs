@@ -44,7 +44,7 @@
             this.moviesFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moviesFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.moviesFlowLayoutPanel.Name = "moviesFlowLayoutPanel";
-            this.moviesFlowLayoutPanel.Size = new System.Drawing.Size(1020, 423);
+            this.moviesFlowLayoutPanel.Size = new System.Drawing.Size(908, 311);
             this.moviesFlowLayoutPanel.TabIndex = 0;
             this.moviesFlowLayoutPanel.Resize += new System.EventHandler(this.moviesFlowLayoutPanel_Resize);
             // 
@@ -88,7 +88,7 @@
             this.searchTbx.HoverBorderColor1 = System.Drawing.Color.Gray;
             this.searchTbx.HoverBorderColor2 = System.Drawing.Color.Gray;
             this.searchTbx.IsEnabled = true;
-            this.searchTbx.Location = new System.Drawing.Point(94, 3);
+            this.searchTbx.Location = new System.Drawing.Point(3, 49);
             this.searchTbx.MinimumSize = new System.Drawing.Size(900, 40);
             this.searchTbx.Name = "searchTbx";
             this.searchTbx.PlaceholderColor = System.Drawing.Color.Gray;
@@ -122,7 +122,7 @@
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(1020, 49);
+            this.topPanel.Size = new System.Drawing.Size(908, 49);
             this.topPanel.TabIndex = 30;
             // 
             // addMovieBtn
@@ -217,7 +217,7 @@
             this.searchBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.searchBtn.IconSize = 36;
             this.searchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchBtn.Location = new System.Drawing.Point(3, 49);
+            this.searchBtn.Location = new System.Drawing.Point(3, 95);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(45, 35);
             this.searchBtn.TabIndex = 3;
@@ -232,7 +232,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 423);
+            this.ClientSize = new System.Drawing.Size(908, 311);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.moviesFlowLayoutPanel);
             this.Name = "CatalogForm";

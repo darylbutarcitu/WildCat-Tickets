@@ -26,6 +26,12 @@ namespace WildCat_Tickets
             {
                 conn.Open();
 
+                // Enable WAL mode
+                using (var cmd = new SQLiteCommand("PRAGMA journal_mode=WAL;", conn))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+
                 // Check and create the Users table if it doesn't exist
                 string createUsersTableQuery = @"
                 CREATE TABLE IF NOT EXISTS Users (
@@ -40,6 +46,7 @@ namespace WildCat_Tickets
                     Email TEXT UNIQUE,
                     Password TEXT,
                     ProfilePhotoPath TEXT
+                    Role TEXT
                 );";
 
                 using (var cmd = new SQLiteCommand(createUsersTableQuery, conn))
@@ -58,7 +65,9 @@ namespace WildCat_Tickets
                     ReleaseDate TEXT NOT NULL,
                     Description TEXT NOT NULL,
                     PosterPath TEXT NOT NULL,
-                    Status TEXT NOT NULL
+                    Status TEXT NOT NULL,
+                    NumberOfRatings INTEGER DEFAULT 0,
+                    TotalRatings INTEGER DEFAULT 0
                 );";
 
                 using (var cmd = new SQLiteCommand(createMoviesTableQuery, conn))

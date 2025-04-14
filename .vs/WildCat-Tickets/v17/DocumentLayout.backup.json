@@ -3,64 +3,40 @@
   "WorkspaceRootPath": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\viewprofileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:viewprofileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\viewprofileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:viewprofileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\addmovieform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:addmovieform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\dashboardform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:dashboardform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\addmovieform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:addmovieform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\moviedetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:moviedetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\catalogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:catalogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\catalogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:catalogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\classdiagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
-      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:classdiagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\signupform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:signupform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\addmovieform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:addmovieform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\moviedetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:moviedetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\moviedetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:moviedetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\catalogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:catalogform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|d:\\oop project\\repos\\wildcat-tickets\\wildcat-tickets\\addmovieform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E5918A6-880B-498E-8D48-CEB4EA6FE5D0}|WildCat-Tickets.csproj|solutionrelative:addmovieform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,17 +46,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 323,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "AddMovieForm.Designer.cs",
               "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\AddMovieForm.Designer.cs",
               "RelativeDocumentMoniker": "AddMovieForm.Designer.cs",
               "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\AddMovieForm.Designer.cs",
               "RelativeToolTip": "AddMovieForm.Designer.cs",
-              "ViewState": "AgIAALoCAAAAAAAAAAApwNICAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowBIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T18:17:42.033Z",
               "IsPinned": true,
@@ -92,179 +68,103 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ViewProfileForm.cs",
-              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\ViewProfileForm.cs",
-              "RelativeDocumentMoniker": "ViewProfileForm.cs",
-              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\ViewProfileForm.cs",
-              "RelativeToolTip": "ViewProfileForm.cs",
-              "ViewState": "AgIAAGkBAAAAAAAAAAAmwHkBAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\LoginForm.cs",
+              "RelativeDocumentMoniker": "LoginForm.cs",
+              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\LoginForm.cs [Design]",
+              "RelativeToolTip": "LoginForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T21:06:58.738Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ViewProfileForm.cs [Design]",
-              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\ViewProfileForm.cs",
-              "RelativeDocumentMoniker": "ViewProfileForm.cs",
-              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\ViewProfileForm.cs [Design]",
-              "RelativeToolTip": "ViewProfileForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T21:05:39.45Z",
+              "WhenOpened": "2025-04-14T16:54:12.158Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DatabaseHelper.cs",
-              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\DatabaseHelper.cs",
-              "RelativeDocumentMoniker": "DatabaseHelper.cs",
-              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\DatabaseHelper.cs",
-              "RelativeToolTip": "DatabaseHelper.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAgwHcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T20:19:56.474Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AddMovieForm.cs",
-              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\AddMovieForm.cs",
-              "RelativeDocumentMoniker": "AddMovieForm.cs",
-              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\AddMovieForm.cs",
-              "RelativeToolTip": "AddMovieForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG0AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:48:36.698Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DashboardForm.cs [Design]",
-              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\DashboardForm.cs",
-              "RelativeDocumentMoniker": "DashboardForm.cs",
-              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\DashboardForm.cs [Design]",
-              "RelativeToolTip": "DashboardForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:56:11.89Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "DashboardForm.cs",
               "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\DashboardForm.cs",
               "RelativeDocumentMoniker": "DashboardForm.cs",
               "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\DashboardForm.cs",
               "RelativeToolTip": "DashboardForm.cs",
-              "ViewState": "AgIAAAoBAAAAAAAAAAAAAA4BAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAgwBkAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T12:57:17.411Z",
+              "WhenOpened": "2025-04-14T16:53:20.544Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DashboardForm.Designer.cs",
-              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\DashboardForm.Designer.cs",
-              "RelativeDocumentMoniker": "DashboardForm.Designer.cs",
-              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\DashboardForm.Designer.cs",
-              "RelativeToolTip": "DashboardForm.Designer.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAEwLkCAAAQAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "CatalogForm.cs",
+              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\CatalogForm.cs",
+              "RelativeDocumentMoniker": "CatalogForm.cs",
+              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\CatalogForm.cs",
+              "RelativeToolTip": "CatalogForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T21:16:11.862Z",
+              "WhenOpened": "2025-04-14T15:35:01.984Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "CatalogForm.cs [Design]",
               "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\CatalogForm.cs",
               "RelativeDocumentMoniker": "CatalogForm.cs",
               "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\CatalogForm.cs [Design]",
               "RelativeToolTip": "CatalogForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:53:44.023Z",
+              "WhenOpened": "2025-04-14T15:34:59.889Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CatalogForm.cs",
-              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\CatalogForm.cs",
-              "RelativeDocumentMoniker": "CatalogForm.cs",
-              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\CatalogForm.cs",
-              "RelativeToolTip": "CatalogForm.cs",
-              "ViewState": "AgIAAMsAAAAAAAAAAAAqwN4AAAATAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "MovieDetails.cs",
+              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\MovieDetails.cs",
+              "RelativeDocumentMoniker": "MovieDetails.cs",
+              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\MovieDetails.cs",
+              "RelativeToolTip": "MovieDetails.cs",
+              "ViewState": "AgIAAGIBAAAAAAAAAAAwwH0BAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:54:14.934Z",
+              "WhenOpened": "2025-04-14T15:29:47.356Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ClassDiagram.cd",
-              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\ClassDiagram.cd",
-              "RelativeDocumentMoniker": "ClassDiagram.cd",
-              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\ClassDiagram.cd",
-              "RelativeToolTip": "ClassDiagram.cd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
-              "WhenOpened": "2025-04-09T20:30:31.94Z",
+              "DocumentIndex": 2,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\LoginForm.cs",
+              "RelativeDocumentMoniker": "LoginForm.cs",
+              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\LoginForm.cs",
+              "RelativeToolTip": "LoginForm.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAQwFQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T16:54:14.108Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AddMovieForm.cs [Design]",
-              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\AddMovieForm.cs",
-              "RelativeDocumentMoniker": "AddMovieForm.cs",
-              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\AddMovieForm.cs [Design]",
-              "RelativeToolTip": "AddMovieForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T15:12:40.647Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "SignUpForm.cs",
-              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\SignUpForm.cs",
-              "RelativeDocumentMoniker": "SignUpForm.cs",
-              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\SignUpForm.cs",
-              "RelativeToolTip": "SignUpForm.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAIwBYAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T20:20:01.428Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 6,
               "Title": "MovieDetails.cs [Design]",
               "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\MovieDetails.cs",
               "RelativeDocumentMoniker": "MovieDetails.cs",
               "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\MovieDetails.cs [Design]",
               "RelativeToolTip": "MovieDetails.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T19:31:29.249Z",
+              "WhenOpened": "2025-04-14T15:29:40.577Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MovieDetails.cs",
-              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\MovieDetails.cs",
-              "RelativeDocumentMoniker": "MovieDetails.cs",
-              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\MovieDetails.cs",
-              "RelativeToolTip": "MovieDetails.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAEwBQAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "DashboardForm.cs [Design]",
+              "DocumentMoniker": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\DashboardForm.cs",
+              "RelativeDocumentMoniker": "DashboardForm.cs",
+              "ToolTip": "D:\\OOP Project\\repos\\WildCat-Tickets\\WildCat-Tickets\\DashboardForm.cs [Design]",
+              "RelativeToolTip": "DashboardForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T19:31:33.895Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:27:25.746Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

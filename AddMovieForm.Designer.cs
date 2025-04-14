@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMovieForm));
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState2 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState1 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState4 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState3 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             this.mainPalette = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
             this.addMovieContainer = new System.Windows.Forms.Panel();
             this.releaseDatePicker = new Krypton.Toolkit.KryptonDateTimePicker();
@@ -185,16 +185,16 @@
             this.addMovieContainer.Name = "addMovieContainer";
             this.addMovieContainer.Size = new System.Drawing.Size(723, 397);
             this.addMovieContainer.TabIndex = 20;
-            layoutState2.Location = new System.Drawing.Point(3, 493);
-            layoutState2.Size = new System.Drawing.Size(194, 188);
-            layoutState2.Visible = true;
-            this.addMovieContainer.Tag = layoutState2;
+            layoutState4.Location = new System.Drawing.Point(3, 493);
+            layoutState4.Size = new System.Drawing.Size(194, 188);
+            layoutState4.Visible = true;
+            this.addMovieContainer.Tag = layoutState4;
             // 
             // releaseDatePicker
             // 
             this.releaseDatePicker.Location = new System.Drawing.Point(195, 281);
             this.releaseDatePicker.Name = "releaseDatePicker";
-            this.releaseDatePicker.Size = new System.Drawing.Size(290, 33);
+            this.releaseDatePicker.Size = new System.Drawing.Size(290, 39);
             this.releaseDatePicker.StateCommon.Border.Rounding = 10F;
             this.releaseDatePicker.TabIndex = 41;
             // 
@@ -212,7 +212,7 @@
             this.releaseDateLabel.AutoSize = true;
             this.releaseDateLabel.Location = new System.Drawing.Point(192, 265);
             this.releaseDateLabel.Name = "releaseDateLabel";
-            this.releaseDateLabel.Size = new System.Drawing.Size(72, 13);
+            this.releaseDateLabel.Size = new System.Drawing.Size(91, 16);
             this.releaseDateLabel.TabIndex = 38;
             this.releaseDateLabel.Text = "Release Date";
             // 
@@ -229,7 +229,7 @@
             "Not Yet Rated"});
             this.ratingComboBox.Location = new System.Drawing.Point(3, 281);
             this.ratingComboBox.Name = "ratingComboBox";
-            this.ratingComboBox.Size = new System.Drawing.Size(186, 34);
+            this.ratingComboBox.Size = new System.Drawing.Size(186, 39);
             this.ratingComboBox.StateCommon.ComboBox.Border.Rounding = 10F;
             this.ratingComboBox.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.ratingComboBox.TabIndex = 35;
@@ -240,7 +240,7 @@
             this.ratingLabel.AutoSize = true;
             this.ratingLabel.Location = new System.Drawing.Point(3, 265);
             this.ratingLabel.Name = "ratingLabel";
-            this.ratingLabel.Size = new System.Drawing.Size(38, 13);
+            this.ratingLabel.Size = new System.Drawing.Size(46, 16);
             this.ratingLabel.TabIndex = 34;
             this.ratingLabel.Text = "Rating";
             // 
@@ -249,7 +249,7 @@
             this.genreLabel.AutoSize = true;
             this.genreLabel.Location = new System.Drawing.Point(329, 103);
             this.genreLabel.Name = "genreLabel";
-            this.genreLabel.Size = new System.Drawing.Size(36, 13);
+            this.genreLabel.Size = new System.Drawing.Size(44, 16);
             this.genreLabel.TabIndex = 33;
             this.genreLabel.Text = "Genre";
             // 
@@ -272,7 +272,7 @@
             0,
             0});
             this.durationUpDown.Name = "durationUpDown";
-            this.durationUpDown.Size = new System.Drawing.Size(75, 34);
+            this.durationUpDown.Size = new System.Drawing.Size(75, 39);
             this.durationUpDown.StateCommon.Border.Rounding = 10F;
             this.durationUpDown.StateNormal.Border.Rounding = 15F;
             this.durationUpDown.TabIndex = 32;
@@ -308,7 +308,7 @@
             "Western"});
             this.genreComboBox.Location = new System.Drawing.Point(332, 119);
             this.genreComboBox.Name = "genreComboBox";
-            this.genreComboBox.Size = new System.Drawing.Size(153, 34);
+            this.genreComboBox.Size = new System.Drawing.Size(153, 39);
             this.genreComboBox.StateCommon.ComboBox.Border.Rounding = 10F;
             this.genreComboBox.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.genreComboBox.TabIndex = 31;
@@ -364,10 +364,10 @@
             this.backgroundLogo.Size = new System.Drawing.Size(71, 71);
             this.backgroundLogo.SizeMode = SiticoneNetFrameworkUI.Helpers.Enum.SiticonePictureBoxSizeMode.Zoom;
             this.backgroundLogo.TabIndex = 27;
-            layoutState1.Location = new System.Drawing.Point(3, 44);
-            layoutState1.Size = new System.Drawing.Size(197, 197);
-            layoutState1.Visible = true;
-            this.backgroundLogo.Tag = layoutState1;
+            layoutState3.Location = new System.Drawing.Point(3, 44);
+            layoutState3.Size = new System.Drawing.Size(197, 197);
+            layoutState3.Visible = true;
+            this.backgroundLogo.Tag = layoutState3;
             this.backgroundLogo.Text = "siticonePictureBox1";
             // 
             // addMovieBtn
@@ -683,7 +683,7 @@
             this.movieDescriptionLabel.AutoSize = true;
             this.movieDescriptionLabel.Location = new System.Drawing.Point(0, 161);
             this.movieDescriptionLabel.Name = "movieDescriptionLabel";
-            this.movieDescriptionLabel.Size = new System.Drawing.Size(92, 13);
+            this.movieDescriptionLabel.Size = new System.Drawing.Size(115, 16);
             this.movieDescriptionLabel.TabIndex = 12;
             this.movieDescriptionLabel.Text = "Movie Description";
             // 
@@ -692,7 +692,7 @@
             this.durationLabel.AutoSize = true;
             this.durationLabel.Location = new System.Drawing.Point(238, 103);
             this.durationLabel.Name = "durationLabel";
-            this.durationLabel.Size = new System.Drawing.Size(77, 13);
+            this.durationLabel.Size = new System.Drawing.Size(96, 16);
             this.durationLabel.TabIndex = 11;
             this.durationLabel.Text = "Duration (mins)";
             // 
@@ -701,19 +701,20 @@
             this.movieTitleLabel.AutoSize = true;
             this.movieTitleLabel.Location = new System.Drawing.Point(0, 103);
             this.movieTitleLabel.Name = "movieTitleLabel";
-            this.movieTitleLabel.Size = new System.Drawing.Size(59, 13);
+            this.movieTitleLabel.Size = new System.Drawing.Size(73, 16);
             this.movieTitleLabel.TabIndex = 10;
             this.movieTitleLabel.Text = "Movie Title";
             // 
             // AddMovieForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 417);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(756, 416);
             this.Controls.Add(this.addMovieContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.LocalCustomPalette = this.mainPalette;
+            this.MaximumSize = new System.Drawing.Size(772, 470);
+            this.MinimumSize = new System.Drawing.Size(772, 470);
             this.Name = "AddMovieForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
@@ -725,7 +726,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.genreComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTitle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moviePosterBox)).EndInit();
-
         }
 
         #endregion

@@ -19,7 +19,8 @@ namespace WildCat_Tickets
         {
             InitializeComponent();
             currentUser = new User();
-            currentUser.Id = idNumber;
+            // Use a constructor or a method to set the Id property since it is protected
+            currentUser.SetId(idNumber);
             this.Load += ProfileForm_Load;
             this.Resize += ProfileForm_Resize;
         }
@@ -95,14 +96,14 @@ namespace WildCat_Tickets
                                 currentUser.LastName = reader["LastName"]?.ToString() ?? string.Empty;
                                 currentUser.Program = reader["Program"]?.ToString() ?? string.Empty;
                                 currentUser.Year = reader["Year"]?.ToString() ?? string.Empty;
-                                currentUser.Id = reader["IDNumber"]?.ToString() ?? string.Empty;
+                                currentUser.SetId(reader["IDNumber"]?.ToString() ?? string.Empty);
 
                                 if (reader["BirthDate"] != DBNull.Value && DateTime.TryParse(reader["BirthDate"].ToString(), out DateTime birthDate))
                                 {
                                     currentUser.BirthDate = birthDate;
                                 }
 
-                                currentUser.Email = reader["Email"]?.ToString() ?? string.Empty;
+                                currentUser.SetEmail(reader["Email"]?.ToString() ?? string.Empty);
                                 currentUser.Phone = reader["Phone"]?.ToString() ?? string.Empty;
                                 currentUser.ProfileUrl = reader["ProfilePhotoPath"]?.ToString() ?? string.Empty;
                             }
@@ -165,7 +166,7 @@ namespace WildCat_Tickets
                 currentUser.Program = programTbx.Text.Trim();
                 currentUser.Year = yearTbx.Text.Trim();
                 currentUser.BirthDate = birthDate;
-                currentUser.Email = emailTbx.Text.Trim();
+                currentUser.SetEmail(emailTbx.Text.Trim());
                 currentUser.Phone = phoneTbx.Text.Trim();
 
                 using (SQLiteConnection conn = new SQLiteConnection("Data Source=wildcattickets.db;Version=3;"))

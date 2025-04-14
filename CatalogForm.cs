@@ -42,7 +42,7 @@ namespace WildCat_Tickets
                 {
                     conn.Open();
 
-                    string query = "SELECT Id, PosterPath FROM Movies";
+                    string query = "SELECT Id, PosterPath, TotalRatings, NumberOfRatings FROM Movies";
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     using (SQLiteDataReader reader = cmd.ExecuteReader())
                     {
@@ -50,9 +50,15 @@ namespace WildCat_Tickets
                         {
                             int movieId = Convert.ToInt32(reader["Id"]);
                             string posterPath = reader["PosterPath"].ToString();
+                            int totalRatings = Convert.ToInt32(reader["TotalRatings"]);
+                            int numberOfRatings = Convert.ToInt32(reader["NumberOfRatings"]);
+
+                            // Calculate stars (avoid division by zero)
+                            double stars = numberOfRatings > 0 ? (double)totalRatings / numberOfRatings : 0.0;
+
                             if (!string.IsNullOrEmpty(posterPath) && File.Exists(posterPath))
                             {
-                                AddImageToGrid(posterPath, movieId);
+                                AddImageToGrid(posterPath, movieId, Math.Round(stars, 1)); // Pass stars to AddImageToGrid
                             }
                         }
                     }
@@ -68,12 +74,12 @@ namespace WildCat_Tickets
             }
         }
 
-        private void AddImageToGrid(string imagePath, int movieId)
+        private void AddImageToGrid(string imagePath, int movieId, double stars)
         {
-            // Create a container panel to hold the PictureBox and the delete icon
+            // Create a container panel to hold the PictureBox and the star rating label
             Panel containerPanel = new Panel
             {
-                Size = new Size(200, 300), // Same size as the PictureBox
+                Size = new Size(200, 340), // Adjusted height to accommodate the star rating label
                 Margin = new Padding(5),
                 Tag = movieId // Store the movie ID in the Tag property
             };
@@ -90,10 +96,20 @@ namespace WildCat_Tickets
 
             pictureBox.Click += MoviePoster_Click; // Attach click event handler
 
-            // Add the PictureBox to the container panel
+            // Create a Label for the star rating
+            Label starsLabel = new Label
+            {
+                Text = $"⭐ {stars:F1} Stars", // Display stars with 1 decimal place
+                TextAlign = ContentAlignment.MiddleCenter,
+                Dock = DockStyle.Bottom,
+                Font = new Font("Segoe UI", 15, FontStyle.Bold),
+                ForeColor = Color.White,
+                Height = 30
+            };
+
+            // Add the PictureBox and the Label to the container panel
+            containerPanel.Controls.Add(starsLabel);
             containerPanel.Controls.Add(pictureBox);
-
-
 
             // Add the container panel to the FlowLayoutPanel
             moviesFlowLayoutPanel.Controls.Add(containerPanel);
@@ -159,7 +175,7 @@ namespace WildCat_Tickets
                                 string posterPath = reader["PosterPath"].ToString();
                                 if (!string.IsNullOrEmpty(posterPath) && File.Exists(posterPath))
                                 {
-                                    AddImageToGrid(posterPath, movieId); // Pass both posterPath and movieId
+                                    AddImageToGrid(posterPath, movieId, 0.0);
                                 }
                             }
                         }
@@ -226,7 +242,10 @@ namespace WildCat_Tickets
                     {
                         conn.Open();
 
-                        string query = "SELECT Title, Description, ReleaseDate, Genre, Rating FROM Movies WHERE Id = @movieId";
+                        string query = @"
+                            SELECT Title, Duration, Genre, Description, TotalRatings, NumberOfRatings, Rating, ReleaseDate, PosterPath 
+                            FROM Movies 
+                            WHERE Id = @movieId";
                         using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                         {
                             cmd.Parameters.AddWithValue("@movieId", movieId);
@@ -235,19 +254,32 @@ namespace WildCat_Tickets
                             {
                                 if (reader.Read())
                                 {
+                                    // Retrieve movie details
                                     string title = reader["Title"].ToString();
-                                    string description = reader["Description"].ToString();
-                                    string releaseDate = reader["ReleaseDate"].ToString();
+                                    string duration = reader["Duration"].ToString();
                                     string genre = reader["Genre"].ToString();
+                                    string description = reader["Description"].ToString();
+                                    int totalRatings = Convert.ToInt32(reader["TotalRatings"]);
+                                    int numberOfRatings = Convert.ToInt32(reader["NumberOfRatings"]);
                                     string rating = reader["Rating"].ToString();
+                                    string releaseDate = reader["ReleaseDate"].ToString();
+                                    string posterPath = reader["PosterPath"].ToString();
 
-                                    // Display the movie information (e.g., in a MessageBox or a new form)
-                                    MessageBox.Show(
-                                        $"Title: {title}\nDescription: {description}\nRelease Date: {releaseDate}\nGenre: {genre}\nRating: {rating}",
-                                        "Movie Details",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information
-                                    );
+                                    // Open the MovieDetails form and pass the movie details
+                                    MovieDetails movieDetailsForm = new MovieDetails(currentUser)
+                                    {
+                                        MovieTitle = title,
+                                        MovieDuration = duration,
+                                        MovieGenre = genre,
+                                        MovieDescription = description,
+                                        MovieTotalRatings = totalRatings,
+                                        MovieNumberOfRatings = numberOfRatings,
+                                        MovieRating = rating,
+                                        MovieReleaseDate = releaseDate,
+                                        MoviePosterPath = posterPath
+                                    };
+
+                                    movieDetailsForm.ShowDialog(); // Open the form as a modal dialog
                                 }
                             }
                         }
@@ -259,7 +291,6 @@ namespace WildCat_Tickets
                 {
                     MessageBox.Show("Error fetching movie details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
             }
         }
 

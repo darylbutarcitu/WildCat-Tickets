@@ -77,31 +77,40 @@ namespace WildCat_Tickets
                 {
                     conn.Open();
 
-                    string query = "SELECT IDNumber FROM Users WHERE IDNumber = @IDNumber AND Password = @Password";
+                    // Ensure WAL mode is enabled
+                    using (SQLiteCommand cmd = new SQLiteCommand("PRAGMA journal_mode=WAL;", conn))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    string query = "SELECT IDNumber, Role FROM Users WHERE IDNumber = @IDNumber AND Password = @Password";
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@IDNumber", idNumber);
                         cmd.Parameters.AddWithValue("@Password", hashedPassword);
 
-                        object result = cmd.ExecuteScalar();
-
-                        if (result != null)
+                        using (SQLiteDataReader reader = cmd.ExecuteReader())
                         {
-                            if (idNumber.ToLower() == "admin")
+                            if (reader.Read())
                             {
-                                MessageBox.Show("Admin Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                string role = reader["Role"]?.ToString() ?? "Student";
+
+                                if (role.ToLower() == "admin")
+                                {
+                                    MessageBox.Show("Admin Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    MessageBox.Show($"User Login successful! Role: {role}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+
+                                OpenDashboard(idNumber);
+                                clearTextBoxes();
                             }
                             else
                             {
-                                MessageBox.Show("User Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Invalid ID number or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-
-                            OpenDashboard(idNumber);
-                            clearTextBoxes();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid ID number or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
 

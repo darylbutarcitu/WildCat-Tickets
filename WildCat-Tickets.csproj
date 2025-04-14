@@ -203,12 +203,6 @@
       <DependentUpon>AddMovieForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin.cs" />
-    <Compile Include="CinemasForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CinemasForm.Designer.cs">
-      <DependentUpon>CinemasForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="MovieDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,11 +242,11 @@
     <Compile Include="CatalogForm.Designer.cs">
       <DependentUpon>CatalogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyTicketsForm.cs">
+    <Compile Include="TicketsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyTicketsForm.Designer.cs">
-      <DependentUpon>MyTicketsForm.cs</DependentUpon>
+    <Compile Include="TicketsForm.Designer.cs">
+      <DependentUpon>TicketsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Account.cs" />
     <Compile Include="ViewProfileForm.cs">
@@ -284,9 +278,6 @@
     <EmbeddedResource Include="AddMovieForm.resx">
       <DependentUpon>AddMovieForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CinemasForm.resx">
-      <DependentUpon>CinemasForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,8 +296,8 @@
     <EmbeddedResource Include="MovieDetails.resx">
       <DependentUpon>MovieDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyTicketsForm.resx">
-      <DependentUpon>MyTicketsForm.cs</DependentUpon>
+    <EmbeddedResource Include="TicketsForm.resx">
+      <DependentUpon>TicketsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewProfileForm.resx">
       <DependentUpon>ViewProfileForm.cs</DependentUpon>

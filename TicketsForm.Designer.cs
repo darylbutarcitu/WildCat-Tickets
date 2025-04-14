@@ -1,6 +1,6 @@
 ﻿namespace WildCat_Tickets
 {
-    partial class MyTicketsForm
+    partial class TicketsForm
     {
         /// <summary>
         /// Required designer variable.

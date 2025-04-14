@@ -92,10 +92,8 @@ namespace WildCat_Tickets
         {
             homeBtn.Width = sidebarFlowPanel.Width;
             moviesBtn.Width = sidebarFlowPanel.Width;
-            cinemaBtn.Width = sidebarFlowPanel.Width;
             eventsBtn.Width = sidebarFlowPanel.Width;
             ticketsBtn.Width = sidebarFlowPanel.Width;
-            settingsBtn.Width = sidebarFlowPanel.Width;
             logoutContainer.Width = sidebarFlowPanel.Width;
         }
 
@@ -103,10 +101,8 @@ namespace WildCat_Tickets
         {
             homeBtn.Text = "";
             moviesBtn.Text = "";
-            cinemaBtn.Text = "";
             eventsBtn.Text = "";
             ticketsBtn.Text = "";
-            settingsBtn.Text = "";
             logoutBtn.Text = "";
         }
 
@@ -114,10 +110,8 @@ namespace WildCat_Tickets
         {
             homeBtn.Text = "Home";
             moviesBtn.Text = "Movies";
-            cinemaBtn.Text = "Cinema";
             eventsBtn.Text = "Events";
             ticketsBtn.Text = "Tickets";
-            settingsBtn.Text = "Settings";
             logoutBtn.Text = "Logout";
         }
 
@@ -190,22 +184,6 @@ namespace WildCat_Tickets
             catalogForm.Show();
         }
 
-        public void cinemaBtn_MouseClick(object sender, MouseEventArgs e)
-        {
-            resetSideBarColors();
-            cinemaBtn.IconColor = Color.FromArgb(255, 219, 12);
-            cinemaBtn.ForeColor = Color.FromArgb(255, 219, 12);
-            cinemaBtn.Font = new Font(cinemaBtn.Font, FontStyle.Bold);
-
-            CinemasForm cinemasForm = new CinemasForm();
-            cinemasForm.TopLevel = false;
-            cinemasForm.FormBorderStyle = FormBorderStyle.None;
-            cinemasForm.Dock = DockStyle.Fill;
-            contentPanel.Controls.Clear();
-            contentPanel.Controls.Add(cinemasForm);
-            cinemasForm.Show();
-        }
-
         public void eventsBtn_MouseClick(object sender, MouseEventArgs e)
         {
             resetSideBarColors();
@@ -229,29 +207,13 @@ namespace WildCat_Tickets
             ticketsBtn.ForeColor = Color.FromArgb(255, 219, 12);
             ticketsBtn.Font = new Font(ticketsBtn.Font, FontStyle.Bold);
 
-            MyTicketsForm ticketsForm = new MyTicketsForm();
+            TicketsForm ticketsForm = new TicketsForm();
             ticketsForm.TopLevel = false;
             ticketsForm.FormBorderStyle = FormBorderStyle.None;
             ticketsForm.Dock = DockStyle.Fill;
             contentPanel.Controls.Clear();
             contentPanel.Controls.Add(ticketsForm);
             ticketsForm.Show();
-        }
-
-        public void settingsBtn_MouseClick(object sender, MouseEventArgs e)
-        {
-            resetSideBarColors();
-            settingsBtn.IconColor = Color.FromArgb(255, 219, 12);
-            settingsBtn.ForeColor = Color.FromArgb(255, 219, 12);
-            settingsBtn.Font = new Font(settingsBtn.Font, FontStyle.Bold);
-
-            SettingsForm settingsForm = new SettingsForm();
-            settingsForm.TopLevel = false;
-            settingsForm.FormBorderStyle = FormBorderStyle.None;
-            settingsForm.Dock = DockStyle.Fill;
-            contentPanel.Controls.Clear();
-            contentPanel.Controls.Add(settingsForm);
-            settingsForm.Show();
         }
 
         public void logoutBtn_MouseClick(object sender, MouseEventArgs e)
@@ -275,26 +237,20 @@ namespace WildCat_Tickets
             userBtn.IconColor = Color.White;
             homeBtn.IconColor = Color.White;
             moviesBtn.IconColor = Color.White;
-            cinemaBtn.IconColor = Color.White;
             eventsBtn.IconColor = Color.White;
             ticketsBtn.IconColor = Color.White;
-            settingsBtn.IconColor = Color.White;
             logoutBtn.IconColor = Color.White;
 
             userBtn.ForeColor = Color.White;
             homeBtn.ForeColor = Color.White;
             moviesBtn.ForeColor = Color.White;
-            cinemaBtn.ForeColor = Color.White;
             eventsBtn.ForeColor = Color.White;
             ticketsBtn.ForeColor = Color.White;
-            settingsBtn.ForeColor = Color.White;
             logoutBtn.ForeColor = Color.White;
 
             homeBtn.Font = new Font(homeBtn.Font, FontStyle.Regular);
             moviesBtn.Font = new Font(moviesBtn.Font, FontStyle.Regular);
-            cinemaBtn.Font = new Font(cinemaBtn.Font, FontStyle.Regular);
             eventsBtn.Font = new Font(eventsBtn.Font, FontStyle.Regular);
-            settingsBtn.Font = new Font(settingsBtn.Font, FontStyle.Regular);
             ticketsBtn.Font = new Font(ticketsBtn.Font, FontStyle.Regular);
             logoutBtn.Font = new Font(logoutBtn.Font, FontStyle.Regular);
         }

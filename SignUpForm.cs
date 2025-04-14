@@ -141,7 +141,9 @@ namespace WildCat_Tickets
                         Email TEXT UNIQUE,
                         Password TEXT,
                         ProfilePhotoPath TEXT
+                        Role TEXT
                     );";
+
                     using (SQLiteCommand createCmd = new SQLiteCommand(createTableQuery, conn))
                     {
                         createCmd.ExecuteNonQuery();
@@ -162,9 +164,10 @@ namespace WildCat_Tickets
                     }
 
                     // Insert user
+                    // Insert user
                     string insertQuery = @"
-                    INSERT INTO Users (IDNumber, FirstName, MiddleName, LastName, BirthDate, Program, Year, Phone, Email, Password, ProfilePhotoPath)
-                    VALUES (@IDNumber, @FirstName, @MiddleName, @LastName, @BirthDate, @Program, @Year, @Phone, @Email, @Password, @ProfilePhotoPath)";
+                        INSERT INTO Users (IDNumber, FirstName, MiddleName, LastName, BirthDate, Program, Year, Phone, Email, Password, ProfilePhotoPath, Role)
+                        VALUES (@IDNumber, @FirstName, @MiddleName, @LastName, @BirthDate, @Program, @Year, @Phone, @Email, @Password, @ProfilePhotoPath, @Role)";
 
                     using (SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn))
                     {
@@ -179,7 +182,7 @@ namespace WildCat_Tickets
                         cmd.Parameters.AddWithValue("@Email", email);
                         cmd.Parameters.AddWithValue("@Password", hashedPassword); // Store hashed password
                         cmd.Parameters.AddWithValue("@ProfilePhotoPath", profilePhotoPath ?? "");
-
+                        cmd.Parameters.AddWithValue("@Role", "Student"); // Default role
                         cmd.ExecuteNonQuery();
                     }
 

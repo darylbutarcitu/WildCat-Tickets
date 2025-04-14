@@ -100,7 +100,7 @@ namespace WildCat_Tickets
 
                     // Ensure the Movies table exists
                     string createTableQuery = @"
-                    CREATE TABLE IF NOT EXISTS Movies (
+                        CREATE TABLE IF NOT EXISTS Movies (
                         Id INTEGER PRIMARY KEY AUTOINCREMENT,
                         Title TEXT NOT NULL,
                         Duration TEXT NOT NULL,
@@ -109,8 +109,10 @@ namespace WildCat_Tickets
                         ReleaseDate TEXT NOT NULL,
                         Description TEXT NOT NULL,
                         PosterPath TEXT NOT NULL,
-                        Status TEXT NOT NULL
-                    )";
+                        Status TEXT NOT NULL,
+                        NumberOfRatings INTEGER DEFAULT 0,
+                        TotalRatings INTEGER DEFAULT 0
+                    );";
                     using (SQLiteCommand createTableCmd = new SQLiteCommand(createTableQuery, conn))
                     {
                         createTableCmd.ExecuteNonQuery();
@@ -118,8 +120,8 @@ namespace WildCat_Tickets
 
                     // Insert the movie
                     string insertQuery = @"
-                    INSERT INTO Movies (Title, Duration, Genre, Rating, ReleaseDate, Description, PosterPath, Status)
-                    VALUES (@Title, @Duration, @Genre, @Rating, @ReleaseDate, @Description, @PosterPath, @Status)";
+                    INSERT INTO Movies (Title, Duration, Genre, Rating, ReleaseDate, Description, PosterPath, Status, NumberOfRatings, TotalRatings)
+                    VALUES (@Title, @Duration, @Genre, @Rating, @ReleaseDate, @Description, @PosterPath, @Status, 0, 0)";
                     using (SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@Title", movieTitle);

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WildCat_Tickets
 {
-    public partial class CinemasForm : TabForm
+    public partial class TicketsForm : TabForm
     {
-        public CinemasForm()
+        public TicketsForm()
         {
             InitializeComponent();
             this.Size = new Size(1080, 675);
