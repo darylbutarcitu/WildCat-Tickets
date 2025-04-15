@@ -218,6 +218,15 @@ namespace WildCat_Tickets
                 string ticketPriceText = ticketPriceTbx.Text.Trim();
                 decimal ticketPrice;
 
+                // Combine date and start time to check if it's in the future
+                DateTime selectedStartDateTime = DateTime.Parse($"{date} {startTime}");
+
+                if (selectedStartDateTime <= DateTime.Now)
+                {
+                    MessageBox.Show("The showtime must be in the future.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (!decimal.TryParse(ticketPriceText, out ticketPrice) || ticketPrice <= 0)
                 {
                     MessageBox.Show("Please enter a valid ticket price.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -265,8 +274,8 @@ namespace WildCat_Tickets
 
                             // Insert the new showtime
                             string insertQuery = @"
-                            INSERT INTO Showtimes (MovieID, VenueID, StartTime, EndTime, TicketPrice) 
-                            VALUES (@movieId, @venueId, @startTime, @endTime, @ticketPrice)";
+                INSERT INTO Showtimes (MovieID, VenueID, StartTime, EndTime, TicketPrice) 
+                VALUES (@movieId, @venueId, @startTime, @endTime, @ticketPrice)";
 
                             using (SQLiteCommand insertCmd = new SQLiteCommand(insertQuery, conn, transaction))
                             {
@@ -294,7 +303,6 @@ namespace WildCat_Tickets
                     MessageBox.Show("Error adding showtime: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             };
-
 
             // Add controls to the form
             addShowtimeForm.Controls.Add(dateLabel);

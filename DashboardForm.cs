@@ -35,6 +35,7 @@ namespace WildCat_Tickets
             if(currentUser == "admin")
             {
                 homeBtn.Visible = false;
+                analyticsBtn.Visible = true;
                 userBtn.Visible = false;
                 logoutContainer.Height += 35;
                 moviesBtn_MouseClick(moviesBtn, new MouseEventArgs(MouseButtons.Left, 1, 0, 0, 0));
@@ -42,6 +43,7 @@ namespace WildCat_Tickets
             else
             {
                 homeBtn.Visible = false;// true;
+                analyticsBtn.Visible = false;
                 userBtn.Visible = true;
             }
         }
@@ -95,7 +97,7 @@ namespace WildCat_Tickets
         {
             homeBtn.Width = sidebarFlowPanel.Width;
             moviesBtn.Width = sidebarFlowPanel.Width;
-            ticketsBtn.Width = sidebarFlowPanel.Width;
+            bookingsBtn.Width = sidebarFlowPanel.Width;
             logoutContainer.Width = sidebarFlowPanel.Width;
         }
 
@@ -103,7 +105,7 @@ namespace WildCat_Tickets
         {
             homeBtn.Text = "";
             moviesBtn.Text = "";
-            ticketsBtn.Text = "";
+            bookingsBtn.Text = "";
             logoutBtn.Text = "";
         }
 
@@ -111,7 +113,7 @@ namespace WildCat_Tickets
         {
             homeBtn.Text = "Home";
             moviesBtn.Text = "Movies";
-            ticketsBtn.Text = "Tickets";
+            bookingsBtn.Text = "Tickets";
             logoutBtn.Text = "Logout";
         }
 
@@ -184,20 +186,20 @@ namespace WildCat_Tickets
             catalogForm.Show();
         }
 
-        public void ticketsBtn_MouseClick(object sender, MouseEventArgs e)
+        public void bookingsBtn_MouseClick(object sender, MouseEventArgs e)
         {
             resetSideBarColors();
-            ticketsBtn.IconColor = Color.FromArgb(255, 219, 12);
-            ticketsBtn.ForeColor = Color.FromArgb(255, 219, 12);
-            ticketsBtn.Font = new Font(ticketsBtn.Font, FontStyle.Bold);
+            bookingsBtn.IconColor = Color.FromArgb(255, 219, 12);
+            bookingsBtn.ForeColor = Color.FromArgb(255, 219, 12);
+            bookingsBtn.Font = new Font(bookingsBtn.Font, FontStyle.Bold);
 
-            BookingsForm ticketsForm = new BookingsForm(currentUser);
-            ticketsForm.TopLevel = false;
-            ticketsForm.FormBorderStyle = FormBorderStyle.None;
-            ticketsForm.Dock = DockStyle.Fill;
+            BookingsForm bookingsForm = new BookingsForm(currentUser);
+            bookingsForm.TopLevel = false;
+            bookingsForm.FormBorderStyle = FormBorderStyle.None;
+            bookingsForm.Dock = DockStyle.Fill;
             contentPanel.Controls.Clear();
-            contentPanel.Controls.Add(ticketsForm);
-            ticketsForm.Show();
+            contentPanel.Controls.Add(bookingsForm);
+            bookingsForm.Show();
         }
 
         public void logoutBtn_MouseClick(object sender, MouseEventArgs e)
@@ -221,19 +223,37 @@ namespace WildCat_Tickets
             userBtn.IconColor = Color.White;
             homeBtn.IconColor = Color.White;
             moviesBtn.IconColor = Color.White;
-            ticketsBtn.IconColor = Color.White;
+            bookingsBtn.IconColor = Color.White;
             logoutBtn.IconColor = Color.White;
+            analyticsBtn.IconColor = Color.White;
 
             userBtn.ForeColor = Color.White;
             homeBtn.ForeColor = Color.White;
             moviesBtn.ForeColor = Color.White;
-            ticketsBtn.ForeColor = Color.White;
+            bookingsBtn.ForeColor = Color.White;
             logoutBtn.ForeColor = Color.White;
+            analyticsBtn.ForeColor = Color.White;
 
             homeBtn.Font = new Font(homeBtn.Font, FontStyle.Regular);
             moviesBtn.Font = new Font(moviesBtn.Font, FontStyle.Regular);
-            ticketsBtn.Font = new Font(ticketsBtn.Font, FontStyle.Regular);
+            bookingsBtn.Font = new Font(bookingsBtn.Font, FontStyle.Regular);
             logoutBtn.Font = new Font(logoutBtn.Font, FontStyle.Regular);
+        }
+
+        private void analyticsBtn_MouseClick(object sender, MouseEventArgs e)
+        {
+            resetSideBarColors();
+            analyticsBtn.IconColor = Color.FromArgb(255, 219, 12);
+            analyticsBtn.ForeColor = Color.FromArgb(255, 219, 12);
+            analyticsBtn.Font = new Font(analyticsBtn.Font, FontStyle.Bold);
+
+            AnalyticsForm analyticsForm = new AnalyticsForm();
+            analyticsForm.TopLevel = false;
+            analyticsForm.FormBorderStyle = FormBorderStyle.None;
+            analyticsForm.Dock = DockStyle.Fill;
+            contentPanel.Controls.Clear();
+            contentPanel.Controls.Add(analyticsForm);
+            analyticsForm.Show();
         }
     }
 }

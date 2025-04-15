@@ -44,7 +44,7 @@
             this.moviesFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moviesFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.moviesFlowLayoutPanel.Name = "moviesFlowLayoutPanel";
-            this.moviesFlowLayoutPanel.Size = new System.Drawing.Size(970, 519);
+            this.moviesFlowLayoutPanel.Size = new System.Drawing.Size(922, 471);
             this.moviesFlowLayoutPanel.TabIndex = 0;
             this.moviesFlowLayoutPanel.Resize += new System.EventHandler(this.moviesFlowLayoutPanel_Resize);
             // 
@@ -122,7 +122,7 @@
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(970, 49);
+            this.topPanel.Size = new System.Drawing.Size(922, 49);
             this.topPanel.TabIndex = 30;
             // 
             // addMovieBtn
@@ -217,7 +217,7 @@
             this.searchBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.searchBtn.IconSize = 36;
             this.searchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchBtn.Location = new System.Drawing.Point(909, 49);
+            this.searchBtn.Location = new System.Drawing.Point(3, 95);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(45, 35);
             this.searchBtn.TabIndex = 3;
@@ -230,9 +230,9 @@
             // 
             // CatalogForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 519);
+            this.ClientSize = new System.Drawing.Size(922, 471);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.moviesFlowLayoutPanel);
             this.Name = "CatalogForm";

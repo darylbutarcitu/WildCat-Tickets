@@ -62,6 +62,7 @@ namespace WildCat_Tickets
                 if (showtimeDropdown.SelectedIndex == -1)
                 {
                     EnableSeatButtons(false); // Disable buttons if no showtime is selected
+                    submitBtn.Enabled = false; // Disable submit button
                     return; // No selection made
                 }
 
@@ -84,6 +85,15 @@ namespace WildCat_Tickets
                         string startTimeString = selectedItem.Split('-')[0].Trim(); // Extract StartTime
                         DateTime startTime = DateTime.Parse(startTimeString);
 
+                        // Check if the showtime is in the past
+                        if (startTime <= DateTime.Now)
+                        {
+                            MessageBox.Show("The selected showtime has already started or is in the past.", "Invalid Showtime", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            EnableSeatButtons(false); // Disable seat buttons
+                            submitBtn.Enabled = false; // Disable submit button
+                            return;
+                        }
+
                         cmd.Parameters.AddWithValue("@startTime", startTime.ToString("yyyy-MM-dd HH:mm:ss"));
 
                         object result = cmd.ExecuteScalar();
@@ -92,12 +102,14 @@ namespace WildCat_Tickets
                             ticketPrice = Convert.ToDecimal(result);
                             ticketPriceTbx.Text = ticketPrice.ToString("C"); // Format as currency
                             EnableSeatButtons(true); // Enable buttons if a valid showtime is selected
+                            submitBtn.Enabled = true; // Enable submit button
                         }
                         else
                         {
                             ticketPriceTbx.Text = "N/A"; // No price found
                             ticketPrice = 0;
                             EnableSeatButtons(false); // Disable buttons if no price is found
+                            submitBtn.Enabled = false; // Disable submit button
                         }
 
                         resetButtons();

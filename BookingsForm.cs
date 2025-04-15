@@ -67,15 +67,14 @@ namespace WildCat_Tickets
 
                     // Adjust the query based on whether the current user is "admin"
                     string query = @"
-                        SELECT s.ShowtimeID, m.Title, m.PosterPath, s.StartTime, s.EndTime, 
-                               GROUP_CONCAT(b.SeatNumber, ', ') AS SeatNames, 
-                               COUNT(b.BookingID) AS SeatCount, 
-                               s.TicketPrice
-                        FROM Bookings b
-                        INNER JOIN Showtimes s ON b.ShowtimeID = s.ShowtimeID
-                        INNER JOIN Movies m ON s.MovieID = m.Id
-                        {0}
-                        GROUP BY s.ShowtimeID, m.Title, m.PosterPath, s.StartTime, s.EndTime, s.TicketPrice";
+                SELECT s.ShowtimeID, m.Title, m.PosterPath, s.StartTime, s.EndTime, 
+                       GROUP_CONCAT(b.SeatNumber, ', ') AS SeatNames, 
+                       s.TicketPrice
+                FROM Bookings b
+                INNER JOIN Showtimes s ON b.ShowtimeID = s.ShowtimeID
+                INNER JOIN Movies m ON s.MovieID = m.Id
+                {0}
+                GROUP BY s.ShowtimeID, m.Title, m.PosterPath, s.StartTime, s.EndTime, s.TicketPrice";
 
                     // If the current user is not "admin", filter by UserID
                     string whereClause = userID.ToLower() == "admin" ? "" : "WHERE b.UserID = @UserID";
@@ -98,7 +97,7 @@ namespace WildCat_Tickets
                                 DateTime startTime = Convert.ToDateTime(reader["StartTime"]);
                                 DateTime endTime = Convert.ToDateTime(reader["EndTime"]);
                                 string seatNames = reader["SeatNames"].ToString();
-                                int seatCount = Convert.ToInt32(reader["SeatCount"]);
+                                int seatCount = string.IsNullOrWhiteSpace(seatNames) ? 0 : seatNames.Split(',').Length; // Count seats
                                 decimal ticketPrice = Convert.ToDecimal(reader["TicketPrice"]);
                                 decimal totalPrice = seatCount * ticketPrice;
 
@@ -118,12 +117,14 @@ namespace WildCat_Tickets
             }
         }
 
+
+
         private void AddShowtimeCard(string imagePath, int showtimeId, string movieTitle, DateTime startTime, DateTime endTime, string seatNames, int seatCount, decimal ticketPrice, decimal totalPrice)
         {
             // Create a container panel for the card
             Panel cardPanel = new Panel
             {
-                Size = new Size(250, 470), // Adjusted size for the card
+                Size = new Size(250, 500), // Adjusted size for the card to accommodate the new label
                 Margin = new Padding(10),
                 BackColor = Color.FromArgb(86, 0, 0),
                 BorderStyle = BorderStyle.None,
@@ -159,7 +160,9 @@ namespace WildCat_Tickets
                 Font = new Font("Segoe UI", 10),
                 ForeColor = Color.White,
                 Location = new Point(10, 270),
-                Size = new Size(230, 40),
+                Size = new Size(230, 0), // Set width, height will adjust automatically
+                MaximumSize = new Size(230, 0), // Limit the width to 230px
+                AutoSize = true, // Allow height to adjust based on content
                 TextAlign = ContentAlignment.MiddleCenter
             };
 
@@ -170,7 +173,9 @@ namespace WildCat_Tickets
                 Font = new Font("Segoe UI", 10),
                 ForeColor = Color.White,
                 Location = new Point(10, 320),
-                Size = new Size(230, 40),
+                Size = new Size(230, 0), // Set width, height will adjust automatically
+                MaximumSize = new Size(230, 0), // Limit the width to 230px
+                AutoSize = true, // Allow height to adjust based on content
                 TextAlign = ContentAlignment.MiddleCenter
             };
 
@@ -207,6 +212,22 @@ namespace WildCat_Tickets
                 TextAlign = ContentAlignment.MiddleCenter
             };
 
+            // Determine the status of the showtime
+            bool isActive = endTime > DateTime.Now;
+            string statusText = isActive ? "Active" : "Inactive";
+            Color statusColor = isActive ? Color.Yellow : Color.Pink;
+
+            // Create a Label for the status
+            Label statusLabel = new Label
+            {
+                Text = $"Status: {statusText}",
+                Font = new Font("Segoe UI", 10, FontStyle.Bold),
+                ForeColor = statusColor,
+                Location = new Point(10, 460),
+                Size = new Size(230, 20),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+
             // Add the PictureBox and Labels to the card panel
             cardPanel.Controls.Add(pictureBox);
             cardPanel.Controls.Add(titleLabel);
@@ -215,9 +236,64 @@ namespace WildCat_Tickets
             cardPanel.Controls.Add(seatCountLabel);
             cardPanel.Controls.Add(ticketPriceLabel);
             cardPanel.Controls.Add(priceLabel);
+            cardPanel.Controls.Add(statusLabel);
+
+            // Add a context menu strip for non-admin users
+            if (userID.ToLower() != "admin")
+            {
+                ContextMenuStrip contextMenu = new ContextMenuStrip();
+                ToolStripMenuItem deleteMenuItem = new ToolStripMenuItem("Delete");
+
+                // Disable the delete option if the showtime is inactive
+                if (!isActive)
+                {
+                    deleteMenuItem.Enabled = false;
+                }
+
+                deleteMenuItem.Click += (s, e) =>
+                {
+                    // Confirm deletion
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete all bookings for this showtime?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        DeleteBookingsForShowtime(showtimeId);
+                    }
+                };
+
+                contextMenu.Items.Add(deleteMenuItem);
+                cardPanel.ContextMenuStrip = contextMenu;
+            }
 
             // Add the card panel to the FlowLayoutPanel
             bookingsFlowLayoutPanel.Controls.Add(cardPanel);
+        }
+
+        private void DeleteBookingsForShowtime(int showtimeId)
+        {
+            try
+            {
+                using (SQLiteConnection conn = new SQLiteConnection("Data Source=wildcattickets.db;Version=3;"))
+                {
+                    conn.Open();
+
+                    string query = "DELETE FROM Bookings WHERE ShowtimeID = @ShowtimeID AND UserID = @UserID";
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ShowtimeID", showtimeId);
+                        cmd.Parameters.AddWithValue("@UserID", userID);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Bookings deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Reload the bookings to reflect the changes
+                    LoadBookingsFromDatabase();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting bookings: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void AdjustBookingLayout()

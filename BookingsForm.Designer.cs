@@ -48,7 +48,7 @@
             this.bookingsFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bookingsFlowLayoutPanel.Location = new System.Drawing.Point(0, 49);
             this.bookingsFlowLayoutPanel.Name = "bookingsFlowLayoutPanel";
-            this.bookingsFlowLayoutPanel.Size = new System.Drawing.Size(1000, 495);
+            this.bookingsFlowLayoutPanel.Size = new System.Drawing.Size(952, 447);
             this.bookingsFlowLayoutPanel.TabIndex = 31;
             // 
             // mySiticoneLicenseSettings2
@@ -123,7 +123,7 @@
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(1000, 49);
+            this.topPanel.Size = new System.Drawing.Size(952, 49);
             this.topPanel.TabIndex = 32;
             // 
             // searchBtn
@@ -152,9 +152,9 @@
             // 
             // BookingsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 544);
+            this.ClientSize = new System.Drawing.Size(952, 496);
             this.Controls.Add(this.bookingsFlowLayoutPanel);
             this.Controls.Add(this.topPanel);
             this.Name = "BookingsForm";
