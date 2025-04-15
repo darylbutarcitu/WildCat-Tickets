@@ -518,7 +518,7 @@
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(200, 0);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(1186, 716);
+            this.contentPanel.Size = new System.Drawing.Size(1220, 716);
             this.contentPanel.TabIndex = 2;
             // 
             // mySiticoneLicenseSettings1
@@ -531,7 +531,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ButtonSpecs.Add(this.buttonSpecAny1);
-            this.ClientSize = new System.Drawing.Size(1386, 716);
+            this.ClientSize = new System.Drawing.Size(1420, 716);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.sidebarFlowPanel);
             this.ForeColor = System.Drawing.Color.White;

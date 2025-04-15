@@ -256,7 +256,7 @@
             this.starBtn.ShadowOffset = new System.Drawing.Point(2, 2);
             this.starBtn.ShakeDuration = 500;
             this.starBtn.ShakeIntensity = 5;
-            this.starBtn.Size = new System.Drawing.Size(97, 27);
+            this.starBtn.Size = new System.Drawing.Size(138, 27);
             this.starBtn.TabIndex = 50;
             this.starBtn.Text = "⭐Add Stars⭐";
             this.starBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -427,7 +427,7 @@
             this.averageTbx.AutoSize = true;
             this.averageTbx.Location = new System.Drawing.Point(407, 107);
             this.averageTbx.Name = "averageTbx";
-            this.averageTbx.Size = new System.Drawing.Size(31, 13);
+            this.averageTbx.Size = new System.Drawing.Size(38, 16);
             this.averageTbx.TabIndex = 47;
             this.averageTbx.Text = "Stars";
             // 
@@ -703,7 +703,7 @@
             this.releaseDateLabel.AutoSize = true;
             this.releaseDateLabel.Location = new System.Drawing.Point(291, 248);
             this.releaseDateLabel.Name = "releaseDateLabel";
-            this.releaseDateLabel.Size = new System.Drawing.Size(72, 13);
+            this.releaseDateLabel.Size = new System.Drawing.Size(91, 16);
             this.releaseDateLabel.TabIndex = 38;
             this.releaseDateLabel.Text = "Release Date";
             // 
@@ -712,7 +712,7 @@
             this.ratingLabel.AutoSize = true;
             this.ratingLabel.Location = new System.Drawing.Point(0, 250);
             this.ratingLabel.Name = "ratingLabel";
-            this.ratingLabel.Size = new System.Drawing.Size(38, 13);
+            this.ratingLabel.Size = new System.Drawing.Size(46, 16);
             this.ratingLabel.TabIndex = 34;
             this.ratingLabel.Text = "Rating";
             // 
@@ -721,7 +721,7 @@
             this.genreLabel.AutoSize = true;
             this.genreLabel.Location = new System.Drawing.Point(329, 3);
             this.genreLabel.Name = "genreLabel";
-            this.genreLabel.Size = new System.Drawing.Size(36, 13);
+            this.genreLabel.Size = new System.Drawing.Size(44, 16);
             this.genreLabel.TabIndex = 33;
             this.genreLabel.Text = "Genre";
             // 
@@ -883,7 +883,7 @@
             this.movieDescriptionLabel.AutoSize = true;
             this.movieDescriptionLabel.Location = new System.Drawing.Point(0, 61);
             this.movieDescriptionLabel.Name = "movieDescriptionLabel";
-            this.movieDescriptionLabel.Size = new System.Drawing.Size(92, 13);
+            this.movieDescriptionLabel.Size = new System.Drawing.Size(115, 16);
             this.movieDescriptionLabel.TabIndex = 12;
             this.movieDescriptionLabel.Text = "Movie Description";
             // 
@@ -892,7 +892,7 @@
             this.durationLabel.AutoSize = true;
             this.durationLabel.Location = new System.Drawing.Point(238, 3);
             this.durationLabel.Name = "durationLabel";
-            this.durationLabel.Size = new System.Drawing.Size(77, 13);
+            this.durationLabel.Size = new System.Drawing.Size(96, 16);
             this.durationLabel.TabIndex = 11;
             this.durationLabel.Text = "Duration (mins)";
             // 
@@ -901,15 +901,15 @@
             this.movieTitleLabel.AutoSize = true;
             this.movieTitleLabel.Location = new System.Drawing.Point(0, 3);
             this.movieTitleLabel.Name = "movieTitleLabel";
-            this.movieTitleLabel.Size = new System.Drawing.Size(59, 13);
+            this.movieTitleLabel.Size = new System.Drawing.Size(73, 16);
             this.movieTitleLabel.TabIndex = 10;
             this.movieTitleLabel.Text = "Movie Title";
             // 
-            // MovieDetails
+            // MovieDetailsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(748, 389);
+            this.ClientSize = new System.Drawing.Size(746, 380);
             this.Controls.Add(this.addMovieContainer);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -917,7 +917,7 @@
             this.LocalCustomPalette = this.mainPalette;
             this.MaximumSize = new System.Drawing.Size(762, 434);
             this.MinimumSize = new System.Drawing.Size(762, 434);
-            this.Name = "MovieDetails";
+            this.Name = "MovieDetailsForm";
             this.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Movie Details";
