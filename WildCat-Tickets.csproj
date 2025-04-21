@@ -42,12 +42,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="FastReport.Compat, Version=2025.2.0.0, Culture=neutral, PublicKeyToken=5ceb240df42bf6e8, processorArchitecture=MSIL">
-      <HintPath>packages\FastReport.Compat.2025.2.0\lib\net462\FastReport.Compat.dll</HintPath>
-    </Reference>
-    <Reference Include="FastReport.DataVisualization, Version=2025.2.0.0, Culture=neutral, PublicKeyToken=5ceb240df42bf6e8, processorArchitecture=MSIL">
-      <HintPath>packages\FastReport.DataVisualization.2025.2.0\lib\net462\FastReport.DataVisualization.dll</HintPath>
-    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.6.6.0\lib\net48\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -65,6 +59,18 @@
     </Reference>
     <Reference Include="Krypton.Workspace, Version=90.25.2.55, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <HintPath>packages\Krypton.Workspace.90.25.2.55\lib\net48\Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Geared, Version=1.2.8.2, Culture=neutral, PublicKeyToken=7292f245d14ab8bf, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.Geared.1.2.9\lib\net45\LiveCharts.Geared.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNetCore.Cryptography.Internal, Version=9.0.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNetCore.Cryptography.Internal.9.0.4\lib\net462\Microsoft.AspNetCore.Cryptography.Internal.dll</HintPath>
@@ -88,6 +94,9 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="QRCoder, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
       <HintPath>packages\QRCoder.1.6.0\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="Siticone.Desktop.UI, Version=2.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Siticone.Desktop.UI.2.0.6\lib\net40\Siticone.Desktop.UI.dll</HintPath>
     </Reference>
     <Reference Include="SiticoneNetFrameworkUI, Version=2025.2.14.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Siticone.NetFramework.UI.2025.2.14\lib\net48\SiticoneNetFrameworkUI.dll</HintPath>
@@ -200,6 +209,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddMovieForm.cs">
@@ -226,6 +236,12 @@
     </Compile>
     <Compile Include="MovieDetailsForm.Designer.cs">
       <DependentUpon>MovieDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesReportForm.Designer.cs">
+      <DependentUpon>SalesReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="DashboardForm.cs">
@@ -306,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BookingsForm.resx">
       <DependentUpon>BookingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesReportForm.resx">
+      <DependentUpon>SalesReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewProfileForm.resx">
       <DependentUpon>ViewProfileForm.cs</DependentUpon>

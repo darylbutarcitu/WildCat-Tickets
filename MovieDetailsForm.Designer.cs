@@ -52,6 +52,8 @@
             this.movieDescriptionLabel = new System.Windows.Forms.Label();
             this.durationLabel = new System.Windows.Forms.Label();
             this.movieTitleLabel = new System.Windows.Forms.Label();
+            this.uploadMoviePosterBtn = new SiticoneNetFrameworkUI.SiticoneButton();
+            this.saveBtn = new SiticoneNetFrameworkUI.SiticoneButton();
             this.addMovieContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moviePosterBox)).BeginInit();
             this.SuspendLayout();
@@ -160,6 +162,8 @@
             // addMovieContainer
             // 
             this.addMovieContainer.BackColor = System.Drawing.Color.Transparent;
+            this.addMovieContainer.Controls.Add(this.saveBtn);
+            this.addMovieContainer.Controls.Add(this.uploadMoviePosterBtn);
             this.addMovieContainer.Controls.Add(this.starBtn);
             this.addMovieContainer.Controls.Add(this.viewShowtimesBtn);
             this.addMovieContainer.Controls.Add(this.showtimeBtn);
@@ -315,7 +319,7 @@
             this.viewShowtimesBtn.IsReadOnly = false;
             this.viewShowtimesBtn.IsToggleButton = false;
             this.viewShowtimesBtn.IsToggled = false;
-            this.viewShowtimesBtn.Location = new System.Drawing.Point(591, 321);
+            this.viewShowtimesBtn.Location = new System.Drawing.Point(190, 321);
             this.viewShowtimesBtn.LongPressDurationMS = 1000;
             this.viewShowtimesBtn.Name = "viewShowtimesBtn";
             this.viewShowtimesBtn.NormalFontStyle = System.Drawing.FontStyle.Regular;
@@ -393,7 +397,7 @@
             this.showtimeBtn.IsReadOnly = false;
             this.showtimeBtn.IsToggleButton = false;
             this.showtimeBtn.IsToggled = false;
-            this.showtimeBtn.Location = new System.Drawing.Point(435, 321);
+            this.showtimeBtn.Location = new System.Drawing.Point(34, 321);
             this.showtimeBtn.LongPressDurationMS = 1000;
             this.showtimeBtn.Name = "showtimeBtn";
             this.showtimeBtn.NormalFontStyle = System.Drawing.FontStyle.Regular;
@@ -427,7 +431,7 @@
             this.averageTbx.AutoSize = true;
             this.averageTbx.Location = new System.Drawing.Point(407, 107);
             this.averageTbx.Name = "averageTbx";
-            this.averageTbx.Size = new System.Drawing.Size(38, 16);
+            this.averageTbx.Size = new System.Drawing.Size(31, 13);
             this.averageTbx.TabIndex = 47;
             this.averageTbx.Text = "Stars";
             // 
@@ -703,7 +707,7 @@
             this.releaseDateLabel.AutoSize = true;
             this.releaseDateLabel.Location = new System.Drawing.Point(291, 248);
             this.releaseDateLabel.Name = "releaseDateLabel";
-            this.releaseDateLabel.Size = new System.Drawing.Size(91, 16);
+            this.releaseDateLabel.Size = new System.Drawing.Size(72, 13);
             this.releaseDateLabel.TabIndex = 38;
             this.releaseDateLabel.Text = "Release Date";
             // 
@@ -712,7 +716,7 @@
             this.ratingLabel.AutoSize = true;
             this.ratingLabel.Location = new System.Drawing.Point(0, 250);
             this.ratingLabel.Name = "ratingLabel";
-            this.ratingLabel.Size = new System.Drawing.Size(46, 16);
+            this.ratingLabel.Size = new System.Drawing.Size(38, 13);
             this.ratingLabel.TabIndex = 34;
             this.ratingLabel.Text = "Rating";
             // 
@@ -721,7 +725,7 @@
             this.genreLabel.AutoSize = true;
             this.genreLabel.Location = new System.Drawing.Point(329, 3);
             this.genreLabel.Name = "genreLabel";
-            this.genreLabel.Size = new System.Drawing.Size(44, 16);
+            this.genreLabel.Size = new System.Drawing.Size(36, 13);
             this.genreLabel.TabIndex = 33;
             this.genreLabel.Text = "Genre";
             // 
@@ -883,7 +887,7 @@
             this.movieDescriptionLabel.AutoSize = true;
             this.movieDescriptionLabel.Location = new System.Drawing.Point(0, 61);
             this.movieDescriptionLabel.Name = "movieDescriptionLabel";
-            this.movieDescriptionLabel.Size = new System.Drawing.Size(115, 16);
+            this.movieDescriptionLabel.Size = new System.Drawing.Size(92, 13);
             this.movieDescriptionLabel.TabIndex = 12;
             this.movieDescriptionLabel.Text = "Movie Description";
             // 
@@ -892,7 +896,7 @@
             this.durationLabel.AutoSize = true;
             this.durationLabel.Location = new System.Drawing.Point(238, 3);
             this.durationLabel.Name = "durationLabel";
-            this.durationLabel.Size = new System.Drawing.Size(96, 16);
+            this.durationLabel.Size = new System.Drawing.Size(77, 13);
             this.durationLabel.TabIndex = 11;
             this.durationLabel.Text = "Duration (mins)";
             // 
@@ -901,15 +905,170 @@
             this.movieTitleLabel.AutoSize = true;
             this.movieTitleLabel.Location = new System.Drawing.Point(0, 3);
             this.movieTitleLabel.Name = "movieTitleLabel";
-            this.movieTitleLabel.Size = new System.Drawing.Size(73, 16);
+            this.movieTitleLabel.Size = new System.Drawing.Size(59, 13);
             this.movieTitleLabel.TabIndex = 10;
             this.movieTitleLabel.Text = "Movie Title";
+            // 
+            // uploadMoviePosterBtn
+            // 
+            this.uploadMoviePosterBtn.AccessibleDescription = "";
+            this.uploadMoviePosterBtn.AccessibleName = "UPLOAD POSTER";
+            this.uploadMoviePosterBtn.AutoSizeBasedOnText = false;
+            this.uploadMoviePosterBtn.BackColor = System.Drawing.Color.Transparent;
+            this.uploadMoviePosterBtn.BadgeBackColor = System.Drawing.Color.Transparent;
+            this.uploadMoviePosterBtn.BadgeFont = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.uploadMoviePosterBtn.BadgeValue = 0;
+            this.uploadMoviePosterBtn.BadgeValueForeColor = System.Drawing.Color.Black;
+            this.uploadMoviePosterBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.uploadMoviePosterBtn.BorderWidth = 2;
+            this.uploadMoviePosterBtn.ButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.uploadMoviePosterBtn.ButtonImage = null;
+            this.uploadMoviePosterBtn.CanBeep = true;
+            this.uploadMoviePosterBtn.CanGlow = false;
+            this.uploadMoviePosterBtn.CanShake = true;
+            this.uploadMoviePosterBtn.ContextMenuStripEx = null;
+            this.uploadMoviePosterBtn.CornerRadiusBottomLeft = 10;
+            this.uploadMoviePosterBtn.CornerRadiusBottomRight = 10;
+            this.uploadMoviePosterBtn.CornerRadiusTopLeft = 10;
+            this.uploadMoviePosterBtn.CornerRadiusTopRight = 10;
+            this.uploadMoviePosterBtn.CustomCursor = System.Windows.Forms.Cursors.Default;
+            this.uploadMoviePosterBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.uploadMoviePosterBtn.EnableLongPress = false;
+            this.uploadMoviePosterBtn.EnablePressAnimation = true;
+            this.uploadMoviePosterBtn.EnableRippleEffect = true;
+            this.uploadMoviePosterBtn.EnableShadow = false;
+            this.uploadMoviePosterBtn.EnableTextWrapping = false;
+            this.uploadMoviePosterBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.uploadMoviePosterBtn.ForeColor = System.Drawing.Color.Black;
+            this.uploadMoviePosterBtn.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.uploadMoviePosterBtn.GlowIntensity = 100;
+            this.uploadMoviePosterBtn.GlowRadius = 20F;
+            this.uploadMoviePosterBtn.GradientBackground = false;
+            this.uploadMoviePosterBtn.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
+            this.uploadMoviePosterBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.uploadMoviePosterBtn.HintText = null;
+            this.uploadMoviePosterBtn.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
+            this.uploadMoviePosterBtn.HoverFontStyle = System.Drawing.FontStyle.Regular;
+            this.uploadMoviePosterBtn.HoverTextColor = System.Drawing.Color.Black;
+            this.uploadMoviePosterBtn.HoverTransitionDuration = 250;
+            this.uploadMoviePosterBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uploadMoviePosterBtn.ImagePadding = 5;
+            this.uploadMoviePosterBtn.ImageSize = new System.Drawing.Size(16, 16);
+            this.uploadMoviePosterBtn.IsRadial = false;
+            this.uploadMoviePosterBtn.IsReadOnly = false;
+            this.uploadMoviePosterBtn.IsToggleButton = false;
+            this.uploadMoviePosterBtn.IsToggled = false;
+            this.uploadMoviePosterBtn.Location = new System.Drawing.Point(586, 321);
+            this.uploadMoviePosterBtn.LongPressDurationMS = 1000;
+            this.uploadMoviePosterBtn.Name = "uploadMoviePosterBtn";
+            this.uploadMoviePosterBtn.NormalFontStyle = System.Drawing.FontStyle.Regular;
+            this.uploadMoviePosterBtn.ParticleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
+            this.uploadMoviePosterBtn.ParticleCount = 15;
+            this.uploadMoviePosterBtn.PressAnimationScale = 0.97F;
+            this.uploadMoviePosterBtn.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
+            this.uploadMoviePosterBtn.PressedFontStyle = System.Drawing.FontStyle.Regular;
+            this.uploadMoviePosterBtn.PressTransitionDuration = 150;
+            this.uploadMoviePosterBtn.ReadOnlyTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.uploadMoviePosterBtn.RippleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.uploadMoviePosterBtn.RippleOpacity = 0.3F;
+            this.uploadMoviePosterBtn.RippleRadiusMultiplier = 0.6F;
+            this.uploadMoviePosterBtn.ShadowBlur = 5;
+            this.uploadMoviePosterBtn.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.uploadMoviePosterBtn.ShadowOffset = new System.Drawing.Point(2, 2);
+            this.uploadMoviePosterBtn.ShakeDuration = 500;
+            this.uploadMoviePosterBtn.ShakeIntensity = 5;
+            this.uploadMoviePosterBtn.Size = new System.Drawing.Size(112, 27);
+            this.uploadMoviePosterBtn.TabIndex = 51;
+            this.uploadMoviePosterBtn.Text = "UPLOAD POSTER";
+            this.uploadMoviePosterBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uploadMoviePosterBtn.TextColor = System.Drawing.Color.Black;
+            this.uploadMoviePosterBtn.TooltipText = null;
+            this.uploadMoviePosterBtn.UseAdvancedRendering = true;
+            this.uploadMoviePosterBtn.UseParticles = false;
+            this.uploadMoviePosterBtn.Click += new System.EventHandler(this.uploadMoviePosterBtn_Click);
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.AccessibleDescription = "";
+            this.saveBtn.AccessibleName = "SAVE DETAILS";
+            this.saveBtn.AutoSizeBasedOnText = false;
+            this.saveBtn.BackColor = System.Drawing.Color.Transparent;
+            this.saveBtn.BadgeBackColor = System.Drawing.Color.Transparent;
+            this.saveBtn.BadgeFont = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.saveBtn.BadgeValue = 0;
+            this.saveBtn.BadgeValueForeColor = System.Drawing.Color.Black;
+            this.saveBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.saveBtn.BorderWidth = 2;
+            this.saveBtn.ButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.saveBtn.ButtonImage = null;
+            this.saveBtn.CanBeep = true;
+            this.saveBtn.CanGlow = false;
+            this.saveBtn.CanShake = true;
+            this.saveBtn.ContextMenuStripEx = null;
+            this.saveBtn.CornerRadiusBottomLeft = 10;
+            this.saveBtn.CornerRadiusBottomRight = 10;
+            this.saveBtn.CornerRadiusTopLeft = 10;
+            this.saveBtn.CornerRadiusTopRight = 10;
+            this.saveBtn.CustomCursor = System.Windows.Forms.Cursors.Default;
+            this.saveBtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.saveBtn.EnableLongPress = false;
+            this.saveBtn.EnablePressAnimation = true;
+            this.saveBtn.EnableRippleEffect = true;
+            this.saveBtn.EnableShadow = false;
+            this.saveBtn.EnableTextWrapping = false;
+            this.saveBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.saveBtn.ForeColor = System.Drawing.Color.Black;
+            this.saveBtn.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.saveBtn.GlowIntensity = 100;
+            this.saveBtn.GlowRadius = 20F;
+            this.saveBtn.GradientBackground = false;
+            this.saveBtn.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
+            this.saveBtn.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.saveBtn.HintText = null;
+            this.saveBtn.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
+            this.saveBtn.HoverFontStyle = System.Drawing.FontStyle.Regular;
+            this.saveBtn.HoverTextColor = System.Drawing.Color.Black;
+            this.saveBtn.HoverTransitionDuration = 250;
+            this.saveBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.saveBtn.ImagePadding = 5;
+            this.saveBtn.ImageSize = new System.Drawing.Size(16, 16);
+            this.saveBtn.IsRadial = false;
+            this.saveBtn.IsReadOnly = false;
+            this.saveBtn.IsToggleButton = false;
+            this.saveBtn.IsToggled = false;
+            this.saveBtn.Location = new System.Drawing.Point(464, 321);
+            this.saveBtn.LongPressDurationMS = 1000;
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.NormalFontStyle = System.Drawing.FontStyle.Regular;
+            this.saveBtn.ParticleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
+            this.saveBtn.ParticleCount = 15;
+            this.saveBtn.PressAnimationScale = 0.97F;
+            this.saveBtn.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
+            this.saveBtn.PressedFontStyle = System.Drawing.FontStyle.Regular;
+            this.saveBtn.PressTransitionDuration = 150;
+            this.saveBtn.ReadOnlyTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.saveBtn.RippleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.saveBtn.RippleOpacity = 0.3F;
+            this.saveBtn.RippleRadiusMultiplier = 0.6F;
+            this.saveBtn.ShadowBlur = 5;
+            this.saveBtn.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.saveBtn.ShadowOffset = new System.Drawing.Point(2, 2);
+            this.saveBtn.ShakeDuration = 500;
+            this.saveBtn.ShakeIntensity = 5;
+            this.saveBtn.Size = new System.Drawing.Size(102, 27);
+            this.saveBtn.TabIndex = 52;
+            this.saveBtn.Text = "SAVE DETAILS";
+            this.saveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.saveBtn.TextColor = System.Drawing.Color.Black;
+            this.saveBtn.TooltipText = null;
+            this.saveBtn.UseAdvancedRendering = true;
+            this.saveBtn.UseParticles = false;
             // 
             // MovieDetailsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(746, 380);
+            this.ClientSize = new System.Drawing.Size(748, 389);
             this.Controls.Add(this.addMovieContainer);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -952,5 +1111,7 @@
         private SiticoneNetFrameworkUI.SiticoneButton showtimeBtn;
         private SiticoneNetFrameworkUI.SiticoneButton viewShowtimesBtn;
         private SiticoneNetFrameworkUI.SiticoneButton starBtn;
+        private SiticoneNetFrameworkUI.SiticoneButton uploadMoviePosterBtn;
+        private SiticoneNetFrameworkUI.SiticoneButton saveBtn;
     }
 }

@@ -35,6 +35,7 @@ namespace WildCat_Tickets
             if(currentUser == "admin")
             {
                 homeBtn.Visible = false;
+                salesReportBtn.Visible = true;
                 analyticsBtn.Visible = true;
                 userBtn.Visible = false;
                 logoutContainer.Height += 35;
@@ -42,7 +43,7 @@ namespace WildCat_Tickets
             }
             else
             {
-                homeBtn.Visible = false;// true;
+                salesReportBtn.Visible = false;// true;
                 analyticsBtn.Visible = false;
                 userBtn.Visible = true;
             }
@@ -226,6 +227,7 @@ namespace WildCat_Tickets
             bookingsBtn.IconColor = Color.White;
             logoutBtn.IconColor = Color.White;
             analyticsBtn.IconColor = Color.White;
+            salesReportBtn.IconColor = Color.White;
 
             userBtn.ForeColor = Color.White;
             homeBtn.ForeColor = Color.White;
@@ -233,11 +235,14 @@ namespace WildCat_Tickets
             bookingsBtn.ForeColor = Color.White;
             logoutBtn.ForeColor = Color.White;
             analyticsBtn.ForeColor = Color.White;
+            salesReportBtn.ForeColor = Color.White;
 
             homeBtn.Font = new Font(homeBtn.Font, FontStyle.Regular);
             moviesBtn.Font = new Font(moviesBtn.Font, FontStyle.Regular);
             bookingsBtn.Font = new Font(bookingsBtn.Font, FontStyle.Regular);
             logoutBtn.Font = new Font(logoutBtn.Font, FontStyle.Regular);
+            analyticsBtn.Font = new Font(analyticsBtn.Font, FontStyle.Regular);
+            salesReportBtn.Font = new Font(salesReportBtn.Font, FontStyle.Regular);
         }
 
         private void analyticsBtn_MouseClick(object sender, MouseEventArgs e)
@@ -254,6 +259,22 @@ namespace WildCat_Tickets
             contentPanel.Controls.Clear();
             contentPanel.Controls.Add(analyticsForm);
             analyticsForm.Show();
+        }
+
+        private void salesReportBtn_MouseClick(object sender, MouseEventArgs e)
+        {
+            resetSideBarColors();
+            salesReportBtn.IconColor = Color.FromArgb(255, 219, 12);
+            salesReportBtn.ForeColor = Color.FromArgb(255, 219, 12);
+            salesReportBtn.Font = new Font(salesReportBtn.Font, FontStyle.Bold);
+
+            SalesReportForm salesReportForm = new SalesReportForm();
+            salesReportForm.TopLevel = false;
+            salesReportForm.FormBorderStyle = FormBorderStyle.None;
+            salesReportForm.Dock = DockStyle.Fill;
+            contentPanel.Controls.Clear();
+            contentPanel.Controls.Add(salesReportForm);
+            salesReportForm.Show();
         }
     }
 }

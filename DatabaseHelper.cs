@@ -43,79 +43,79 @@ namespace WildCat_Tickets
         {
             string[] tableCreationQueries = new string[]
             {
-        @"
-        CREATE TABLE IF NOT EXISTS Users (
-            IDNumber TEXT PRIMARY KEY,
-            FirstName TEXT,
-            MiddleName TEXT,
-            LastName TEXT,
-            BirthDate TEXT,
-            Program TEXT,
-            Year TEXT,
-            Phone TEXT,
-            Email TEXT UNIQUE,
-            Password TEXT,
-            ProfilePhotoPath TEXT,
-            Role TEXT
-        );",
-        @"
-        CREATE TABLE IF NOT EXISTS Movies (
-            Id INTEGER PRIMARY KEY AUTOINCREMENT,
-            Title TEXT NOT NULL,
-            Duration TEXT NOT NULL,
-            Genre TEXT NOT NULL,
-            Rating TEXT NOT NULL,
-            ReleaseDate TEXT NOT NULL,
-            Description TEXT NOT NULL,
-            PosterPath TEXT NOT NULL,
-            Status TEXT NOT NULL,
-            NumberOfRatings INTEGER DEFAULT 0,
-            TotalRatings INTEGER DEFAULT 0
-        );",
-        @"
-        CREATE TABLE IF NOT EXISTS Venues (
-            VenueID INTEGER PRIMARY KEY AUTOINCREMENT,
-            Name TEXT NOT NULL,
-            Location TEXT NOT NULL,
-            SeatCapacity INTEGER NOT NULL
-        );",
-        @"
-        CREATE TABLE IF NOT EXISTS Showtimes (
-            ShowtimeID INTEGER PRIMARY KEY AUTOINCREMENT,
-            MovieID INTEGER NOT NULL,
-            VenueID INTEGER NOT NULL,
-            StartTime DATETIME NOT NULL,
-            EndTime DATETIME NOT NULL,
-            TicketPrice REAL NOT NULL,
-            FOREIGN KEY (MovieID) REFERENCES Movies(Id),
-            FOREIGN KEY (VenueID) REFERENCES Venues(VenueID)
-        );",
-        @"
-        CREATE TABLE IF NOT EXISTS Seats (
-            SeatID INTEGER PRIMARY KEY AUTOINCREMENT,
-            VenueID INTEGER NOT NULL,
-            SeatNumber TEXT NOT NULL UNIQUE,
-            FOREIGN KEY (VenueID) REFERENCES Venues(VenueID)
-        );",
-        @"
-        CREATE TABLE IF NOT EXISTS Bookings (
-            BookingID INTEGER PRIMARY KEY AUTOINCREMENT,
-            UserID TEXT NOT NULL,
-            ShowtimeID INTEGER NOT NULL,
-            SeatNumber TEXT NOT NULL,
-            BookingTime DATETIME DEFAULT CURRENT_TIMESTAMP,
-            FOREIGN KEY (UserID) REFERENCES Users(IDNumber),
-            FOREIGN KEY (ShowtimeID) REFERENCES Showtimes(ShowtimeID)
-        );",
-        @"
-        CREATE TABLE IF NOT EXISTS Ratings (
-            RatingID INTEGER PRIMARY KEY AUTOINCREMENT,
-            UserID TEXT NOT NULL,
-            MovieID INTEGER NOT NULL,
-            Rating INTEGER NOT NULL CHECK (Rating >= 1 AND Rating <= 5),
-            FOREIGN KEY (UserID) REFERENCES Users(IDNumber),
-            FOREIGN KEY (MovieID) REFERENCES Movies(Id)
-        );"
+            @"
+            CREATE TABLE IF NOT EXISTS Users (
+                IDNumber TEXT PRIMARY KEY,
+                FirstName TEXT,
+                MiddleName TEXT,
+                LastName TEXT,
+                BirthDate TEXT,
+                Program TEXT,
+                Year TEXT,
+                Phone TEXT,
+                Email TEXT UNIQUE,
+                Password TEXT,
+                ProfilePhotoPath TEXT,
+                Role TEXT
+            );",
+            @"
+            CREATE TABLE IF NOT EXISTS Movies (
+                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                Title TEXT NOT NULL,
+                Duration TEXT NOT NULL,
+                Genre TEXT NOT NULL,
+                Rating TEXT NOT NULL,
+                ReleaseDate TEXT NOT NULL,
+                Description TEXT NOT NULL,
+                PosterPath TEXT NOT NULL,
+                Status TEXT NOT NULL,
+                NumberOfRatings INTEGER DEFAULT 0,
+                TotalRatings INTEGER DEFAULT 0
+            );",
+            @"
+            CREATE TABLE IF NOT EXISTS Venues (
+                VenueID INTEGER PRIMARY KEY AUTOINCREMENT,
+                Name TEXT NOT NULL,
+                Location TEXT NOT NULL,
+                SeatCapacity INTEGER NOT NULL
+            );",
+            @"
+            CREATE TABLE IF NOT EXISTS Showtimes (
+                ShowtimeID INTEGER PRIMARY KEY AUTOINCREMENT,
+                MovieID INTEGER NOT NULL,
+                VenueID INTEGER NOT NULL,
+                StartTime DATETIME NOT NULL,
+                EndTime DATETIME NOT NULL,
+                TicketPrice REAL NOT NULL,
+                FOREIGN KEY (MovieID) REFERENCES Movies(Id),
+                FOREIGN KEY (VenueID) REFERENCES Venues(VenueID)
+            );",
+            @"
+            CREATE TABLE IF NOT EXISTS Seats (
+                SeatID INTEGER PRIMARY KEY AUTOINCREMENT,
+                VenueID INTEGER NOT NULL,
+                SeatNumber TEXT NOT NULL UNIQUE,
+                FOREIGN KEY (VenueID) REFERENCES Venues(VenueID)
+            );",
+            @"
+            CREATE TABLE IF NOT EXISTS Bookings (
+                BookingID INTEGER PRIMARY KEY AUTOINCREMENT,
+                UserID TEXT NOT NULL,
+                ShowtimeID INTEGER NOT NULL,
+                SeatNumber TEXT NOT NULL,
+                BookingTime DATETIME DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (UserID) REFERENCES Users(IDNumber),
+                FOREIGN KEY (ShowtimeID) REFERENCES Showtimes(ShowtimeID)
+            );",
+            @"
+            CREATE TABLE IF NOT EXISTS Ratings (
+                RatingID INTEGER PRIMARY KEY AUTOINCREMENT,
+                UserID TEXT NOT NULL,
+                MovieID INTEGER NOT NULL,
+                Rating INTEGER NOT NULL CHECK (Rating >= 1 AND Rating <= 5),
+                FOREIGN KEY (UserID) REFERENCES Users(IDNumber),
+                FOREIGN KEY (MovieID) REFERENCES Movies(Id)
+            );"
             };
 
             foreach (var query in tableCreationQueries)
@@ -181,6 +181,64 @@ namespace WildCat_Tickets
             }
         }
 
+        public static Dictionary<string, int> GetTotalBookingsByMovie(string genre = "Any", string releaseYear = "Any", int maxResults = 10)
+        {
+            var totalBookingsByMovie = new Dictionary<string, int>();
+
+            string query = @"
+            SELECT 
+                Movies.Title, 
+                COUNT(Bookings.BookingID) AS TotalBookings
+            FROM 
+                Movies
+            LEFT JOIN 
+                Showtimes ON Movies.Id = Showtimes.MovieID
+            LEFT JOIN 
+                Bookings ON Showtimes.ShowtimeID = Bookings.ShowtimeID
+            WHERE 
+                (@Genre = 'Any' OR Movies.Genre = @Genre)
+                AND (@ReleaseYear = 'Any' OR strftime('%Y', Movies.ReleaseDate) = @ReleaseYear)
+            GROUP BY 
+                Movies.Title
+            ORDER BY 
+                TotalBookings DESC
+            LIMIT 
+                @MaxResults";
+
+            try
+            {
+                using (var conn = new SQLiteConnection("Data Source=wildcattickets.db;Version=3;"))
+                {
+                    conn.Open();
+                    using (var cmd = new SQLiteCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Genre", genre);
+                        cmd.Parameters.AddWithValue("@ReleaseYear", releaseYear);
+                        cmd.Parameters.AddWithValue("@MaxResults", maxResults);
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string title = reader["Title"].ToString();
+                                int totalBookings = Convert.ToInt32(reader["TotalBookings"]);
+                                totalBookingsByMovie[title] = totalBookings;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error fetching total bookings: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return totalBookingsByMovie;
+        }
 
         internal static string HashPassword(string password)
         {

@@ -37,9 +37,10 @@
             SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState5 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState6 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState7 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState10 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState11 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState8 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState9 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState10 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             this.mainPalette = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
             this.buttonSpecAny1 = new Krypton.Toolkit.ButtonSpecAny();
             this.tabsBtn = new FontAwesome.Sharp.IconButton();
@@ -52,6 +53,7 @@
             this.moviesBtn = new FontAwesome.Sharp.IconButton();
             this.bookingsBtn = new FontAwesome.Sharp.IconButton();
             this.logoutContainer = new System.Windows.Forms.Panel();
+            this.salesReportBtn = new FontAwesome.Sharp.IconButton();
             this.logoutBtn = new FontAwesome.Sharp.IconButton();
             this.analyticsBtn = new FontAwesome.Sharp.IconButton();
             this.menuTransitionTimer = new System.Windows.Forms.Timer(this.components);
@@ -213,7 +215,7 @@
             this.sidebarFlowPanel.ItemSpacing = 5;
             this.sidebarFlowPanel.Location = new System.Drawing.Point(0, 0);
             this.sidebarFlowPanel.Name = "sidebarFlowPanel";
-            this.sidebarFlowPanel.Size = new System.Drawing.Size(200, 716);
+            this.sidebarFlowPanel.Size = new System.Drawing.Size(200, 725);
             this.sidebarFlowPanel.TabIndex = 1;
             this.sidebarFlowPanel.VirtualizationThreshold = 100;
             // 
@@ -443,6 +445,7 @@
             // logoutContainer
             // 
             this.logoutContainer.BackColor = System.Drawing.Color.Transparent;
+            this.logoutContainer.Controls.Add(this.salesReportBtn);
             this.logoutContainer.Controls.Add(this.logoutBtn);
             this.logoutContainer.Controls.Add(this.analyticsBtn);
             this.logoutContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -450,10 +453,36 @@
             this.logoutContainer.Name = "logoutContainer";
             this.logoutContainer.Size = new System.Drawing.Size(194, 353);
             this.logoutContainer.TabIndex = 15;
-            layoutState10.Location = new System.Drawing.Point(3, 370);
-            layoutState10.Size = new System.Drawing.Size(194, 353);
-            layoutState10.Visible = true;
-            this.logoutContainer.Tag = layoutState10;
+            layoutState11.Location = new System.Drawing.Point(3, 370);
+            layoutState11.Size = new System.Drawing.Size(194, 353);
+            layoutState11.Visible = true;
+            this.logoutContainer.Tag = layoutState11;
+            // 
+            // salesReportBtn
+            // 
+            this.salesReportBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.salesReportBtn.FlatAppearance.BorderSize = 0;
+            this.salesReportBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.salesReportBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.salesReportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.salesReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salesReportBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.salesReportBtn.IconChar = FontAwesome.Sharp.IconChar.Receipt;
+            this.salesReportBtn.IconColor = System.Drawing.Color.White;
+            this.salesReportBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.salesReportBtn.IconSize = 36;
+            this.salesReportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.salesReportBtn.Location = new System.Drawing.Point(-3, 41);
+            this.salesReportBtn.Name = "salesReportBtn";
+            this.salesReportBtn.Size = new System.Drawing.Size(194, 35);
+            this.salesReportBtn.TabIndex = 17;
+            layoutState8.Location = new System.Drawing.Point(3, 744);
+            layoutState8.Size = new System.Drawing.Size(194, 35);
+            layoutState8.Visible = true;
+            this.salesReportBtn.Tag = layoutState8;
+            this.salesReportBtn.Text = "Sales Report";
+            this.salesReportBtn.UseVisualStyleBackColor = false;
+            this.salesReportBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.salesReportBtn_MouseClick);
             // 
             // logoutBtn
             // 
@@ -474,10 +503,10 @@
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(194, 49);
             this.logoutBtn.TabIndex = 14;
-            layoutState8.Location = new System.Drawing.Point(3, 493);
-            layoutState8.Size = new System.Drawing.Size(194, 35);
-            layoutState8.Visible = true;
-            this.logoutBtn.Tag = layoutState8;
+            layoutState9.Location = new System.Drawing.Point(3, 493);
+            layoutState9.Size = new System.Drawing.Size(194, 35);
+            layoutState9.Visible = true;
+            this.logoutBtn.Tag = layoutState9;
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.UseVisualStyleBackColor = false;
             this.logoutBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.logoutBtn_MouseClick);
@@ -500,10 +529,10 @@
             this.analyticsBtn.Name = "analyticsBtn";
             this.analyticsBtn.Size = new System.Drawing.Size(194, 35);
             this.analyticsBtn.TabIndex = 16;
-            layoutState9.Location = new System.Drawing.Point(3, 744);
-            layoutState9.Size = new System.Drawing.Size(194, 35);
-            layoutState9.Visible = true;
-            this.analyticsBtn.Tag = layoutState9;
+            layoutState10.Location = new System.Drawing.Point(3, 744);
+            layoutState10.Size = new System.Drawing.Size(194, 35);
+            layoutState10.Visible = true;
+            this.analyticsBtn.Tag = layoutState10;
             this.analyticsBtn.Text = "Analytics";
             this.analyticsBtn.UseVisualStyleBackColor = false;
             this.analyticsBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.analyticsBtn_MouseClick);
@@ -518,7 +547,7 @@
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(200, 0);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(1220, 716);
+            this.contentPanel.Size = new System.Drawing.Size(1228, 725);
             this.contentPanel.TabIndex = 2;
             // 
             // mySiticoneLicenseSettings1
@@ -531,7 +560,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ButtonSpecs.Add(this.buttonSpecAny1);
-            this.ClientSize = new System.Drawing.Size(1420, 716);
+            this.ClientSize = new System.Drawing.Size(1428, 725);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.sidebarFlowPanel);
             this.ForeColor = System.Drawing.Color.White;
@@ -574,6 +603,7 @@
         private SiticoneNetFrameworkUI.SiticoneTextBox currentUserTbx;
         private SiticoneNetFrameworkUI.MySiticoneLicenseSettings mySiticoneLicenseSettings1;
         private FontAwesome.Sharp.IconButton analyticsBtn;
+        private FontAwesome.Sharp.IconButton salesReportBtn;
     }
 }
 

@@ -104,6 +104,8 @@ namespace WildCat_Tickets
                 bookBtn.Visible = false;
                 viewShowtimesBtn.Visible = true;
                 starBtn.Visible = false;
+                uploadMoviePosterBtn.Visible = true;
+                saveBtn.Visible = true;
             }
             else
             {
@@ -111,6 +113,8 @@ namespace WildCat_Tickets
                 bookBtn.Visible = true;
                 viewShowtimesBtn.Visible = false;
                 starBtn.Visible = true;
+                uploadMoviePosterBtn.Visible = false;
+                saveBtn.Visible = false;
             }
         }
 
@@ -546,6 +550,54 @@ namespace WildCat_Tickets
 
             // Show the form as a dialog
             showtimesForm.ShowDialog();
+        }
+
+        private void uploadMoviePosterBtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Select a Movie Poster",
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFile = openFileDialog.FileName;
+
+                try
+                {
+                    using (SQLiteConnection conn = new SQLiteConnection("Data Source=wildcattickets.db;Version=3;"))
+                    {
+                        conn.Open();
+                        string updateQuery = "UPDATE Movies SET PosterPath = @posterPath WHERE Id = @movieId";
+                        using (SQLiteCommand cmd = new SQLiteCommand(updateQuery, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@posterPath", selectedFile);
+                            cmd.Parameters.AddWithValue("@movieId", this.MovieID);
+
+                            int rowsAffected = cmd.ExecuteNonQuery();
+                            if (rowsAffected > 0)
+                            {
+                                // Update the movie poster in the UI if the file exists
+                                if (File.Exists(selectedFile))
+                                {
+                                    moviePosterBox.Image = Image.FromFile(selectedFile);
+                                }
+                                MessageBox.Show("Movie poster updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to update movie poster.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error updating movie poster: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void bookBtn_Click(object sender, EventArgs e)

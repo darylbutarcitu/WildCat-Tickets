@@ -42,7 +42,9 @@ namespace WildCat_Tickets
                 {
                     conn.Open();
 
-                    string query = "SELECT Id, PosterPath, TotalRatings, NumberOfRatings FROM Movies";
+                    // Load all movies from the Movies table
+                    string query = "SELECT Id, PosterPath, TotalRatings, NumberOfRatings, Title, ReleaseDate FROM Movies";
+
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     using (SQLiteDataReader reader = cmd.ExecuteReader())
                     {
@@ -52,13 +54,22 @@ namespace WildCat_Tickets
                             string posterPath = reader["PosterPath"].ToString();
                             int totalRatings = Convert.ToInt32(reader["TotalRatings"]);
                             int numberOfRatings = Convert.ToInt32(reader["NumberOfRatings"]);
+                            string title = reader["Title"].ToString();
 
-                            // Calculate stars (avoid division by zero)
-                            double stars = numberOfRatings > 0 ? (double)totalRatings / numberOfRatings : 0.0;
+                            // Extract release year from ReleaseDate
+                            DateTime releaseDate = Convert.ToDateTime(reader["ReleaseDate"]);
+                            string releaseYear = releaseDate.Year.ToString();
 
-                            if (!string.IsNullOrEmpty(posterPath) && File.Exists(posterPath))
+                            // Check if the movie has at least one upcoming showtime for non-admin users
+                            if (currentUser == "admin" || HasUpcomingShowtime(conn, movieId))
                             {
-                                AddImageToGrid(posterPath, movieId, Math.Round(stars, 1)); // Pass stars to AddImageToGrid
+                                // Calculate stars (avoid division by zero)
+                                double stars = numberOfRatings > 0 ? (double)totalRatings / numberOfRatings : 0.0;
+
+                                if (!string.IsNullOrEmpty(posterPath) && File.Exists(posterPath))
+                                {
+                                    AddImageToGrid(posterPath, movieId, Math.Round(stars, 1), title, releaseYear);
+                                }
                             }
                         }
                     }
@@ -74,12 +85,28 @@ namespace WildCat_Tickets
             }
         }
 
-        private void AddImageToGrid(string imagePath, int movieId, double stars)
+        private bool HasUpcomingShowtime(SQLiteConnection conn, int movieId)
         {
-            // Create a container panel to hold the PictureBox and the star rating label
+            // Query to check for at least one upcoming showtime
+            string query = "SELECT 1 FROM Showtimes WHERE MovieID = @movieId AND StartTime > @currentDateTime LIMIT 1";
+
+            using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@movieId", movieId);
+                cmd.Parameters.AddWithValue("@currentDateTime", DateTime.Now);
+
+                object result = cmd.ExecuteScalar();
+                return result != null; // Returns true if at least one upcoming showtime exists
+            }
+        }
+
+
+        private void AddImageToGrid(string imagePath, int movieId, double stars, string title, string releaseYear)
+        {
+            // Create a container panel to hold all elements
             Panel containerPanel = new Panel
             {
-                Size = new Size(200, 340), // Adjusted height to accommodate the star rating label
+                Size = new Size(200, 400), // Adjusted height to fit all elements
                 Margin = new Padding(5),
                 Tag = movieId // Store the movie ID in the Tag property
             };
@@ -91,30 +118,96 @@ namespace WildCat_Tickets
                 SizeMode = PictureBoxSizeMode.Zoom,
                 Cursor = Cursors.Hand,
                 Image = Image.FromFile(imagePath),
+                Dock = DockStyle.Top,
                 Tag = movieId // Store the movie ID in the Tag property
             };
 
             pictureBox.Click += MoviePoster_Click; // Attach click event handler
 
-            // Create a Label for the star rating
-            Label starsLabel = new Label
+            // Create a Label for the title and release year with wrapping enabled
+            Label titleLabel = new Label
             {
-                Text = $"⭐ {stars:F1} Stars", // Display stars with 1 decimal place
-                TextAlign = ContentAlignment.MiddleCenter,
-                Dock = DockStyle.Bottom,
-                Font = new Font("Segoe UI", 15, FontStyle.Bold),
+                Text = $"{title} ({releaseYear})",
                 ForeColor = Color.White,
-                Height = 30
+                Font = new Font("Segoe UI", 10, FontStyle.Bold),
+                AutoSize = true, // Enable AutoSize to automatically adjust to the text
+                MaximumSize = new Size(200, 0), // Restrict the width to the container width
+                TextAlign = ContentAlignment.TopCenter,
+                Dock = DockStyle.Top, // Position it below the PictureBox and above the starsPanel
+                Padding = new Padding(5), // Add padding for better readability
             };
 
-            // Add the PictureBox and the Label to the container panel
-            containerPanel.Controls.Add(starsLabel);
-            containerPanel.Controls.Add(pictureBox);
+            // Create a FlowLayoutPanel for the star rating
+            var starsPanel = new FlowLayoutPanel
+            {
+                AutoSize = true, // Ensure it adjusts to the content
+                FlowDirection = FlowDirection.LeftToRight,
+                WrapContents = false,
+                Dock = DockStyle.Top, // Align it directly below the title
+                Margin = new Padding(0, 5, 0, 0) // Add small margin above the stars
+            };
+
+            // Add star rating images based on the stars value
+            double avgRating = stars;
+            for (int j = 0; j < 5; j++)
+            {
+                PictureBox starPictureBox = new PictureBox
+                {
+                    SizeMode = PictureBoxSizeMode.Zoom,
+                    Width = 20,
+                    Height = 20
+                };
+
+                if (avgRating >= 1.0)
+                {
+                    starPictureBox.Image = Image.FromFile(@"D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\bin\assets\full_star.png");
+                    avgRating -= 1.0;
+                }
+                else if (avgRating >= 0.5)
+                {
+                    if (avgRating == 0.5)
+                    {
+                        starPictureBox.Image = Image.FromFile(@"D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\bin\assets\half_star.png");
+
+                    } else
+                    {
+                        starPictureBox.Image = Image.FromFile(@"D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\bin\assets\more_star.png");
+                    }
+
+                    avgRating = 0.0;
+                }
+                else if (avgRating > 0.0 && avgRating < 0.5)
+                {
+                    starPictureBox.Image = Image.FromFile(@"D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\bin\assets\less_star.png");
+                    avgRating = 0.0;
+                }
+                else
+                {
+                    starPictureBox.Image = Image.FromFile(@"D:\OOP Project\repos\WildCat-Tickets\WildCat-Tickets\bin\assets\no_star.png");
+                }
+
+                starsPanel.Controls.Add(starPictureBox);
+            }
+
+            // Add the average rating value next to the stars
+            var ratingLabel = new Label
+            {
+                Text = $"({stars:0.0})",
+                ForeColor = Color.White,
+                Font = new Font("Arial", 10, FontStyle.Regular),
+                TextAlign = ContentAlignment.MiddleLeft,
+                Margin = new Padding(5, 5, 0, 0)
+            };
+            starsPanel.Controls.Add(ratingLabel);
+
+            // Add elements to the container panel in the correct order
+            containerPanel.Controls.Add(starsPanel);  // Add the starsPanel first (at the bottom of the container)
+            containerPanel.Controls.Add(titleLabel); // Add the titleLabel above the starsPanel
+            containerPanel.Controls.Add(pictureBox); // Add the pictureBox at the top of the container
 
             // Add the container panel to the FlowLayoutPanel
             moviesFlowLayoutPanel.Controls.Add(containerPanel);
         }
-
         private void moviesFlowLayoutPanel_Resize(object sender, EventArgs e)
         {
             AdjustImageLayout();
@@ -155,13 +248,13 @@ namespace WildCat_Tickets
 
                     // Use a LIKE query for partial matching across multiple fields
                     string query = @"
-                        SELECT Id, PosterPath 
-                        FROM Movies 
-                        WHERE Title LIKE @keyword 
-                           OR Description LIKE @keyword 
-                           OR Genre LIKE @keyword 
-                           OR Rating LIKE @keyword 
-                           OR ReleaseDate LIKE @keyword";
+                SELECT Id, PosterPath, Title, ReleaseDate, TotalRatings, NumberOfRatings 
+                FROM Movies 
+                WHERE Title LIKE @keyword 
+                   OR Description LIKE @keyword 
+                   OR Genre LIKE @keyword 
+                   OR Rating LIKE @keyword 
+                   OR ReleaseDate LIKE @keyword";
 
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     {
@@ -173,9 +266,21 @@ namespace WildCat_Tickets
                             {
                                 int movieId = Convert.ToInt32(reader["Id"]);
                                 string posterPath = reader["PosterPath"].ToString();
+                                string title = reader["Title"].ToString();
+
+                                // Extract release year from ReleaseDate
+                                DateTime releaseDate = Convert.ToDateTime(reader["ReleaseDate"]);
+                                string releaseYear = releaseDate.Year.ToString();
+
+                                int totalRatings = Convert.ToInt32(reader["TotalRatings"]);
+                                int numberOfRatings = Convert.ToInt32(reader["NumberOfRatings"]);
+
+                                // Calculate stars (avoid division by zero)
+                                double stars = numberOfRatings > 0 ? (double)totalRatings / numberOfRatings : 0.0;
+
                                 if (!string.IsNullOrEmpty(posterPath) && File.Exists(posterPath))
                                 {
-                                    AddImageToGrid(posterPath, movieId, 0.0);
+                                    AddImageToGrid(posterPath, movieId, Math.Round(stars, 1), title, releaseYear);
                                 }
                             }
                         }
