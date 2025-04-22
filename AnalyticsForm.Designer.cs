@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState10 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState11 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState12 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState13 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState14 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState15 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState16 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState17 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState18 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState19 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState20 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState21 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState22 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState23 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState24 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState25 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState26 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState27 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             this.filterPanel = new SiticoneNetFrameworkUI.SiticoneFlatPanel();
+            this.titlePanel = new SiticoneNetFrameworkUI.SiticoneFlatPanel();
             this.countDropdown = new SiticoneNetFrameworkUI.SiticoneDropdown();
             this.siticoneLabel3 = new SiticoneNetFrameworkUI.SiticoneLabel();
             this.siticoneLabel2 = new SiticoneNetFrameworkUI.SiticoneLabel();
@@ -49,9 +50,8 @@
             this.analyticsLabel = new SiticoneNetFrameworkUI.SiticoneLabel();
             this.analyticsDropdown = new SiticoneNetFrameworkUI.SiticoneDropdown();
             this.contentPanel = new SiticoneNetFrameworkUI.SiticoneFlatPanel();
-            this.rankingPanel = new SiticoneNetFrameworkUI.SiticoneFlatPanel();
             this.resultsPanel = new SiticoneNetFrameworkUI.SiticoneFlatPanel();
-            this.titlePanel = new SiticoneNetFrameworkUI.SiticoneFlatPanel();
+            this.rankingPanel = new SiticoneNetFrameworkUI.SiticoneFlatPanel();
             this.filterPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
@@ -74,8 +74,18 @@
             this.filterPanel.Location = new System.Drawing.Point(0, 0);
             this.filterPanel.MinimumSize = new System.Drawing.Size(20, 20);
             this.filterPanel.Name = "filterPanel";
-            this.filterPanel.Size = new System.Drawing.Size(1066, 167);
+            this.filterPanel.Size = new System.Drawing.Size(1157, 167);
             this.filterPanel.TabIndex = 0;
+            // 
+            // titlePanel
+            // 
+            this.titlePanel.BackColor = System.Drawing.Color.Transparent;
+            this.titlePanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.titlePanel.Location = new System.Drawing.Point(0, 99);
+            this.titlePanel.MinimumSize = new System.Drawing.Size(20, 20);
+            this.titlePanel.Name = "titlePanel";
+            this.titlePanel.Size = new System.Drawing.Size(1157, 68);
+            this.titlePanel.TabIndex = 0;
             // 
             // countDropdown
             // 
@@ -114,10 +124,10 @@
             this.countDropdown.SelectedValue = null;
             this.countDropdown.Size = new System.Drawing.Size(187, 40);
             this.countDropdown.TabIndex = 10;
-            layoutState10.Location = new System.Drawing.Point(177, 3);
-            layoutState10.Size = new System.Drawing.Size(220, 40);
-            layoutState10.Visible = true;
-            this.countDropdown.Tag = layoutState10;
+            layoutState19.Location = new System.Drawing.Point(177, 3);
+            layoutState19.Size = new System.Drawing.Size(220, 40);
+            layoutState19.Visible = true;
+            this.countDropdown.Tag = layoutState19;
             this.countDropdown.Text = "Select Genre";
             this.countDropdown.UnselectedItemTextColor = System.Drawing.Color.Black;
             this.countDropdown.ValueMember = null;
@@ -131,10 +141,10 @@
             this.siticoneLabel3.Name = "siticoneLabel3";
             this.siticoneLabel3.Size = new System.Drawing.Size(109, 26);
             this.siticoneLabel3.TabIndex = 9;
-            layoutState11.Location = new System.Drawing.Point(3, 0);
-            layoutState11.Size = new System.Drawing.Size(168, 31);
-            layoutState11.Visible = true;
-            this.siticoneLabel3.Tag = layoutState11;
+            layoutState20.Location = new System.Drawing.Point(3, 0);
+            layoutState20.Size = new System.Drawing.Size(168, 31);
+            layoutState20.Visible = true;
+            this.siticoneLabel3.Tag = layoutState20;
             this.siticoneLabel3.Text = "Result Count:";
             // 
             // siticoneLabel2
@@ -145,10 +155,10 @@
             this.siticoneLabel2.Name = "siticoneLabel2";
             this.siticoneLabel2.Size = new System.Drawing.Size(60, 26);
             this.siticoneLabel2.TabIndex = 8;
-            layoutState12.Location = new System.Drawing.Point(3, 0);
-            layoutState12.Size = new System.Drawing.Size(168, 31);
-            layoutState12.Visible = true;
-            this.siticoneLabel2.Tag = layoutState12;
+            layoutState21.Location = new System.Drawing.Point(3, 0);
+            layoutState21.Size = new System.Drawing.Size(168, 31);
+            layoutState21.Visible = true;
+            this.siticoneLabel2.Tag = layoutState21;
             this.siticoneLabel2.Text = "Genre:";
             // 
             // releaseYearDropdown
@@ -186,10 +196,10 @@
             this.releaseYearDropdown.SelectedValue = null;
             this.releaseYearDropdown.Size = new System.Drawing.Size(108, 40);
             this.releaseYearDropdown.TabIndex = 7;
-            layoutState13.Location = new System.Drawing.Point(177, 3);
-            layoutState13.Size = new System.Drawing.Size(220, 40);
-            layoutState13.Visible = true;
-            this.releaseYearDropdown.Tag = layoutState13;
+            layoutState22.Location = new System.Drawing.Point(177, 3);
+            layoutState22.Size = new System.Drawing.Size(220, 40);
+            layoutState22.Visible = true;
+            this.releaseYearDropdown.Tag = layoutState22;
             this.releaseYearDropdown.Text = "Select Genre";
             this.releaseYearDropdown.UnselectedItemTextColor = System.Drawing.Color.Black;
             this.releaseYearDropdown.ValueMember = null;
@@ -203,10 +213,10 @@
             this.siticoneLabel1.Name = "siticoneLabel1";
             this.siticoneLabel1.Size = new System.Drawing.Size(112, 26);
             this.siticoneLabel1.TabIndex = 6;
-            layoutState14.Location = new System.Drawing.Point(3, 0);
-            layoutState14.Size = new System.Drawing.Size(168, 31);
-            layoutState14.Visible = true;
-            this.siticoneLabel1.Tag = layoutState14;
+            layoutState23.Location = new System.Drawing.Point(3, 0);
+            layoutState23.Size = new System.Drawing.Size(168, 31);
+            layoutState23.Visible = true;
+            this.siticoneLabel1.Tag = layoutState23;
             this.siticoneLabel1.Text = "Release Year:";
             // 
             // genreDropdown
@@ -264,10 +274,10 @@
             this.genreDropdown.SelectedValue = null;
             this.genreDropdown.Size = new System.Drawing.Size(195, 40);
             this.genreDropdown.TabIndex = 5;
-            layoutState15.Location = new System.Drawing.Point(177, 3);
-            layoutState15.Size = new System.Drawing.Size(220, 40);
-            layoutState15.Visible = true;
-            this.genreDropdown.Tag = layoutState15;
+            layoutState24.Location = new System.Drawing.Point(177, 3);
+            layoutState24.Size = new System.Drawing.Size(220, 40);
+            layoutState24.Visible = true;
+            this.genreDropdown.Tag = layoutState24;
             this.genreDropdown.Text = "Select Genre";
             this.genreDropdown.UnselectedItemTextColor = System.Drawing.Color.Black;
             this.genreDropdown.ValueMember = null;
@@ -291,10 +301,10 @@
             this.sortLabel.Name = "sortLabel";
             this.sortLabel.Size = new System.Drawing.Size(71, 26);
             this.sortLabel.TabIndex = 3;
-            layoutState16.Location = new System.Drawing.Point(3, 0);
-            layoutState16.Size = new System.Drawing.Size(168, 31);
-            layoutState16.Visible = true;
-            this.sortLabel.Tag = layoutState16;
+            layoutState25.Location = new System.Drawing.Point(3, 0);
+            layoutState25.Size = new System.Drawing.Size(168, 31);
+            layoutState25.Visible = true;
+            this.sortLabel.Tag = layoutState25;
             this.sortLabel.Text = "Filter by";
             // 
             // analyticsLabel
@@ -305,10 +315,10 @@
             this.analyticsLabel.Name = "analyticsLabel";
             this.analyticsLabel.Size = new System.Drawing.Size(137, 26);
             this.analyticsLabel.TabIndex = 1;
-            layoutState17.Location = new System.Drawing.Point(3, 0);
-            layoutState17.Size = new System.Drawing.Size(168, 31);
-            layoutState17.Visible = true;
-            this.analyticsLabel.Tag = layoutState17;
+            layoutState26.Location = new System.Drawing.Point(3, 0);
+            layoutState26.Size = new System.Drawing.Size(168, 31);
+            layoutState26.Visible = true;
+            this.analyticsLabel.Tag = layoutState26;
             this.analyticsLabel.Text = "Choose Analytics:";
             // 
             // analyticsDropdown
@@ -347,10 +357,10 @@
             this.analyticsDropdown.SelectedValue = null;
             this.analyticsDropdown.Size = new System.Drawing.Size(200, 40);
             this.analyticsDropdown.TabIndex = 2;
-            layoutState18.Location = new System.Drawing.Point(177, 3);
-            layoutState18.Size = new System.Drawing.Size(220, 40);
-            layoutState18.Visible = true;
-            this.analyticsDropdown.Tag = layoutState18;
+            layoutState27.Location = new System.Drawing.Point(177, 3);
+            layoutState27.Size = new System.Drawing.Size(220, 40);
+            layoutState27.Visible = true;
+            this.analyticsDropdown.Tag = layoutState27;
             this.analyticsDropdown.Text = "Select Analytics";
             this.analyticsDropdown.UnselectedItemTextColor = System.Drawing.Color.Black;
             this.analyticsDropdown.ValueMember = null;
@@ -365,19 +375,8 @@
             this.contentPanel.Location = new System.Drawing.Point(0, 167);
             this.contentPanel.MinimumSize = new System.Drawing.Size(20, 20);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(1066, 494);
+            this.contentPanel.Size = new System.Drawing.Size(1157, 446);
             this.contentPanel.TabIndex = 1;
-            // 
-            // rankingPanel
-            // 
-            this.rankingPanel.AutoScroll = true;
-            this.rankingPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.rankingPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rankingPanel.Location = new System.Drawing.Point(731, 0);
-            this.rankingPanel.MinimumSize = new System.Drawing.Size(20, 20);
-            this.rankingPanel.Name = "rankingPanel";
-            this.rankingPanel.Size = new System.Drawing.Size(335, 494);
-            this.rankingPanel.TabIndex = 0;
             // 
             // resultsPanel
             // 
@@ -387,24 +386,25 @@
             this.resultsPanel.Location = new System.Drawing.Point(0, 0);
             this.resultsPanel.MinimumSize = new System.Drawing.Size(20, 20);
             this.resultsPanel.Name = "resultsPanel";
-            this.resultsPanel.Size = new System.Drawing.Size(731, 494);
+            this.resultsPanel.Size = new System.Drawing.Size(785, 446);
             this.resultsPanel.TabIndex = 1;
             // 
-            // titlePanel
+            // rankingPanel
             // 
-            this.titlePanel.BackColor = System.Drawing.Color.Transparent;
-            this.titlePanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.titlePanel.Location = new System.Drawing.Point(0, 124);
-            this.titlePanel.MinimumSize = new System.Drawing.Size(20, 20);
-            this.titlePanel.Name = "titlePanel";
-            this.titlePanel.Size = new System.Drawing.Size(1066, 43);
-            this.titlePanel.TabIndex = 0;
+            this.rankingPanel.AutoScroll = true;
+            this.rankingPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.rankingPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rankingPanel.Location = new System.Drawing.Point(785, 0);
+            this.rankingPanel.MinimumSize = new System.Drawing.Size(20, 20);
+            this.rankingPanel.Name = "rankingPanel";
+            this.rankingPanel.Size = new System.Drawing.Size(372, 446);
+            this.rankingPanel.TabIndex = 0;
             // 
             // AnalyticsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1066, 661);
+            this.ClientSize = new System.Drawing.Size(1157, 613);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.filterPanel);
             this.Name = "AnalyticsForm";

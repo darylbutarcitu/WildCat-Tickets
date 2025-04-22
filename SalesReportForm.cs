@@ -231,12 +231,21 @@ namespace WildCat_Tickets
                             // New: Add chart rendering logic with descriptive titles
                             chartPanel.Controls.Clear(); // Clear previous charts
                             var labels = new List<string>();
-                            var values = new ChartValues<int>();
+                            var values = new ChartValues<double>(); // Use double to support revenue values
 
                             foreach (DataRow row in dataTable.Rows)
                             {
                                 labels.Add(row["Label"].ToString());
-                                values.Add(Convert.ToInt32(row["TicketsSold"]));
+
+                                // Use Tickets Sold or Revenue based on yAxisDropdown selection
+                                if (yAxisDropdown.SelectedIndex == 1) // Revenue
+                                {
+                                    values.Add(Convert.ToDouble(row["TotalRevenue"]));
+                                }
+                                else // Default to Tickets Sold
+                                {
+                                    values.Add(Convert.ToInt32(row["TicketsSold"]));
+                                }
                             }
 
                             LiveCharts.WinForms.CartesianChart chart = new LiveCharts.WinForms.CartesianChart
@@ -248,40 +257,40 @@ namespace WildCat_Tickets
                             string chartTitle = "";
                             switch (selectedIndex)
                             {
-                                case 0: // Daily - Line Chart
+                                case 0: // Daily
                                     chart.Series.Add(new LineSeries
                                     {
-                                        Title = "Tickets Sold",
+                                        Title = yAxisDropdown.SelectedIndex == 1 ? "Revenue (PHP)" : "Tickets Sold",
                                         Values = values
                                     });
-                                    chartTitle = "Daily Sales Fluctuation";
+                                    chartTitle = yAxisDropdown.SelectedIndex == 1 ? "Daily Revenue Fluctuation" : "Daily Ticket Sales Fluctuation";
                                     break;
 
-                                case 1: // Weekly - Bar Chart
+                                case 1: // Weekly
                                     chart.Series.Add(new ColumnSeries
                                     {
-                                        Title = "Tickets Sold",
+                                        Title = yAxisDropdown.SelectedIndex == 1 ? "Revenue (PHP)" : "Tickets Sold",
                                         Values = values
                                     });
-                                    chartTitle = "Weekly Sales Comparison";
+                                    chartTitle = yAxisDropdown.SelectedIndex == 1 ? "Weekly Revenue Comparison" : "Weekly Ticket Sales Comparison";
                                     break;
 
-                                case 2: // Monthly - Column Chart
+                                case 2: // Monthly
                                     chart.Series.Add(new ColumnSeries
                                     {
-                                        Title = "Tickets Sold",
+                                        Title = yAxisDropdown.SelectedIndex == 1 ? "Revenue (PHP)" : "Tickets Sold",
                                         Values = values
                                     });
-                                    chartTitle = "Monthly Sales Comparison";
+                                    chartTitle = yAxisDropdown.SelectedIndex == 1 ? "Monthly Revenue Comparison" : "Monthly Ticket Sales Comparison";
                                     break;
 
-                                case 3: // Yearly - Bar Chart
+                                case 3: // Yearly
                                     chart.Series.Add(new ColumnSeries
                                     {
-                                        Title = "Tickets Sold",
+                                        Title = yAxisDropdown.SelectedIndex == 1 ? "Revenue (PHP)" : "Tickets Sold",
                                         Values = values
                                     });
-                                    chartTitle = "Yearly Sales Comparison";
+                                    chartTitle = yAxisDropdown.SelectedIndex == 1 ? "Yearly Revenue Bar Chart" : "Yearly Ticket Sales Bar Chart";
                                     break;
                             }
 
@@ -294,8 +303,8 @@ namespace WildCat_Tickets
 
                             chart.AxisY.Add(new Axis
                             {
-                                Title = "Tickets Sold",
-                                LabelFormatter = value => value.ToString("N0"),
+                                Title = yAxisDropdown.SelectedIndex == 1 ? "Revenue (PHP)" : "Tickets Sold",
+                                LabelFormatter = value => yAxisDropdown.SelectedIndex == 1 ? value.ToString("C") : value.ToString("N0"),
                                 Foreground = System.Windows.Media.Brushes.White
                             });
 

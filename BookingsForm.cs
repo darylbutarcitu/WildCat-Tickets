@@ -55,6 +55,7 @@ namespace WildCat_Tickets
                 }
             }
         }
+
         private void LoadBookingsFromDatabase()
         {
             bookingsFlowLayoutPanel.Controls.Clear(); // Clear previous bookings
@@ -65,27 +66,36 @@ namespace WildCat_Tickets
                 {
                     conn.Open();
 
-                    // Adjust the query based on whether the current user is "admin"
                     string query = @"
-                SELECT s.ShowtimeID, m.Title, m.PosterPath, s.StartTime, s.EndTime, 
-                       GROUP_CONCAT(b.SeatNumber, ', ') AS SeatNames, 
-                       s.TicketPrice
-                FROM Bookings b
-                INNER JOIN Showtimes s ON b.ShowtimeID = s.ShowtimeID
-                INNER JOIN Movies m ON s.MovieID = m.Id
-                {0}
-                GROUP BY s.ShowtimeID, m.Title, m.PosterPath, s.StartTime, s.EndTime, s.TicketPrice";
-
-                    // If the current user is not "admin", filter by UserID
-                    string whereClause = userID.ToLower() == "admin" ? "" : "WHERE b.UserID = @UserID";
-                    query = string.Format(query, whereClause);
+            SELECT 
+                s.ShowtimeID, 
+                m.Title, 
+                m.PosterPath, 
+                s.StartTime, 
+                s.EndTime, 
+                GROUP_CONCAT(b.SeatNumber, ', ') AS SeatNames, 
+                COUNT(b.SeatNumber) AS SeatCount,
+                s.TicketPrice
+            FROM 
+                Bookings b
+            INNER JOIN 
+                Showtimes s ON b.ShowtimeID = s.ShowtimeID
+            INNER JOIN 
+                Movies m ON s.MovieID = m.Id
+            WHERE (@IsAdmin = 1 OR b.UserID = @UserID)
+            GROUP BY 
+                s.ShowtimeID, 
+                m.Title, 
+                m.PosterPath, 
+                s.StartTime, 
+                s.EndTime, 
+                s.TicketPrice";
 
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     {
-                        if (userID.ToLower() != "admin")
-                        {
-                            cmd.Parameters.AddWithValue("@UserID", userID); // Filter by current user
-                        }
+                        // Pass parameters for admin or specific user
+                        cmd.Parameters.AddWithValue("@IsAdmin", userID.ToLower() == "admin" ? 1 : 0);
+                        cmd.Parameters.AddWithValue("@UserID", userID);
 
                         using (SQLiteDataReader reader = cmd.ExecuteReader())
                         {
@@ -97,7 +107,7 @@ namespace WildCat_Tickets
                                 DateTime startTime = Convert.ToDateTime(reader["StartTime"]);
                                 DateTime endTime = Convert.ToDateTime(reader["EndTime"]);
                                 string seatNames = reader["SeatNames"].ToString();
-                                int seatCount = string.IsNullOrWhiteSpace(seatNames) ? 0 : seatNames.Split(',').Length; // Count seats
+                                int seatCount = Convert.ToInt32(reader["SeatCount"]);
                                 decimal ticketPrice = Convert.ToDecimal(reader["TicketPrice"]);
                                 decimal totalPrice = seatCount * ticketPrice;
 
@@ -116,8 +126,6 @@ namespace WildCat_Tickets
                 MessageBox.Show("Error loading bookings: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
 
         private void AddShowtimeCard(string imagePath, int showtimeId, string movieTitle, DateTime startTime, DateTime endTime, string seatNames, int seatCount, decimal ticketPrice, decimal totalPrice)
         {

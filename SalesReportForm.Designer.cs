@@ -29,17 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState5 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState6 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState1 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState2 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState3 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState4 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             this.filterPanel = new SiticoneNetFrameworkUI.SiticoneFlatPanel();
+            this.yAxisDataLabel = new SiticoneNetFrameworkUI.SiticoneLabel();
+            this.yAxisDropdown = new SiticoneNetFrameworkUI.SiticoneDropdown();
             this.siticoneFlatPanel1 = new SiticoneNetFrameworkUI.SiticoneFlatPanel();
             this.salesViewType = new SiticoneNetFrameworkUI.SiticoneLabel();
             this.salesReportDropown = new SiticoneNetFrameworkUI.SiticoneDropdown();
             this.siticoneHumanizerDateTime1 = new SiticoneNetFrameworkUI.SiticoneHumanizerDateTime(this.components);
             this.contentPanel = new SiticoneNetFrameworkUI.SiticoneFlatPanel();
-            this.chartPanel = new SiticoneNetFrameworkUI.SiticoneFlatPanel();
-            this.titlePanel = new SiticoneNetFrameworkUI.SiticoneFlatPanel();
             this.resultsPanel = new SiticoneNetFrameworkUI.SiticoneFlatPanel();
+            this.titlePanel = new SiticoneNetFrameworkUI.SiticoneFlatPanel();
+            this.chartPanel = new SiticoneNetFrameworkUI.SiticoneFlatPanel();
             this.filterPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +51,8 @@
             // filterPanel
             // 
             this.filterPanel.BackColor = System.Drawing.Color.Transparent;
+            this.filterPanel.Controls.Add(this.yAxisDataLabel);
+            this.filterPanel.Controls.Add(this.yAxisDropdown);
             this.filterPanel.Controls.Add(this.siticoneFlatPanel1);
             this.filterPanel.Controls.Add(this.salesViewType);
             this.filterPanel.Controls.Add(this.salesReportDropown);
@@ -54,8 +60,67 @@
             this.filterPanel.Location = new System.Drawing.Point(0, 0);
             this.filterPanel.MinimumSize = new System.Drawing.Size(20, 20);
             this.filterPanel.Name = "filterPanel";
-            this.filterPanel.Size = new System.Drawing.Size(1066, 105);
+            this.filterPanel.Size = new System.Drawing.Size(1064, 105);
             this.filterPanel.TabIndex = 2;
+            // 
+            // yAxisDataLabel
+            // 
+            this.yAxisDataLabel.BackColor = System.Drawing.Color.Transparent;
+            this.yAxisDataLabel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.yAxisDataLabel.Location = new System.Drawing.Point(232, 3);
+            this.yAxisDataLabel.Name = "yAxisDataLabel";
+            this.yAxisDataLabel.Size = new System.Drawing.Size(137, 26);
+            this.yAxisDataLabel.TabIndex = 5;
+            layoutState1.Location = new System.Drawing.Point(3, 0);
+            layoutState1.Size = new System.Drawing.Size(168, 31);
+            layoutState1.Visible = true;
+            this.yAxisDataLabel.Tag = layoutState1;
+            this.yAxisDataLabel.Text = "Y-Axis Data";
+            // 
+            // yAxisDropdown
+            // 
+            this.yAxisDropdown.AllowMultipleSelection = false;
+            this.yAxisDropdown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
+            this.yAxisDropdown.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.yAxisDropdown.BorderSize = 2;
+            this.yAxisDropdown.CanBeep = false;
+            this.yAxisDropdown.CanShake = true;
+            this.yAxisDropdown.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.yAxisDropdown.DataSource = null;
+            this.yAxisDropdown.DisplayMember = null;
+            this.yAxisDropdown.DropdownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
+            this.yAxisDropdown.DropdownWidth = 0;
+            this.yAxisDropdown.DropShadowEnabled = false;
+            this.yAxisDropdown.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.yAxisDropdown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.yAxisDropdown.HoveredItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.yAxisDropdown.HoveredItemTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
+            this.yAxisDropdown.IsReadonly = false;
+            this.yAxisDropdown.ItemHeight = 30;
+            this.yAxisDropdown.Items.AddRange(new string[] {
+            "Tickets Sold",
+            "Revenue"});
+            this.yAxisDropdown.Location = new System.Drawing.Point(232, 29);
+            this.yAxisDropdown.MaxDropDownItems = 8;
+            this.yAxisDropdown.Name = "yAxisDropdown";
+            this.yAxisDropdown.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.yAxisDropdown.PlaceholderDisappearsOnFocus = false;
+            this.yAxisDropdown.PlaceholderText = "- Select Data -";
+            this.yAxisDropdown.SelectedIndex = 0;
+            this.yAxisDropdown.SelectedItem = "Tickets Sold";
+            this.yAxisDropdown.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
+            this.yAxisDropdown.SelectedItemTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.yAxisDropdown.SelectedValue = null;
+            this.yAxisDropdown.Size = new System.Drawing.Size(200, 40);
+            this.yAxisDropdown.TabIndex = 6;
+            layoutState2.Location = new System.Drawing.Point(177, 3);
+            layoutState2.Size = new System.Drawing.Size(220, 40);
+            layoutState2.Visible = true;
+            this.yAxisDropdown.Tag = layoutState2;
+            this.yAxisDropdown.Text = "Select Data";
+            this.yAxisDropdown.UnselectedItemTextColor = System.Drawing.Color.Black;
+            this.yAxisDropdown.ValueMember = null;
+            this.yAxisDropdown.SelectedIndexChanged += new System.EventHandler(this.salesReportDropown_SelectedIndexChanged);
             // 
             // siticoneFlatPanel1
             // 
@@ -75,10 +140,10 @@
             this.salesViewType.Name = "salesViewType";
             this.salesViewType.Size = new System.Drawing.Size(137, 26);
             this.salesViewType.TabIndex = 1;
-            layoutState5.Location = new System.Drawing.Point(3, 0);
-            layoutState5.Size = new System.Drawing.Size(168, 31);
-            layoutState5.Visible = true;
-            this.salesViewType.Tag = layoutState5;
+            layoutState3.Location = new System.Drawing.Point(3, 0);
+            layoutState3.Size = new System.Drawing.Size(168, 31);
+            layoutState3.Visible = true;
+            this.salesViewType.Tag = layoutState3;
             this.salesViewType.Text = "Sales Report";
             // 
             // salesReportDropown
@@ -111,7 +176,7 @@
             this.salesReportDropown.Name = "salesReportDropown";
             this.salesReportDropown.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.salesReportDropown.PlaceholderDisappearsOnFocus = false;
-            this.salesReportDropown.PlaceholderText = "- Select View Type -";
+            this.salesReportDropown.PlaceholderText = "- Select View -";
             this.salesReportDropown.SelectedIndex = -1;
             this.salesReportDropown.SelectedItem = null;
             this.salesReportDropown.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(12)))));
@@ -119,11 +184,11 @@
             this.salesReportDropown.SelectedValue = null;
             this.salesReportDropown.Size = new System.Drawing.Size(200, 40);
             this.salesReportDropown.TabIndex = 2;
-            layoutState6.Location = new System.Drawing.Point(177, 3);
-            layoutState6.Size = new System.Drawing.Size(220, 40);
-            layoutState6.Visible = true;
-            this.salesReportDropown.Tag = layoutState6;
-            this.salesReportDropown.Text = "Select View Type";
+            layoutState4.Location = new System.Drawing.Point(177, 3);
+            layoutState4.Size = new System.Drawing.Size(220, 40);
+            layoutState4.Visible = true;
+            this.salesReportDropown.Tag = layoutState4;
+            this.salesReportDropown.Text = "Select View";
             this.salesReportDropown.UnselectedItemTextColor = System.Drawing.Color.Black;
             this.salesReportDropown.ValueMember = null;
             this.salesReportDropown.SelectedIndexChanged += new System.EventHandler(this.salesReportDropown_SelectedIndexChanged);
@@ -153,28 +218,8 @@
             this.contentPanel.Location = new System.Drawing.Point(0, 105);
             this.contentPanel.MinimumSize = new System.Drawing.Size(20, 20);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(1066, 556);
+            this.contentPanel.Size = new System.Drawing.Size(1064, 554);
             this.contentPanel.TabIndex = 3;
-            // 
-            // chartPanel
-            // 
-            this.chartPanel.BackColor = System.Drawing.Color.Transparent;
-            this.chartPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.chartPanel.Location = new System.Drawing.Point(310, 0);
-            this.chartPanel.MinimumSize = new System.Drawing.Size(20, 20);
-            this.chartPanel.Name = "chartPanel";
-            this.chartPanel.Size = new System.Drawing.Size(756, 556);
-            this.chartPanel.TabIndex = 0;
-            // 
-            // titlePanel
-            // 
-            this.titlePanel.BackColor = System.Drawing.Color.Transparent;
-            this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.titlePanel.Location = new System.Drawing.Point(0, 0);
-            this.titlePanel.MinimumSize = new System.Drawing.Size(20, 20);
-            this.titlePanel.Name = "titlePanel";
-            this.titlePanel.Size = new System.Drawing.Size(310, 56);
-            this.titlePanel.TabIndex = 1;
             // 
             // resultsPanel
             // 
@@ -183,14 +228,34 @@
             this.resultsPanel.Location = new System.Drawing.Point(0, 56);
             this.resultsPanel.MinimumSize = new System.Drawing.Size(20, 20);
             this.resultsPanel.Name = "resultsPanel";
-            this.resultsPanel.Size = new System.Drawing.Size(310, 500);
+            this.resultsPanel.Size = new System.Drawing.Size(308, 498);
             this.resultsPanel.TabIndex = 2;
+            // 
+            // titlePanel
+            // 
+            this.titlePanel.BackColor = System.Drawing.Color.Transparent;
+            this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titlePanel.Location = new System.Drawing.Point(0, 0);
+            this.titlePanel.MinimumSize = new System.Drawing.Size(20, 20);
+            this.titlePanel.Name = "titlePanel";
+            this.titlePanel.Size = new System.Drawing.Size(308, 56);
+            this.titlePanel.TabIndex = 1;
+            // 
+            // chartPanel
+            // 
+            this.chartPanel.BackColor = System.Drawing.Color.Transparent;
+            this.chartPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.chartPanel.Location = new System.Drawing.Point(308, 0);
+            this.chartPanel.MinimumSize = new System.Drawing.Size(20, 20);
+            this.chartPanel.Name = "chartPanel";
+            this.chartPanel.Size = new System.Drawing.Size(756, 554);
+            this.chartPanel.TabIndex = 0;
             // 
             // SalesReportForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1066, 661);
+            this.ClientSize = new System.Drawing.Size(1064, 659);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.filterPanel);
             this.MinimumSize = new System.Drawing.Size(1080, 675);
@@ -215,5 +280,7 @@
         private SiticoneNetFrameworkUI.SiticoneFlatPanel titlePanel;
         private SiticoneNetFrameworkUI.SiticoneFlatPanel chartPanel;
         private SiticoneNetFrameworkUI.SiticoneFlatPanel resultsPanel;
+        private SiticoneNetFrameworkUI.SiticoneLabel yAxisDataLabel;
+        private SiticoneNetFrameworkUI.SiticoneDropdown yAxisDropdown;
     }
 }

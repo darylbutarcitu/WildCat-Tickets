@@ -227,33 +227,57 @@ namespace WildCat_Tickets
                     };
                     titlePanel.Controls.Add(chartTitleLabel);
 
+                    // Function to generate a color from an HSL hue value
+                    System.Windows.Media.Color HSLColor(double hue)
+                    {
+                        var h = hue % 360;
+                        var s = 0.6;
+                        var l = 0.5;
+
+                        var c = (1 - Math.Abs(2 * l - 1)) * s;
+                        var x = c * (1 - Math.Abs(h / 60 % 2 - 1));
+                        var m = l - c / 2;
+
+                        double r = 0, g = 0, b = 0;
+
+                        if (h < 60) { r = c; g = x; }
+                        else if (h < 120) { r = x; g = c; }
+                        else if (h < 180) { g = c; b = x; }
+                        else if (h < 240) { g = x; b = c; }
+                        else if (h < 300) { r = x; b = c; }
+                        else { r = c; b = x; }
+
+                        return System.Windows.Media.Color.FromRgb(
+                            (byte)((r + m) * 255),
+                            (byte)((g + m) * 255),
+                            (byte)((b + m) * 255)
+                        );
+                    }
+
                     // Create a new PieChart
                     var pieChart = new LiveCharts.WinForms.PieChart
                     {
-                        Dock = DockStyle.Fill, // Automatically resize with the parent container
-                        Margin = new Padding(50), // Add some margin for aesthetics
+                        Dock = DockStyle.Fill,
+                        Margin = new Padding(10),
                     };
 
-                    // Add a legend to the pie chart
-                    pieChart.LegendLocation = LiveCharts.LegendLocation.Left;
-                    pieChart.DefaultLegend = new DefaultLegend {Foreground = System.Windows.Media.Brushes.White};
-
-                    // Populate the pie chart
+                    // Generate dynamic colors for each movie
+                    int index = 0;
+                    int count = totalBookingsByMovie.Count;
                     foreach (var movie in totalBookingsByMovie)
                     {
+                        var color = HSLColor(index * 360.0 / count);
                         pieChart.Series.Add(new LiveCharts.Wpf.PieSeries
                         {
                             Title = movie.Key,
                             Values = new LiveCharts.ChartValues<double> { movie.Value },
                             DataLabels = true,
                             LabelPoint = chartPoint => $"{chartPoint.Y} ({chartPoint.Participation:P})",
-                            Fill = new System.Windows.Media.SolidColorBrush(
-                                System.Windows.Media.Color.FromRgb(
-                                    (byte)(50 + movie.Value * 20 % 200),
-                                    (byte)(100 + movie.Value * 15 % 200),
-                                    (byte)(150 + movie.Value * 10 % 200))) // Generate unique colors
+                            Fill = new System.Windows.Media.SolidColorBrush(color)
                         });
+                        index++;
                     }
+
                     resultsPanel.Controls.Add(pieChart);
 
                     DisplayMoviesInRankingPanel(totalBookingsByMovie.Keys.ToList(), totalBookingsByMovie.Values.Select(v => (double)v).ToList(), false);

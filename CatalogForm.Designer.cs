@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState2 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
+            SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState layoutState1 = new SiticoneNetFrameworkUI.SiticoneFlowPanel.LayoutState();
             this.moviesFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.mySiticoneLicenseSettings1 = new SiticoneNetFrameworkUI.MySiticoneLicenseSettings();
             this.searchTbx = new SiticoneNetFrameworkUI.SiticoneTextBox();
@@ -44,7 +44,7 @@
             this.moviesFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moviesFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.moviesFlowLayoutPanel.Name = "moviesFlowLayoutPanel";
-            this.moviesFlowLayoutPanel.Size = new System.Drawing.Size(972, 430);
+            this.moviesFlowLayoutPanel.Size = new System.Drawing.Size(940, 398);
             this.moviesFlowLayoutPanel.TabIndex = 0;
             this.moviesFlowLayoutPanel.Resize += new System.EventHandler(this.moviesFlowLayoutPanel_Resize);
             // 
@@ -121,7 +121,7 @@
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(972, 49);
+            this.topPanel.Size = new System.Drawing.Size(940, 49);
             this.topPanel.TabIndex = 30;
             // 
             // addMovieBtn
@@ -216,22 +216,22 @@
             this.searchBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.searchBtn.IconSize = 36;
             this.searchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchBtn.Location = new System.Drawing.Point(909, 49);
+            this.searchBtn.Location = new System.Drawing.Point(3, 95);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(45, 35);
             this.searchBtn.TabIndex = 3;
-            layoutState2.Location = new System.Drawing.Point(3, 247);
-            layoutState2.Size = new System.Drawing.Size(194, 35);
-            layoutState2.Visible = true;
-            this.searchBtn.Tag = layoutState2;
+            layoutState1.Location = new System.Drawing.Point(3, 247);
+            layoutState1.Size = new System.Drawing.Size(194, 35);
+            layoutState1.Visible = true;
+            this.searchBtn.Tag = layoutState1;
             this.searchBtn.UseVisualStyleBackColor = false;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // CatalogForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 430);
+            this.ClientSize = new System.Drawing.Size(940, 398);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.moviesFlowLayoutPanel);
             this.Name = "CatalogForm";

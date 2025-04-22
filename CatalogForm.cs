@@ -42,8 +42,8 @@ namespace WildCat_Tickets
                 {
                     conn.Open();
 
-                    // Load all movies from the Movies table
-                    string query = "SELECT Id, PosterPath, TotalRatings, NumberOfRatings, Title, ReleaseDate FROM Movies";
+                    // Load all movies from the Movies table and sort them alphabetically by Title
+                    string query = "SELECT Id, PosterPath, TotalRatings, NumberOfRatings, Title, ReleaseDate FROM Movies ORDER BY Title ASC";
 
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     using (SQLiteDataReader reader = cmd.ExecuteReader())
