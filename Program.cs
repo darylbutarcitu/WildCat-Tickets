@@ -14,29 +14,12 @@ namespace WildCat_Tickets
         [STAThread]
         static void Main()
         {
-            bool isAdmin = false;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Run Login Form
             // Authenticate user
 
-            //Application.Run(new SignUpForm());
-            if (isAdmin)
-            {
-
-            }
-            else
-            {
-                string idNumber = "24-5865-705";
-                string password = "09261999!Db";
-                Customer customer = new Customer();
-                customer.Login(idNumber, password).GetAwaiter().GetResult();
-
-                MessageBox.Show("Login successful!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Proceed to the next form or main application window
-                Application.Run(new CustomerDashboardForm(customer));
-            }
-            //Application.Run(new MoviesForm());
+            Application.Run(new LoginForm());
         }
     }
 }

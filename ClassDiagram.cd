@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WildCat_Tickets.Account" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAEAAAAAIAAgAAAQAAAAASAAAAAAA=</HashCode>
+      <FileName>Account.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WildCat_Tickets.User">
+    <Position X="2.75" Y="1.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAUAABIAAoAAAAAIQAAQAAAAAAAAAAAAAIAAAAAg=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WildCat_Tickets.Admin">
+    <Position X="1.25" Y="1.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAQAAQAAAA=</HashCode>
+      <FileName>Admin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WildCat_Tickets.DatabaseHelper">
+    <Position X="5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAwAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WildCat_Tickets.TabForm">
+    <Position X="11.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAFAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TabForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WildCat_Tickets.LoginForm">
+    <Position X="7.75" Y="4" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BQAACAgLACAAMAAAAYCAEAACIIQABAAigAAAAAEAAAA=</HashCode>
+      <FileName>LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WildCat_Tickets.SignUpForm">
+    <Position X="10" Y="4" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>pQMACIALACAQojEANAiEFEACEJQICQCAEAAAAAAAAAU=</HashCode>
+      <FileName>SignUpForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WildCat_Tickets.AddMovieForm">
+    <Position X="11.25" Y="8.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BAAEAAIKACBAAQEAkAKIAEAGAAAEAAAFQSAAABACAAQ=</HashCode>
+      <FileName>AddMovieForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WildCat_Tickets.CatalogForm">
+    <Position X="7.75" Y="8.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQEAAgAAACEAAACAEgCoAgCCAEAEAAAAAAAAIAAAAUg=</HashCode>
+      <FileName>CatalogForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WildCat_Tickets.DashboardForm">
+    <Position X="0.75" Y="6" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>FAMAAiAGYCQAIADAAIiAAgwDAgACCgAAIEABIAEKQAg=</HashCode>
+      <FileName>DashboardForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WildCat_Tickets.ViewProfileForm">
+    <Position X="12.5" Y="4" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>oQMBAIAAQCAQgrGANAiAVEACEBQQAACEEAAAAQAABAU=</HashCode>
+      <FileName>ViewProfileForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WildCat_Tickets.BookingsForm">
+    <Position X="14.5" Y="8.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIEQAgAAgCAAAAAACECgCgACAEAAAAAAAAACAAAAAAg=</HashCode>
+      <FileName>BookingsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WildCat_Tickets.MovieDetailsForm">
+    <Position X="3.25" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ZAAEBIYDECASAYEEAEKBAEAGgAGAQgkAQQAEJBACFAI=</HashCode>
+      <FileName>MovieDetailsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WildCat_Tickets.AnalyticsForm">
+    <Position X="15" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAABAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>AnalyticsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WildCat_Tickets.CreateBookingForm">
+    <Position X="5" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BcA3DIBIgCAAIAAEBFCBAMM+ARCAgP8/AQIAwbAvEAE=</HashCode>
+      <FileName>CreateBookingForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
