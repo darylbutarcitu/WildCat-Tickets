@@ -56,7 +56,7 @@ namespace WildCat_Tickets
                     FROM Bookings b
                     JOIN Showtimes s ON b.ShowtimeID = s.ShowtimeID
                     GROUP BY Label
-                    ORDER BY Label DESC;";
+                    ORDER BY Label ASC;";
                     break;
 
                 case 1: // Weekly
@@ -81,7 +81,7 @@ namespace WildCat_Tickets
                     FROM Bookings b
                     JOIN Showtimes s ON b.ShowtimeID = s.ShowtimeID
                     GROUP BY Label
-                    ORDER BY Label DESC;";
+                    ORDER BY Label ASC;";
                     break;
 
                 case 2: // Monthly
@@ -106,7 +106,7 @@ namespace WildCat_Tickets
                     FROM Bookings b
                     JOIN Showtimes s ON b.ShowtimeID = s.ShowtimeID
                     GROUP BY Label
-                    ORDER BY Label DESC;";
+                    ORDER BY Label ASC;";
                     break;
 
                 case 3: // Yearly
@@ -131,7 +131,7 @@ namespace WildCat_Tickets
                     FROM Bookings b
                     JOIN Showtimes s ON b.ShowtimeID = s.ShowtimeID
                     GROUP BY Label
-                    ORDER BY Label DESC;";
+                    ORDER BY Label ASC;";
                     break;
 
                 default:
@@ -214,8 +214,8 @@ namespace WildCat_Tickets
                             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = reportHeader, DataPropertyName = "Label" });
                             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tickets Sold", DataPropertyName = "TicketsSold" });
                             dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Revenue (PHP)", DataPropertyName = "TotalRevenue" });
-                            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Top Movie", DataPropertyName = "TopMovie" });
-                            dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Top Genre", DataPropertyName = "TopGenre" });
+                            //dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Top Movie", DataPropertyName = "TopMovie" });
+                            //dataGridView.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Top Genre", DataPropertyName = "TopGenre" });
                             dataGridView.Columns.Add(new DataGridViewTextBoxColumn
                             {
                                 HeaderText = "Avg Revenue (PHP)",

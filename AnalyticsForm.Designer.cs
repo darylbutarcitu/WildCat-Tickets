@@ -74,17 +74,17 @@
             this.filterPanel.Location = new System.Drawing.Point(0, 0);
             this.filterPanel.MinimumSize = new System.Drawing.Size(20, 20);
             this.filterPanel.Name = "filterPanel";
-            this.filterPanel.Size = new System.Drawing.Size(1157, 167);
+            this.filterPanel.Size = new System.Drawing.Size(1093, 167);
             this.filterPanel.TabIndex = 0;
             // 
             // titlePanel
             // 
             this.titlePanel.BackColor = System.Drawing.Color.Transparent;
             this.titlePanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.titlePanel.Location = new System.Drawing.Point(0, 99);
+            this.titlePanel.Location = new System.Drawing.Point(0, 104);
             this.titlePanel.MinimumSize = new System.Drawing.Size(20, 20);
             this.titlePanel.Name = "titlePanel";
-            this.titlePanel.Size = new System.Drawing.Size(1157, 68);
+            this.titlePanel.Size = new System.Drawing.Size(1093, 63);
             this.titlePanel.TabIndex = 0;
             // 
             // countDropdown
@@ -343,7 +343,7 @@
             this.analyticsDropdown.ItemHeight = 30;
             this.analyticsDropdown.Items.AddRange(new string[] {
             "Top Rated",
-            "Top Booked"});
+            "Top Selling"});
             this.analyticsDropdown.Location = new System.Drawing.Point(0, 29);
             this.analyticsDropdown.MaxDropDownItems = 8;
             this.analyticsDropdown.Name = "analyticsDropdown";
@@ -375,7 +375,7 @@
             this.contentPanel.Location = new System.Drawing.Point(0, 167);
             this.contentPanel.MinimumSize = new System.Drawing.Size(20, 20);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(1157, 446);
+            this.contentPanel.Size = new System.Drawing.Size(1093, 382);
             this.contentPanel.TabIndex = 1;
             // 
             // resultsPanel
@@ -386,7 +386,7 @@
             this.resultsPanel.Location = new System.Drawing.Point(0, 0);
             this.resultsPanel.MinimumSize = new System.Drawing.Size(20, 20);
             this.resultsPanel.Name = "resultsPanel";
-            this.resultsPanel.Size = new System.Drawing.Size(785, 446);
+            this.resultsPanel.Size = new System.Drawing.Size(721, 382);
             this.resultsPanel.TabIndex = 1;
             // 
             // rankingPanel
@@ -394,17 +394,17 @@
             this.rankingPanel.AutoScroll = true;
             this.rankingPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.rankingPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rankingPanel.Location = new System.Drawing.Point(785, 0);
+            this.rankingPanel.Location = new System.Drawing.Point(721, 0);
             this.rankingPanel.MinimumSize = new System.Drawing.Size(20, 20);
             this.rankingPanel.Name = "rankingPanel";
-            this.rankingPanel.Size = new System.Drawing.Size(372, 446);
+            this.rankingPanel.Size = new System.Drawing.Size(372, 382);
             this.rankingPanel.TabIndex = 0;
             // 
             // AnalyticsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 613);
+            this.ClientSize = new System.Drawing.Size(1093, 549);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.filterPanel);
             this.Name = "AnalyticsForm";

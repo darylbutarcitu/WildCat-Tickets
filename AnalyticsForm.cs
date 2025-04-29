@@ -218,7 +218,7 @@ namespace WildCat_Tickets
 
                     var chartTitleLabel = new Label
                     {
-                        Text = "Top Movies by Total Bookings",
+                        Text = "Pie Chart of Top Selling Movies",
                         ForeColor = Color.White,
                         Font = new Font("Arial", 18, FontStyle.Italic),
                         Dock = DockStyle.Top,
@@ -446,7 +446,7 @@ namespace WildCat_Tickets
                             // Add number of bookings
                             var bookingsLabel = new Label
                             {
-                                Text = $"Bookings: {value}",
+                                Text = $"Tickets Sold: {value}",
                                 ForeColor = Color.White,
                                 Font = new Font("Arial", 10, FontStyle.Regular),
                                 AutoSize = true,
